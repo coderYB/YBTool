@@ -41,6 +41,9 @@
 		EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86FC207F63DA00EAADED /* YBRectConst.m */; };
 		EA6E871B207F63DB00EAADED /* YBRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86FE207F63DA00EAADED /* YBRSA.m */; };
 		EA6E871C207F63DB00EAADED /* YBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8701207F63DA00EAADED /* YBUtils.m */; };
+		EA6E871E207F658600EAADED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E871D207F658600EAADED /* UIKit.framework */; };
+		EA6E8720207F658E00EAADED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E871F207F658D00EAADED /* Foundation.framework */; };
+		EA6E8722207F659800EAADED /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E8721207F659800EAADED /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +115,9 @@
 		EA6E86FF207F63DA00EAADED /* YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTool.h; sourceTree = "<group>"; };
 		EA6E8700207F63DA00EAADED /* YBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUtils.h; sourceTree = "<group>"; };
 		EA6E8701207F63DA00EAADED /* YBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUtils.m; sourceTree = "<group>"; };
+		EA6E871D207F658600EAADED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA6E871F207F658D00EAADED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA6E8721207F659800EAADED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6E8722207F659800EAADED /* AdSupport.framework in Frameworks */,
+				EA6E8720207F658E00EAADED /* Foundation.framework in Frameworks */,
+				EA6E871E207F658600EAADED /* UIKit.framework in Frameworks */,
 				D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +147,9 @@
 		9D4EACC1A3A62EC5677B43E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA6E8721207F659800EAADED /* AdSupport.framework */,
+				EA6E871F207F658D00EAADED /* Foundation.framework */,
+				EA6E871D207F658600EAADED /* UIKit.framework */,
 				6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */,
 			);
 			name = Frameworks;
