@@ -9,32 +9,6 @@
 #ifndef YBTool_h
 #define YBTool_h
 
-#import "DatePickerView.h"
-#import "YBPopupMenu.h"
-#import "YBPopupMenuPath.h"
-#import "YBRectConst.h"
-#import "VideoCompressTools.h"
-
-#import "NSData+YBTool.h"
-#import "NSString+YBTool.h"
-#import "UIView+YBTool.h"
-#import "UIColor+YBTool.h"
-#import "UIButton+YBTool.h"
-#import "UIImageView+YBTool.h"
-#import "UIImage+YBTool.h"
-#import "UIFont+YBTool.h"
-#import "UILabel+YBTool.h"
-#import "NSObject+YBTool.h"
-#import "UIViewController+YBTool.h"
-#import "UIView+EmptyView.h"
-#import "YBUtils.h"
-#import "YBRSA.h"
-#import "YBKeyChain.h"
-#import "YBAlertView.h"
-#import "ClearTheCacheTools.h"
-#import "UITextView+PlaceHolder.h"
-
-
 //判断与相应的屏幕比例是否一致
 #define SCALE_TO_SCREEN(w,h) [[NSString stringWithFormat:@"%0.5f",UIScreen.mainScreen.bounds.size.width/UIScreen.mainScreen.bounds.size.height] isEqualToString:[NSString stringWithFormat:@"%0.5f",w/h]]
 //3.5寸屏比例
@@ -72,5 +46,34 @@
 #define YBUnArchive(name) [YBUtils yb_unArchiveWithFileName:name]
 //删除根目录下的文件
 #define YBDeleteArchiveFile(name) [YBUtils yb_deleteArchiveWithFileName:name]
+
+
+#import "DatePickerView.h"
+#import "YBPopupMenu.h"
+#import "YBPopupMenuPath.h"
+#import "YBRectConst.h"
+#import "VideoCompressTools.h"
+
+#import "NSData+YBTool.h"
+#import "NSString+YBTool.h"
+#import "UIView+YBTool.h"
+#import "UIColor+YBTool.h"
+#import "UIButton+YBTool.h"
+#import "UIImageView+YBTool.h"
+#import "UIImage+YBTool.h"
+#import "UIFont+YBTool.h"
+#import "UILabel+YBTool.h"
+#import "NSObject+YBTool.h"
+#import "UIViewController+YBTool.h"
+#import "UIView+EmptyView.h"
+#import "YBUtils.h"
+#import "YBRSA.h"
+#import "YBKeyChain.h"
+#import "YBAlertView.h"
+#import "ClearTheCacheTools.h"
+#import "UITextView+PlaceHolder.h"
+#import "YBCustomAlertView.h"
+
+
 
 #endif /* YBTool_h */

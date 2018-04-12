@@ -44,6 +44,7 @@
 		EA6E871E207F658600EAADED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E871D207F658600EAADED /* UIKit.framework */; };
 		EA6E8720207F658E00EAADED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E871F207F658D00EAADED /* Foundation.framework */; };
 		EA6E8722207F659800EAADED /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E8721207F659800EAADED /* AdSupport.framework */; };
+		EA6E8725207F6E8D00EAADED /* YBCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,8 @@
 		EA6E871D207F658600EAADED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EA6E871F207F658D00EAADED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA6E8721207F659800EAADED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		EA6E8723207F6E8D00EAADED /* YBCustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCustomAlertView.h; sourceTree = "<group>"; };
+		EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCustomAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +242,8 @@
 				EA6E86FF207F63DA00EAADED /* YBTool.h */,
 				EA6E8700207F63DA00EAADED /* YBUtils.h */,
 				EA6E8701207F63DA00EAADED /* YBUtils.m */,
+				EA6E8723207F6E8D00EAADED /* YBCustomAlertView.h */,
+				EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */,
 				EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */,
 				EA6E8710207F63DB00EAADED /* UITextView+PlaceHolder.m in Sources */,
+				EA6E8725207F6E8D00EAADED /* YBCustomAlertView.m in Sources */,
 				EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */,
 				EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */,
 				EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */,
