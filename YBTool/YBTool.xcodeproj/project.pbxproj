@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */; };
+		EA6E86B3207F62FC00EAADED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86B2207F62FC00EAADED /* AppDelegate.m */; };
+		EA6E86B6207F62FC00EAADED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86B5207F62FC00EAADED /* ViewController.m */; };
+		EA6E86B9207F62FC00EAADED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86B7207F62FC00EAADED /* Main.storyboard */; };
+		EA6E86BB207F62FE00EAADED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86BA207F62FE00EAADED /* Assets.xcassets */; };
+		EA6E86BE207F62FE00EAADED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86BC207F62FE00EAADED /* LaunchScreen.storyboard */; };
+		EA6E86C1207F62FE00EAADED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86C0207F62FE00EAADED /* main.m */; };
+		EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */; };
+		EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CC207F63DA00EAADED /* BasePickerView.m */; };
+		EA6E8704207F63DB00EAADED /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CE207F63DA00EAADED /* DatePickerView.m */; };
+		EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */; };
+		EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */; };
+		EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */; };
+		EA6E8708207F63DB00EAADED /* UIButton+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */; };
+		EA6E8709207F63DB00EAADED /* UIColor+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D8207F63DA00EAADED /* UIColor+YBTool.m */; };
+		EA6E870A207F63DB00EAADED /* UIFont+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86DA207F63DA00EAADED /* UIFont+YBTool.m */; };
+		EA6E870B207F63DB00EAADED /* UIImage+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86DC207F63DA00EAADED /* UIImage+YBTool.m */; };
+		EA6E870C207F63DB00EAADED /* UIImageView+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86DE207F63DA00EAADED /* UIImageView+YBTool.m */; };
+		EA6E870D207F63DB00EAADED /* UILabel+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E0207F63DA00EAADED /* UILabel+YBTool.m */; };
+		EA6E870E207F63DB00EAADED /* UINavigationBar+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E2207F63DA00EAADED /* UINavigationBar+YBTool.m */; };
+		EA6E870F207F63DB00EAADED /* UIScrollView+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E4207F63DA00EAADED /* UIScrollView+YBTool.m */; };
+		EA6E8710207F63DB00EAADED /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E6207F63DA00EAADED /* UITextView+PlaceHolder.m */; };
+		EA6E8711207F63DB00EAADED /* UIView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */; };
+		EA6E8712207F63DB00EAADED /* UIView+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */; };
+		EA6E8713207F63DB00EAADED /* UIViewController+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */; };
+		EA6E8714207F63DB00EAADED /* VideoCompressTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */; };
+		EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F1207F63DA00EAADED /* YBAlertView.m */; };
+		EA6E8716207F63DB00EAADED /* YBCacheFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */; };
+		EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F5207F63DA00EAADED /* YBKeyChain.m */; };
+		EA6E8718207F63DB00EAADED /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F8207F63DA00EAADED /* YBPopupMenu.m */; };
+		EA6E8719207F63DB00EAADED /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86FA207F63DA00EAADED /* YBPopupMenuPath.m */; };
+		EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86FC207F63DA00EAADED /* YBRectConst.m */; };
+		EA6E871B207F63DB00EAADED /* YBRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86FE207F63DA00EAADED /* YBRSA.m */; };
+		EA6E871C207F63DB00EAADED /* YBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8701207F63DA00EAADED /* YBUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2024053D51FD2E6B66E6480A /* Pods-YBTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.release.xcconfig"; sourceTree = "<group>"; };
+		4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.debug.xcconfig"; sourceTree = "<group>"; };
+		6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YBTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6E86AE207F62FC00EAADED /* YBTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6E86B1207F62FC00EAADED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA6E86B2207F62FC00EAADED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA6E86B4207F62FC00EAADED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA6E86B5207F62FC00EAADED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA6E86B8207F62FC00EAADED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA6E86BA207F62FE00EAADED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA6E86BD207F62FE00EAADED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA6E86BF207F62FE00EAADED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA6E86C0207F62FE00EAADED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearTheCacheTools.h; sourceTree = "<group>"; };
+		EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearTheCacheTools.m; sourceTree = "<group>"; };
+		EA6E86CB207F63DA00EAADED /* BasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePickerView.h; sourceTree = "<group>"; };
+		EA6E86CC207F63DA00EAADED /* BasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePickerView.m; sourceTree = "<group>"; };
+		EA6E86CD207F63DA00EAADED /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		EA6E86CE207F63DA00EAADED /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		EA6E86CF207F63DA00EAADED /* NSData+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86D3207F63DA00EAADED /* NSString+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86D5207F63DA00EAADED /* UIButton+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86D7207F63DA00EAADED /* UIColor+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86D8207F63DA00EAADED /* UIColor+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86D9207F63DA00EAADED /* UIFont+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86DA207F63DA00EAADED /* UIFont+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86DB207F63DA00EAADED /* UIImage+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86DC207F63DA00EAADED /* UIImage+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86DD207F63DA00EAADED /* UIImageView+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86DE207F63DA00EAADED /* UIImageView+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86DF207F63DA00EAADED /* UILabel+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86E0207F63DA00EAADED /* UILabel+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86E1207F63DA00EAADED /* UINavigationBar+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86E2207F63DA00EAADED /* UINavigationBar+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86E3207F63DA00EAADED /* UIScrollView+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86E4207F63DA00EAADED /* UIScrollView+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86E5207F63DA00EAADED /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
+		EA6E86E6207F63DA00EAADED /* UITextView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PlaceHolder.m"; sourceTree = "<group>"; };
+		EA6E86E7207F63DA00EAADED /* UIView+EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EmptyView.h"; sourceTree = "<group>"; };
+		EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EmptyView.m"; sourceTree = "<group>"; };
+		EA6E86E9207F63DA00EAADED /* UIView+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86EB207F63DA00EAADED /* UIViewController+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YBTool.h"; sourceTree = "<group>"; };
+		EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YBTool.m"; sourceTree = "<group>"; };
+		EA6E86EE207F63DA00EAADED /* VideoCompressTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCompressTools.h; sourceTree = "<group>"; };
+		EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCompressTools.m; sourceTree = "<group>"; };
+		EA6E86F0207F63DA00EAADED /* YBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlertView.h; sourceTree = "<group>"; };
+		EA6E86F1207F63DA00EAADED /* YBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlertView.m; sourceTree = "<group>"; };
+		EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCacheFileUtils.h; sourceTree = "<group>"; };
+		EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCacheFileUtils.m; sourceTree = "<group>"; };
+		EA6E86F4207F63DA00EAADED /* YBKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBKeyChain.h; sourceTree = "<group>"; };
+		EA6E86F5207F63DA00EAADED /* YBKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBKeyChain.m; sourceTree = "<group>"; };
+		EA6E86F7207F63DA00EAADED /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
+		EA6E86F8207F63DA00EAADED /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
+		EA6E86F9207F63DA00EAADED /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		EA6E86FA207F63DA00EAADED /* YBPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenuPath.m; sourceTree = "<group>"; };
+		EA6E86FB207F63DA00EAADED /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
+		EA6E86FC207F63DA00EAADED /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
+		EA6E86FD207F63DA00EAADED /* YBRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRSA.h; sourceTree = "<group>"; };
+		EA6E86FE207F63DA00EAADED /* YBRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRSA.m; sourceTree = "<group>"; };
+		EA6E86FF207F63DA00EAADED /* YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTool.h; sourceTree = "<group>"; };
+		EA6E8700207F63DA00EAADED /* YBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBUtils.h; sourceTree = "<group>"; };
+		EA6E8701207F63DA00EAADED /* YBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBUtils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA6E86AB207F62FC00EAADED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C79D6FAE12A3508527E9F84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */,
+				2024053D51FD2E6B66E6480A /* Pods-YBTool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D4EACC1A3A62EC5677B43E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA6E86A5207F62FC00EAADED = {
+			isa = PBXGroup;
+			children = (
+				EA6E86B0207F62FC00EAADED /* YBTool */,
+				EA6E86AF207F62FC00EAADED /* Products */,
+				4C79D6FAE12A3508527E9F84 /* Pods */,
+				9D4EACC1A3A62EC5677B43E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA6E86AF207F62FC00EAADED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86AE207F62FC00EAADED /* YBTool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA6E86B0207F62FC00EAADED /* YBTool */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86C7207F63DA00EAADED /* Class */,
+				EA6E86B1207F62FC00EAADED /* AppDelegate.h */,
+				EA6E86B2207F62FC00EAADED /* AppDelegate.m */,
+				EA6E86B4207F62FC00EAADED /* ViewController.h */,
+				EA6E86B5207F62FC00EAADED /* ViewController.m */,
+				EA6E86B7207F62FC00EAADED /* Main.storyboard */,
+				EA6E86BA207F62FE00EAADED /* Assets.xcassets */,
+				EA6E86BC207F62FE00EAADED /* LaunchScreen.storyboard */,
+				EA6E86BF207F62FE00EAADED /* Info.plist */,
+				EA6E86C0207F62FE00EAADED /* main.m */,
+			);
+			path = YBTool;
+			sourceTree = "<group>";
+		};
+		EA6E86C7207F63DA00EAADED /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */,
+				EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */,
+				EA6E86CA207F63DA00EAADED /* DatePickerView */,
+				EA6E86CF207F63DA00EAADED /* NSData+YBTool.h */,
+				EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */,
+				EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */,
+				EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */,
+				EA6E86D3207F63DA00EAADED /* NSString+YBTool.h */,
+				EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */,
+				EA6E86D5207F63DA00EAADED /* UIButton+YBTool.h */,
+				EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */,
+				EA6E86D7207F63DA00EAADED /* UIColor+YBTool.h */,
+				EA6E86D8207F63DA00EAADED /* UIColor+YBTool.m */,
+				EA6E86D9207F63DA00EAADED /* UIFont+YBTool.h */,
+				EA6E86DA207F63DA00EAADED /* UIFont+YBTool.m */,
+				EA6E86DB207F63DA00EAADED /* UIImage+YBTool.h */,
+				EA6E86DC207F63DA00EAADED /* UIImage+YBTool.m */,
+				EA6E86DD207F63DA00EAADED /* UIImageView+YBTool.h */,
+				EA6E86DE207F63DA00EAADED /* UIImageView+YBTool.m */,
+				EA6E86DF207F63DA00EAADED /* UILabel+YBTool.h */,
+				EA6E86E0207F63DA00EAADED /* UILabel+YBTool.m */,
+				EA6E86E1207F63DA00EAADED /* UINavigationBar+YBTool.h */,
+				EA6E86E2207F63DA00EAADED /* UINavigationBar+YBTool.m */,
+				EA6E86E3207F63DA00EAADED /* UIScrollView+YBTool.h */,
+				EA6E86E4207F63DA00EAADED /* UIScrollView+YBTool.m */,
+				EA6E86E5207F63DA00EAADED /* UITextView+PlaceHolder.h */,
+				EA6E86E6207F63DA00EAADED /* UITextView+PlaceHolder.m */,
+				EA6E86E7207F63DA00EAADED /* UIView+EmptyView.h */,
+				EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */,
+				EA6E86E9207F63DA00EAADED /* UIView+YBTool.h */,
+				EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */,
+				EA6E86EB207F63DA00EAADED /* UIViewController+YBTool.h */,
+				EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */,
+				EA6E86ED207F63DA00EAADED /* VideoCompressTools */,
+				EA6E86F0207F63DA00EAADED /* YBAlertView.h */,
+				EA6E86F1207F63DA00EAADED /* YBAlertView.m */,
+				EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */,
+				EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */,
+				EA6E86F4207F63DA00EAADED /* YBKeyChain.h */,
+				EA6E86F5207F63DA00EAADED /* YBKeyChain.m */,
+				EA6E86F6207F63DA00EAADED /* YBPopupMenu */,
+				EA6E86FD207F63DA00EAADED /* YBRSA.h */,
+				EA6E86FE207F63DA00EAADED /* YBRSA.m */,
+				EA6E86FF207F63DA00EAADED /* YBTool.h */,
+				EA6E8700207F63DA00EAADED /* YBUtils.h */,
+				EA6E8701207F63DA00EAADED /* YBUtils.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		EA6E86CA207F63DA00EAADED /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86CB207F63DA00EAADED /* BasePickerView.h */,
+				EA6E86CC207F63DA00EAADED /* BasePickerView.m */,
+				EA6E86CD207F63DA00EAADED /* DatePickerView.h */,
+				EA6E86CE207F63DA00EAADED /* DatePickerView.m */,
+			);
+			path = DatePickerView;
+			sourceTree = "<group>";
+		};
+		EA6E86ED207F63DA00EAADED /* VideoCompressTools */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86EE207F63DA00EAADED /* VideoCompressTools.h */,
+				EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */,
+			);
+			path = VideoCompressTools;
+			sourceTree = "<group>";
+		};
+		EA6E86F6207F63DA00EAADED /* YBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86F7207F63DA00EAADED /* YBPopupMenu.h */,
+				EA6E86F8207F63DA00EAADED /* YBPopupMenu.m */,
+				EA6E86F9207F63DA00EAADED /* YBPopupMenuPath.h */,
+				EA6E86FA207F63DA00EAADED /* YBPopupMenuPath.m */,
+				EA6E86FB207F63DA00EAADED /* YBRectConst.h */,
+				EA6E86FC207F63DA00EAADED /* YBRectConst.m */,
+			);
+			path = YBPopupMenu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA6E86AD207F62FC00EAADED /* YBTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6E86C4207F62FE00EAADED /* Build configuration list for PBXNativeTarget "YBTool" */;
+			buildPhases = (
+				40DFD9CCB8100D06C881F7A7 /* [CP] Check Pods Manifest.lock */,
+				EA6E86AA207F62FC00EAADED /* Sources */,
+				EA6E86AB207F62FC00EAADED /* Frameworks */,
+				EA6E86AC207F62FC00EAADED /* Resources */,
+				24B31200DE4A421B3AFEFF4F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YBTool;
+			productName = YBTool;
+			productReference = EA6E86AE207F62FC00EAADED /* YBTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA6E86A6207F62FC00EAADED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = zbwx;
+				TargetAttributes = {
+					EA6E86AD207F62FC00EAADED = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = EA6E86A9207F62FC00EAADED /* Build configuration list for PBXProject "YBTool" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA6E86A5207F62FC00EAADED;
+			productRefGroup = EA6E86AF207F62FC00EAADED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA6E86AD207F62FC00EAADED /* YBTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA6E86AC207F62FC00EAADED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6E86BE207F62FE00EAADED /* LaunchScreen.storyboard in Resources */,
+				EA6E86BB207F62FE00EAADED /* Assets.xcassets in Resources */,
+				EA6E86B9207F62FC00EAADED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24B31200DE4A421B3AFEFF4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YBTool/Pods-YBTool-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YBTool/Pods-YBTool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40DFD9CCB8100D06C881F7A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YBTool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA6E86AA207F62FC00EAADED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */,
+				EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */,
+				EA6E8710207F63DB00EAADED /* UITextView+PlaceHolder.m in Sources */,
+				EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */,
+				EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */,
+				EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */,
+				EA6E870D207F63DB00EAADED /* UILabel+YBTool.m in Sources */,
+				EA6E870A207F63DB00EAADED /* UIFont+YBTool.m in Sources */,
+				EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */,
+				EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */,
+				EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */,
+				EA6E870F207F63DB00EAADED /* UIScrollView+YBTool.m in Sources */,
+				EA6E8704207F63DB00EAADED /* DatePickerView.m in Sources */,
+				EA6E86B6207F62FC00EAADED /* ViewController.m in Sources */,
+				EA6E8713207F63DB00EAADED /* UIViewController+YBTool.m in Sources */,
+				EA6E86C1207F62FE00EAADED /* main.m in Sources */,
+				EA6E870E207F63DB00EAADED /* UINavigationBar+YBTool.m in Sources */,
+				EA6E870C207F63DB00EAADED /* UIImageView+YBTool.m in Sources */,
+				EA6E8714207F63DB00EAADED /* VideoCompressTools.m in Sources */,
+				EA6E8709207F63DB00EAADED /* UIColor+YBTool.m in Sources */,
+				EA6E8712207F63DB00EAADED /* UIView+YBTool.m in Sources */,
+				EA6E870B207F63DB00EAADED /* UIImage+YBTool.m in Sources */,
+				EA6E8708207F63DB00EAADED /* UIButton+YBTool.m in Sources */,
+				EA6E8716207F63DB00EAADED /* YBCacheFileUtils.m in Sources */,
+				EA6E86B3207F62FC00EAADED /* AppDelegate.m in Sources */,
+				EA6E8718207F63DB00EAADED /* YBPopupMenu.m in Sources */,
+				EA6E871C207F63DB00EAADED /* YBUtils.m in Sources */,
+				EA6E8719207F63DB00EAADED /* YBPopupMenuPath.m in Sources */,
+				EA6E871B207F63DB00EAADED /* YBRSA.m in Sources */,
+				EA6E8711207F63DB00EAADED /* UIView+EmptyView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA6E86B7207F62FC00EAADED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6E86B8207F62FC00EAADED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA6E86BC207F62FE00EAADED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6E86BD207F62FE00EAADED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA6E86C2207F62FE00EAADED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA6E86C3207F62FE00EAADED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA6E86C5207F62FE00EAADED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/YBTool\"",
+				);
+				INFOPLIST_FILE = YBTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZBWX.YBTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA6E86C6207F62FE00EAADED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2024053D51FD2E6B66E6480A /* Pods-YBTool.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/YBTool\"",
+				);
+				INFOPLIST_FILE = YBTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZBWX.YBTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA6E86A9207F62FC00EAADED /* Build configuration list for PBXProject "YBTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6E86C2207F62FE00EAADED /* Debug */,
+				EA6E86C3207F62FE00EAADED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6E86C4207F62FE00EAADED /* Build configuration list for PBXNativeTarget "YBTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6E86C5207F62FE00EAADED /* Debug */,
+				EA6E86C6207F62FE00EAADED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA6E86A6207F62FC00EAADED /* Project object */;
+}
