@@ -45,6 +45,25 @@
 		EA6E8720207F658E00EAADED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E871F207F658D00EAADED /* Foundation.framework */; };
 		EA6E8722207F659800EAADED /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6E8721207F659800EAADED /* AdSupport.framework */; };
 		EA6E8725207F6E8D00EAADED /* YBCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */; };
+		EA6E874F207F836300EAADED /* UIView+YBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E874E207F836300EAADED /* UIView+YBEvent.m */; };
+		EA6E8757207F88CB00EAADED /* UIImage+Code.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8755207F88CB00EAADED /* UIImage+Code.m */; };
+		EA6E875B207F89F500EAADED /* UIDevice+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E875A207F89F500EAADED /* UIDevice+YBTool.m */; };
+		EA6E875F207F8A4A00EAADED /* UIWindow+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E875E207F8A4A00EAADED /* UIWindow+YBTool.m */; };
+		EA6E8763207F8C0D00EAADED /* UIApplication+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8762207F8C0D00EAADED /* UIApplication+YBTool.m */; };
+		EA6E876A207F8E0D00EAADED /* YBOnceRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8769207F8E0D00EAADED /* YBOnceRun.m */; };
+		EA6E876D207F8E5300EAADED /* YBDelayRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E876C207F8E5300EAADED /* YBDelayRun.m */; };
+		EA6E8770207F8E7700EAADED /* YBAsyncRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E876F207F8E7700EAADED /* YBAsyncRun.m */; };
+		EA6E8773207F8E8800EAADED /* YBMainThredRun.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E8772207F8E8800EAADED /* YBMainThredRun.m */; };
+		EA8DF51F208049D500486F41 /* NSURL+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF51E208049D500486F41 /* NSURL+YBTool.m */; };
+		EA8DF52420804A9C00486F41 /* NSDate+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52320804A9C00486F41 /* NSDate+YBTool.m */; };
+		EA8DF52820804ADF00486F41 /* NSError+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52720804ADF00486F41 /* NSError+YBTool.m */; };
+		EA8DF52C20804B3800486F41 /* NSArray+YBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */; };
+		EA8DF52F20804B7200486F41 /* NSArray+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */; };
+		EA8DF53220804CBF00486F41 /* NSMutableArray+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */; };
+		EA8DF5362080517100486F41 /* NSNumber+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF5352080517100486F41 /* NSNumber+YBTool.m */; };
+		EA8DF53A208051B000486F41 /* NSDictionary+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF539208051B000486F41 /* NSDictionary+YBTool.m */; };
+		EA8DF53E2080530400486F41 /* NSFileManager+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF53D2080530400486F41 /* NSFileManager+YBTool.m */; };
+		EA8DF5452080606700486F41 /* NSUserDefaults+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF5432080606700486F41 /* NSUserDefaults+YBTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +140,46 @@
 		EA6E8721207F659800EAADED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EA6E8723207F6E8D00EAADED /* YBCustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCustomAlertView.h; sourceTree = "<group>"; };
 		EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCustomAlertView.m; sourceTree = "<group>"; };
+		EA6E8748207F7E8400EAADED /* YBToolMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBToolMacro.h; sourceTree = "<group>"; };
+		EA6E874D207F836300EAADED /* UIView+YBEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YBEvent.h"; sourceTree = "<group>"; };
+		EA6E874E207F836300EAADED /* UIView+YBEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YBEvent.m"; sourceTree = "<group>"; };
+		EA6E8755207F88CB00EAADED /* UIImage+Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Code.m"; sourceTree = "<group>"; };
+		EA6E8756207F88CB00EAADED /* UIImage+Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Code.h"; sourceTree = "<group>"; };
+		EA6E8759207F89F500EAADED /* UIDevice+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YBTool.h"; sourceTree = "<group>"; };
+		EA6E875A207F89F500EAADED /* UIDevice+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YBTool.m"; sourceTree = "<group>"; };
+		EA6E875D207F8A4A00EAADED /* UIWindow+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+YBTool.h"; sourceTree = "<group>"; };
+		EA6E875E207F8A4A00EAADED /* UIWindow+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+YBTool.m"; sourceTree = "<group>"; };
+		EA6E8761207F8C0D00EAADED /* UIApplication+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+YBTool.h"; sourceTree = "<group>"; };
+		EA6E8762207F8C0D00EAADED /* UIApplication+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+YBTool.m"; sourceTree = "<group>"; };
+		EA6E8767207F8DDC00EAADED /* YBThreadMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBThreadMethod.h; sourceTree = "<group>"; };
+		EA6E8768207F8E0D00EAADED /* YBOnceRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBOnceRun.h; sourceTree = "<group>"; };
+		EA6E8769207F8E0D00EAADED /* YBOnceRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBOnceRun.m; sourceTree = "<group>"; };
+		EA6E876B207F8E5300EAADED /* YBDelayRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBDelayRun.h; sourceTree = "<group>"; };
+		EA6E876C207F8E5300EAADED /* YBDelayRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBDelayRun.m; sourceTree = "<group>"; };
+		EA6E876E207F8E7700EAADED /* YBAsyncRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBAsyncRun.h; sourceTree = "<group>"; };
+		EA6E876F207F8E7700EAADED /* YBAsyncRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBAsyncRun.m; sourceTree = "<group>"; };
+		EA6E8771207F8E8800EAADED /* YBMainThredRun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMainThredRun.h; sourceTree = "<group>"; };
+		EA6E8772207F8E8800EAADED /* YBMainThredRun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMainThredRun.m; sourceTree = "<group>"; };
+		EA8DF51D208049D500486F41 /* NSURL+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF51E208049D500486F41 /* NSURL+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF52220804A9C00486F41 /* NSDate+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF52320804A9C00486F41 /* NSDate+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF52620804ADF00486F41 /* NSError+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF52720804ADF00486F41 /* NSError+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF52A20804B3800486F41 /* NSArray+YBLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YBLog.h"; sourceTree = "<group>"; };
+		EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YBLog.m"; sourceTree = "<group>"; };
+		EA8DF52D20804B7200486F41 /* NSArray+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF53020804CBF00486F41 /* NSMutableArray+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF5342080517100486F41 /* NSNumber+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF5352080517100486F41 /* NSNumber+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF538208051B000486F41 /* NSDictionary+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF539208051B000486F41 /* NSDictionary+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF53C2080530400486F41 /* NSFileManager+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+YBTool.h"; sourceTree = "<group>"; };
+		EA8DF53D2080530400486F41 /* NSFileManager+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF5432080606700486F41 /* NSUserDefaults+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+YBTool.m"; sourceTree = "<group>"; };
+		EA8DF5442080606700486F41 /* NSUserDefaults+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+YBTool.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,54 +255,39 @@
 		EA6E86C7207F63DA00EAADED /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */,
-				EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */,
+				EA8DF5112080439800486F41 /* Commons */,
+				EA8DF5332080516100486F41 /* NSNumber */,
+				EA8DF52920804B1700486F41 /* NSArray */,
+				EA8DF52520804ACA00486F41 /* NSError */,
+				EA8DF52120804A8400486F41 /* NSDate */,
+				EA8DF51C2080497500486F41 /* NSURL */,
+				EA8DF5372080519F00486F41 /* NSDictionary */,
+				EA8DF53B208052ED00486F41 /* NSFileManager */,
+				EA8DF53F20805A5F00486F41 /* NSUserDefaults */,
+				EA8DF51A2080445A00486F41 /* UITextView */,
+				EA8DF51B2080446D00486F41 /* UIAlertView */,
+				EA8DF5192080443F00486F41 /* UIScrollView */,
+				EA8DF5182080442B00486F41 /* UINavigationBar */,
+				EA8DF5172080441C00486F41 /* UILabel */,
+				EA8DF5162080440A00486F41 /* UIImageView */,
+				EA8DF5152080440100486F41 /* UIFont */,
+				EA8DF514208043F300486F41 /* UIButton */,
+				EA8DF513208043E700486F41 /* NSString */,
+				EA8DF512208043D900486F41 /* NSData */,
+				EA6E8766207F8DB900EAADED /* ThreadMethod */,
+				EA6E8765207F8CCB00EAADED /* NSObject */,
+				EA6E8764207F8C9B00EAADED /* UIViewController */,
+				EA6E8760207F8BDC00EAADED /* UIApplication */,
+				EA6E875C207F8A3000EAADED /* UIWindow */,
+				EA6E8758207F89D400EAADED /* UIDevice */,
+				EA6E8751207F851200EAADED /* UIImage */,
+				EA6E8750207F845800EAADED /* UIColor */,
+				EA6E8749207F818300EAADED /* UIView */,
 				EA6E86CA207F63DA00EAADED /* DatePickerView */,
-				EA6E86CF207F63DA00EAADED /* NSData+YBTool.h */,
-				EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */,
-				EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */,
-				EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */,
-				EA6E86D3207F63DA00EAADED /* NSString+YBTool.h */,
-				EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */,
-				EA6E86D5207F63DA00EAADED /* UIButton+YBTool.h */,
-				EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */,
-				EA6E86D7207F63DA00EAADED /* UIColor+YBTool.h */,
-				EA6E86D8207F63DA00EAADED /* UIColor+YBTool.m */,
-				EA6E86D9207F63DA00EAADED /* UIFont+YBTool.h */,
-				EA6E86DA207F63DA00EAADED /* UIFont+YBTool.m */,
-				EA6E86DB207F63DA00EAADED /* UIImage+YBTool.h */,
-				EA6E86DC207F63DA00EAADED /* UIImage+YBTool.m */,
-				EA6E86DD207F63DA00EAADED /* UIImageView+YBTool.h */,
-				EA6E86DE207F63DA00EAADED /* UIImageView+YBTool.m */,
-				EA6E86DF207F63DA00EAADED /* UILabel+YBTool.h */,
-				EA6E86E0207F63DA00EAADED /* UILabel+YBTool.m */,
-				EA6E86E1207F63DA00EAADED /* UINavigationBar+YBTool.h */,
-				EA6E86E2207F63DA00EAADED /* UINavigationBar+YBTool.m */,
-				EA6E86E3207F63DA00EAADED /* UIScrollView+YBTool.h */,
-				EA6E86E4207F63DA00EAADED /* UIScrollView+YBTool.m */,
-				EA6E86E5207F63DA00EAADED /* UITextView+PlaceHolder.h */,
-				EA6E86E6207F63DA00EAADED /* UITextView+PlaceHolder.m */,
-				EA6E86E7207F63DA00EAADED /* UIView+EmptyView.h */,
-				EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */,
-				EA6E86E9207F63DA00EAADED /* UIView+YBTool.h */,
-				EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */,
-				EA6E86EB207F63DA00EAADED /* UIViewController+YBTool.h */,
-				EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */,
 				EA6E86ED207F63DA00EAADED /* VideoCompressTools */,
-				EA6E86F0207F63DA00EAADED /* YBAlertView.h */,
-				EA6E86F1207F63DA00EAADED /* YBAlertView.m */,
-				EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */,
-				EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */,
-				EA6E86F4207F63DA00EAADED /* YBKeyChain.h */,
-				EA6E86F5207F63DA00EAADED /* YBKeyChain.m */,
 				EA6E86F6207F63DA00EAADED /* YBPopupMenu */,
-				EA6E86FD207F63DA00EAADED /* YBRSA.h */,
-				EA6E86FE207F63DA00EAADED /* YBRSA.m */,
+				EA6E8748207F7E8400EAADED /* YBToolMacro.h */,
 				EA6E86FF207F63DA00EAADED /* YBTool.h */,
-				EA6E8700207F63DA00EAADED /* YBUtils.h */,
-				EA6E8701207F63DA00EAADED /* YBUtils.m */,
-				EA6E8723207F6E8D00EAADED /* YBCustomAlertView.h */,
-				EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -281,6 +325,285 @@
 			path = YBPopupMenu;
 			sourceTree = "<group>";
 		};
+		EA6E8749207F818300EAADED /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86E7207F63DA00EAADED /* UIView+EmptyView.h */,
+				EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */,
+				EA6E86E9207F63DA00EAADED /* UIView+YBTool.h */,
+				EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */,
+				EA6E874D207F836300EAADED /* UIView+YBEvent.h */,
+				EA6E874E207F836300EAADED /* UIView+YBEvent.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		EA6E8750207F845800EAADED /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86D7207F63DA00EAADED /* UIColor+YBTool.h */,
+				EA6E86D8207F63DA00EAADED /* UIColor+YBTool.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		EA6E8751207F851200EAADED /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E8756207F88CB00EAADED /* UIImage+Code.h */,
+				EA6E8755207F88CB00EAADED /* UIImage+Code.m */,
+				EA6E86DB207F63DA00EAADED /* UIImage+YBTool.h */,
+				EA6E86DC207F63DA00EAADED /* UIImage+YBTool.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		EA6E8758207F89D400EAADED /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E8759207F89F500EAADED /* UIDevice+YBTool.h */,
+				EA6E875A207F89F500EAADED /* UIDevice+YBTool.m */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		EA6E875C207F8A3000EAADED /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E875D207F8A4A00EAADED /* UIWindow+YBTool.h */,
+				EA6E875E207F8A4A00EAADED /* UIWindow+YBTool.m */,
+			);
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		EA6E8760207F8BDC00EAADED /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E8761207F8C0D00EAADED /* UIApplication+YBTool.h */,
+				EA6E8762207F8C0D00EAADED /* UIApplication+YBTool.m */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		EA6E8764207F8C9B00EAADED /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86EB207F63DA00EAADED /* UIViewController+YBTool.h */,
+				EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		EA6E8765207F8CCB00EAADED /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */,
+				EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		EA6E8766207F8DB900EAADED /* ThreadMethod */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E8767207F8DDC00EAADED /* YBThreadMethod.h */,
+				EA6E8768207F8E0D00EAADED /* YBOnceRun.h */,
+				EA6E8769207F8E0D00EAADED /* YBOnceRun.m */,
+				EA6E876B207F8E5300EAADED /* YBDelayRun.h */,
+				EA6E876C207F8E5300EAADED /* YBDelayRun.m */,
+				EA6E876E207F8E7700EAADED /* YBAsyncRun.h */,
+				EA6E876F207F8E7700EAADED /* YBAsyncRun.m */,
+				EA6E8771207F8E8800EAADED /* YBMainThredRun.h */,
+				EA6E8772207F8E8800EAADED /* YBMainThredRun.m */,
+			);
+			path = ThreadMethod;
+			sourceTree = "<group>";
+		};
+		EA8DF5112080439800486F41 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */,
+				EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */,
+				EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */,
+				EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */,
+				EA6E86F4207F63DA00EAADED /* YBKeyChain.h */,
+				EA6E86F5207F63DA00EAADED /* YBKeyChain.m */,
+				EA6E86FD207F63DA00EAADED /* YBRSA.h */,
+				EA6E86FE207F63DA00EAADED /* YBRSA.m */,
+				EA6E8700207F63DA00EAADED /* YBUtils.h */,
+				EA6E8701207F63DA00EAADED /* YBUtils.m */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		EA8DF512208043D900486F41 /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86CF207F63DA00EAADED /* NSData+YBTool.h */,
+				EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
+		EA8DF513208043E700486F41 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86D3207F63DA00EAADED /* NSString+YBTool.h */,
+				EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		EA8DF514208043F300486F41 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86D5207F63DA00EAADED /* UIButton+YBTool.h */,
+				EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		EA8DF5152080440100486F41 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86D9207F63DA00EAADED /* UIFont+YBTool.h */,
+				EA6E86DA207F63DA00EAADED /* UIFont+YBTool.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		EA8DF5162080440A00486F41 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86DD207F63DA00EAADED /* UIImageView+YBTool.h */,
+				EA6E86DE207F63DA00EAADED /* UIImageView+YBTool.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		EA8DF5172080441C00486F41 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86DF207F63DA00EAADED /* UILabel+YBTool.h */,
+				EA6E86E0207F63DA00EAADED /* UILabel+YBTool.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		EA8DF5182080442B00486F41 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86E1207F63DA00EAADED /* UINavigationBar+YBTool.h */,
+				EA6E86E2207F63DA00EAADED /* UINavigationBar+YBTool.m */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		EA8DF5192080443F00486F41 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86E3207F63DA00EAADED /* UIScrollView+YBTool.h */,
+				EA6E86E4207F63DA00EAADED /* UIScrollView+YBTool.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		EA8DF51A2080445A00486F41 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86E5207F63DA00EAADED /* UITextView+PlaceHolder.h */,
+				EA6E86E6207F63DA00EAADED /* UITextView+PlaceHolder.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		EA8DF51B2080446D00486F41 /* UIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E86F0207F63DA00EAADED /* YBAlertView.h */,
+				EA6E86F1207F63DA00EAADED /* YBAlertView.m */,
+				EA6E8723207F6E8D00EAADED /* YBCustomAlertView.h */,
+				EA6E8724207F6E8D00EAADED /* YBCustomAlertView.m */,
+			);
+			path = UIAlertView;
+			sourceTree = "<group>";
+		};
+		EA8DF51C2080497500486F41 /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF51D208049D500486F41 /* NSURL+YBTool.h */,
+				EA8DF51E208049D500486F41 /* NSURL+YBTool.m */,
+			);
+			path = NSURL;
+			sourceTree = "<group>";
+		};
+		EA8DF52120804A8400486F41 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF52220804A9C00486F41 /* NSDate+YBTool.h */,
+				EA8DF52320804A9C00486F41 /* NSDate+YBTool.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		EA8DF52520804ACA00486F41 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF52620804ADF00486F41 /* NSError+YBTool.h */,
+				EA8DF52720804ADF00486F41 /* NSError+YBTool.m */,
+			);
+			path = NSError;
+			sourceTree = "<group>";
+		};
+		EA8DF52920804B1700486F41 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF52A20804B3800486F41 /* NSArray+YBLog.h */,
+				EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */,
+				EA8DF52D20804B7200486F41 /* NSArray+YBTool.h */,
+				EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */,
+				EA8DF53020804CBF00486F41 /* NSMutableArray+YBTool.h */,
+				EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		EA8DF5332080516100486F41 /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF5342080517100486F41 /* NSNumber+YBTool.h */,
+				EA8DF5352080517100486F41 /* NSNumber+YBTool.m */,
+			);
+			path = NSNumber;
+			sourceTree = "<group>";
+		};
+		EA8DF5372080519F00486F41 /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF538208051B000486F41 /* NSDictionary+YBTool.h */,
+				EA8DF539208051B000486F41 /* NSDictionary+YBTool.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		EA8DF53B208052ED00486F41 /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF53C2080530400486F41 /* NSFileManager+YBTool.h */,
+				EA8DF53D2080530400486F41 /* NSFileManager+YBTool.m */,
+			);
+			path = NSFileManager;
+			sourceTree = "<group>";
+		};
+		EA8DF53F20805A5F00486F41 /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DF5442080606700486F41 /* NSUserDefaults+YBTool.h */,
+				EA8DF5432080606700486F41 /* NSUserDefaults+YBTool.m */,
+			);
+			path = NSUserDefaults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +632,7 @@
 		EA6E86A6207F62FC00EAADED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YBTool;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = zbwx;
 				TargetAttributes = {
@@ -392,20 +716,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6E875F207F8A4A00EAADED /* UIWindow+YBTool.m in Sources */,
 				EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */,
 				EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */,
 				EA6E8710207F63DB00EAADED /* UITextView+PlaceHolder.m in Sources */,
+				EA8DF5452080606700486F41 /* NSUserDefaults+YBTool.m in Sources */,
 				EA6E8725207F6E8D00EAADED /* YBCustomAlertView.m in Sources */,
 				EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */,
+				EA8DF53220804CBF00486F41 /* NSMutableArray+YBTool.m in Sources */,
 				EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */,
 				EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */,
 				EA6E870D207F63DB00EAADED /* UILabel+YBTool.m in Sources */,
 				EA6E870A207F63DB00EAADED /* UIFont+YBTool.m in Sources */,
+				EA8DF53A208051B000486F41 /* NSDictionary+YBTool.m in Sources */,
+				EA6E876A207F8E0D00EAADED /* YBOnceRun.m in Sources */,
 				EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */,
+				EA8DF52F20804B7200486F41 /* NSArray+YBTool.m in Sources */,
 				EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */,
 				EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */,
+				EA8DF5362080517100486F41 /* NSNumber+YBTool.m in Sources */,
+				EA6E874F207F836300EAADED /* UIView+YBEvent.m in Sources */,
+				EA6E8773207F8E8800EAADED /* YBMainThredRun.m in Sources */,
 				EA6E870F207F63DB00EAADED /* UIScrollView+YBTool.m in Sources */,
 				EA6E8704207F63DB00EAADED /* DatePickerView.m in Sources */,
+				EA6E8770207F8E7700EAADED /* YBAsyncRun.m in Sources */,
+				EA8DF52420804A9C00486F41 /* NSDate+YBTool.m in Sources */,
 				EA6E86B6207F62FC00EAADED /* ViewController.m in Sources */,
 				EA6E8713207F63DB00EAADED /* UIViewController+YBTool.m in Sources */,
 				EA6E86C1207F62FE00EAADED /* main.m in Sources */,
@@ -413,15 +748,23 @@
 				EA6E870C207F63DB00EAADED /* UIImageView+YBTool.m in Sources */,
 				EA6E8714207F63DB00EAADED /* VideoCompressTools.m in Sources */,
 				EA6E8709207F63DB00EAADED /* UIColor+YBTool.m in Sources */,
+				EA8DF53E2080530400486F41 /* NSFileManager+YBTool.m in Sources */,
+				EA6E8763207F8C0D00EAADED /* UIApplication+YBTool.m in Sources */,
+				EA6E875B207F89F500EAADED /* UIDevice+YBTool.m in Sources */,
 				EA6E8712207F63DB00EAADED /* UIView+YBTool.m in Sources */,
 				EA6E870B207F63DB00EAADED /* UIImage+YBTool.m in Sources */,
 				EA6E8708207F63DB00EAADED /* UIButton+YBTool.m in Sources */,
 				EA6E8716207F63DB00EAADED /* YBCacheFileUtils.m in Sources */,
 				EA6E86B3207F62FC00EAADED /* AppDelegate.m in Sources */,
 				EA6E8718207F63DB00EAADED /* YBPopupMenu.m in Sources */,
+				EA6E876D207F8E5300EAADED /* YBDelayRun.m in Sources */,
 				EA6E871C207F63DB00EAADED /* YBUtils.m in Sources */,
 				EA6E8719207F63DB00EAADED /* YBPopupMenuPath.m in Sources */,
+				EA8DF51F208049D500486F41 /* NSURL+YBTool.m in Sources */,
 				EA6E871B207F63DB00EAADED /* YBRSA.m in Sources */,
+				EA8DF52820804ADF00486F41 /* NSError+YBTool.m in Sources */,
+				EA6E8757207F88CB00EAADED /* UIImage+Code.m in Sources */,
+				EA8DF52C20804B3800486F41 /* NSArray+YBLog.m in Sources */,
 				EA6E8711207F63DB00EAADED /* UIView+EmptyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

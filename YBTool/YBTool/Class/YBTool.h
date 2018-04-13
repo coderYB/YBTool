@@ -9,71 +9,80 @@
 #ifndef YBTool_h
 #define YBTool_h
 
-//判断与相应的屏幕比例是否一致
-#define SCALE_TO_SCREEN(w,h) [[NSString stringWithFormat:@"%0.5f",UIScreen.mainScreen.bounds.size.width/UIScreen.mainScreen.bounds.size.height] isEqualToString:[NSString stringWithFormat:@"%0.5f",w/h]]
-//3.5寸屏比例
-#define SCALE_3_5INCH SCALE_TO_SCREEN(640.f,960.f)
-//4.7寸屏比例
-#define SCALE_4INCH_SCREEN SCALE_TO_SCREEN(640.f,1136.f)
-//5寸屏比例
-#define SCALE_4_7INCH_SCREEN SCALE_TO_SCREEN(750.f,1334.f)
-//5.5寸屏比例
-#define SCALE_5_5INCH_SCREEN SCALE_TO_SCREEN(1242.f,2208.f)
-//iPhone X屏幕比例
-#define SCALE_IPHONE_X_SCREEN SCALE_TO_SCREEN(1125.f,2436.f)
+#import "YBToolMacro.h"
+#import "YBThreadMethod.h"
 
-
-//app框架高度
-#define APP_FRAME_HEIGHT [[UIScreen mainScreen] applicationFrame].size.height
-//app框架宽度
-#define APP_FRAME_WIDTH [[UIScreen mainScreen] applicationFrame].size.width
-//屏幕的尺寸
-#define SCREEN_SIZE ([[UIScreen mainScreen] bounds]).size
-//屏幕高度
-#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds]).size.height
-//屏幕宽度
-#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds]).size.width
-
-//沙盒目录
-#define DOCUMENT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-//应用keyWindow
-#define KEY_WINDOW [UIApplication sharedApplication].keyWindow
-
-
-//文件根目录归档
-#define YBArchive(object,name) [YBUtils yb_archiveWithObject:object fileName:name]
-//文件根目录解档
-#define YBUnArchive(name) [YBUtils yb_unArchiveWithFileName:name]
-//删除根目录下的文件
-#define YBDeleteArchiveFile(name) [YBUtils yb_deleteArchiveWithFileName:name]
-
-
-#import "DatePickerView.h"
-#import "YBPopupMenu.h"
-#import "YBPopupMenuPath.h"
-#import "YBRectConst.h"
-#import "VideoCompressTools.h"
-
-#import "NSData+YBTool.h"
-#import "NSString+YBTool.h"
-#import "UIView+YBTool.h"
-#import "UIColor+YBTool.h"
-#import "UIButton+YBTool.h"
-#import "UIImageView+YBTool.h"
-#import "UIImage+YBTool.h"
-#import "UIFont+YBTool.h"
-#import "UILabel+YBTool.h"
-#import "NSObject+YBTool.h"
-#import "UIViewController+YBTool.h"
-#import "UIView+EmptyView.h"
 #import "YBUtils.h"
 #import "YBRSA.h"
 #import "YBKeyChain.h"
-#import "YBAlertView.h"
+
+#import "VideoCompressTools.h"
+
 #import "ClearTheCacheTools.h"
+
+#import "NSNumber+YBTool.h"
+
+#import "NSArray+YBLog.h"
+#import "NSArray+YBTool.h"
+#import "NSMutableArray+YBTool.h"
+
+#import "NSError+YBTool.h"
+
+#import "NSDate+YBTool.h"
+
+#import "NSURL+YBTool.h"
+
+#import "NSDictionary+YBTool.h"
+
+#import "NSFileManager+YBTool.h"
+
+#import "NSUserDefaults+YBTool.h"
+
 #import "UITextView+PlaceHolder.h"
+
+#import "YBAlertView.h"
 #import "YBCustomAlertView.h"
 
+#import "UIScrollView+YBTool.h"
 
+#import "UINavigationBar+YBTool.h"
+
+#import "UILabel+YBTool.h"
+
+#import "UIImageView+YBTool.h"
+
+#import "UIFont+YBTool.h"
+
+#import "UIButton+YBTool.h"
+
+#import "NSString+YBTool.h"
+
+#import "NSData+YBTool.h"
+
+#import "NSObject+YBTool.h"
+
+#import "UIViewController+YBTool.h"
+
+#import "UIApplication+YBTool.h"
+
+#import "UIWindow+YBTool.h"
+
+#import "UIDevice+YBTool.h"
+
+#import "UIImage+YBTool.h"
+#import "UIImage+Code.h"
+
+#import "UIColor+YBTool.h"
+
+#import "UIView+YBTool.h"
+#import "UIView+EmptyView.h"
+#import "UIView+YBEvent.h"
+
+#import "BasePickerView.h"
+#import "DatePickerView.h"
+
+#import "YBPopupMenuPath.h"
+#import "YBPopupMenu.h"
+#import "YBRectConst.h"
 
 #endif /* YBTool_h */
