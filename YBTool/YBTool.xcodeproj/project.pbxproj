@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */; };
+		EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */; };
+		EA6A65B620875837009675FC /* UIButton+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B520875837009675FC /* UIButton+Swizzling.m */; };
+		EA6A65B920875858009675FC /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B820875858009675FC /* NSObject+Swizzling.m */; };
 		EA6E86B3207F62FC00EAADED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86B2207F62FC00EAADED /* AppDelegate.m */; };
 		EA6E86B6207F62FC00EAADED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86B5207F62FC00EAADED /* ViewController.m */; };
 		EA6E86B9207F62FC00EAADED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86B7207F62FC00EAADED /* Main.storyboard */; };
@@ -70,6 +73,12 @@
 		2024053D51FD2E6B66E6480A /* Pods-YBTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.release.xcconfig"; sourceTree = "<group>"; };
 		4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YBTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Swizzling.m"; sourceTree = "<group>"; };
+		EA6A65B22087581B009675FC /* NSMutableArray+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Swizzling.h"; sourceTree = "<group>"; };
+		EA6A65B420875837009675FC /* UIButton+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Swizzling.h"; sourceTree = "<group>"; };
+		EA6A65B520875837009675FC /* UIButton+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Swizzling.m"; sourceTree = "<group>"; };
+		EA6A65B720875858009675FC /* NSObject+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
+		EA6A65B820875858009675FC /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
 		EA6E86AE207F62FC00EAADED /* YBTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6E86B1207F62FC00EAADED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA6E86B2207F62FC00EAADED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -399,6 +408,8 @@
 			children = (
 				EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */,
 				EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */,
+				EA6A65B720875858009675FC /* NSObject+Swizzling.h */,
+				EA6A65B820875858009675FC /* NSObject+Swizzling.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -459,6 +470,8 @@
 			children = (
 				EA6E86D5207F63DA00EAADED /* UIButton+YBTool.h */,
 				EA6E86D6207F63DA00EAADED /* UIButton+YBTool.m */,
+				EA6A65B420875837009675FC /* UIButton+Swizzling.h */,
+				EA6A65B520875837009675FC /* UIButton+Swizzling.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -564,6 +577,8 @@
 				EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */,
 				EA8DF53020804CBF00486F41 /* NSMutableArray+YBTool.h */,
 				EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */,
+				EA6A65B22087581B009675FC /* NSMutableArray+Swizzling.h */,
+				EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
@@ -733,6 +748,7 @@
 				EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */,
 				EA8DF52F20804B7200486F41 /* NSArray+YBTool.m in Sources */,
 				EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */,
+				EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */,
 				EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */,
 				EA8DF5362080517100486F41 /* NSNumber+YBTool.m in Sources */,
 				EA6E874F207F836300EAADED /* UIView+YBEvent.m in Sources */,
@@ -760,10 +776,12 @@
 				EA6E876D207F8E5300EAADED /* YBDelayRun.m in Sources */,
 				EA6E871C207F63DB00EAADED /* YBUtils.m in Sources */,
 				EA6E8719207F63DB00EAADED /* YBPopupMenuPath.m in Sources */,
+				EA6A65B620875837009675FC /* UIButton+Swizzling.m in Sources */,
 				EA8DF51F208049D500486F41 /* NSURL+YBTool.m in Sources */,
 				EA6E871B207F63DB00EAADED /* YBRSA.m in Sources */,
 				EA8DF52820804ADF00486F41 /* NSError+YBTool.m in Sources */,
 				EA6E8757207F88CB00EAADED /* UIImage+Code.m in Sources */,
+				EA6A65B920875858009675FC /* NSObject+Swizzling.m in Sources */,
 				EA8DF52C20804B3800486F41 /* NSArray+YBLog.m in Sources */,
 				EA6E8711207F63DB00EAADED /* UIView+EmptyView.m in Sources */,
 			);
