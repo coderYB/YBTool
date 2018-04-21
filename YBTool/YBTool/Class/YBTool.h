@@ -8,7 +8,7 @@
 
 #ifndef YBTool_h
 #define YBTool_h
-
+#import <MJExtension.h>
 #import <SDWebImageManager.h>
 #import <Masonry.h>
 #import <MBProgressHUD.h>
