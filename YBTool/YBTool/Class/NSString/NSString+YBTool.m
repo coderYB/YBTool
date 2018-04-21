@@ -7,8 +7,12 @@
 //
 
 #import "NSString+YBTool.h"
+
 #import <AdSupport/AdSupport.h>
-#import <UIKit/UIKit.h>
+#import "NSData+YBTool.h"
+#import "UIColor+YBTool.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
 @implementation NSString (YBTool)
 
 /**

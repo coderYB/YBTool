@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSData+YBTool.h"
-#import "UIColor+YBTool.h"
-#import <CommonCrypto/CommonDigest.h>
-#import <CommonCrypto/CommonCryptor.h>
+#import <UIKit/UIKit.h>
 @interface NSString (YBTool)
 
 /**
