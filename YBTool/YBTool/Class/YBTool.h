@@ -8,13 +8,17 @@
 
 #ifndef YBTool_h
 #define YBTool_h
-#import <MJExtension.h>
-#import <SDWebImageManager.h>
-#import <Masonry.h>
-#import <MBProgressHUD.h>
-#import <MJRefresh.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import <Masonry/Masonry.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
+
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
-#import <BlocksKit.h>
+#import <BlocksKit/BlocksKit.h>
+#import <BlocksKit/BlocksKit+UIKit.h>
 
 #import "YBToolMacro.h"
 #import "YBThreadMethod.h"
