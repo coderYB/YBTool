@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296426C120BFEA82006A16F7 /* YBCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296426C020BFEA82006A16F7 /* YBCircularProgressView.m */; };
 		D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */; };
 		EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */; };
 		EA6A65B620875837009675FC /* UIButton+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B520875837009675FC /* UIButton+Swizzling.m */; };
@@ -71,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		2024053D51FD2E6B66E6480A /* Pods-YBTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.release.xcconfig"; sourceTree = "<group>"; };
+		296426BF20BFEA82006A16F7 /* YBCircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBCircularProgressView.h; sourceTree = "<group>"; };
+		296426C020BFEA82006A16F7 /* YBCircularProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBCircularProgressView.m; sourceTree = "<group>"; };
 		4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YBTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Swizzling.m"; sourceTree = "<group>"; };
@@ -206,6 +209,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296426BE20BFEA3D006A16F7 /* YBCircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				296426BF20BFEA82006A16F7 /* YBCircularProgressView.h */,
+				296426C020BFEA82006A16F7 /* YBCircularProgressView.m */,
+			);
+			path = YBCircularProgressView;
+			sourceTree = "<group>";
+		};
 		4C79D6FAE12A3508527E9F84 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +276,7 @@
 		EA6E86C7207F63DA00EAADED /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				296426BE20BFEA3D006A16F7 /* YBCircularProgressView */,
 				EA8DF5112080439800486F41 /* Commons */,
 				EA8DF5332080516100486F41 /* NSNumber */,
 				EA8DF52920804B1700486F41 /* NSArray */,
@@ -734,6 +747,7 @@
 				EA6E875F207F8A4A00EAADED /* UIWindow+YBTool.m in Sources */,
 				EA6E871A207F63DB00EAADED /* YBRectConst.m in Sources */,
 				EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */,
+				296426C120BFEA82006A16F7 /* YBCircularProgressView.m in Sources */,
 				EA6E8710207F63DB00EAADED /* UITextView+PlaceHolder.m in Sources */,
 				EA8DF5452080606700486F41 /* NSUserDefaults+YBTool.m in Sources */,
 				EA6E8725207F6E8D00EAADED /* YBCustomAlertView.m in Sources */,

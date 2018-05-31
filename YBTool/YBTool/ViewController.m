@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "YBTool.h"
-@interface ViewController ()
+@interface ViewController (){
+    YBCircularProgressView * progressView;
+}
 
 @end
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
+    [self createProgressView];
 }
 
 /**
@@ -440,6 +443,23 @@
     NSLog(@"%@",[self getAllProperties]);
     NSLog(@"%@",[self getAllMethods]);
     NSLog(@"%@",[self getAllIvars]);
+}
+- (void)createProgressView{
+    //中间进度条
+    progressView = [[YBCircularProgressView alloc] initWithFrame:CGRectMake(50, 100, 120, 120)];
+    progressView.lineWidth = 10.0f;
+    progressView.progressColor = [UIColor colorWithHex:0x2756dc];
+    
+    progressView.clockwise = NO;
+    progressView.progressBackgroundColor = [UIColor colorWithHex:0x2756dc alpha:0.45];
+    progressView.centerLabel.font = [UIFont systemFontOfSize:10];
+    progressView.centerLabelVisible = YES;
+    [progressView setPercentage:0.0];
+    [progressView.centerLabel setTextColor:[UIColor redColor]];
+    [self.view addSubview:progressView];
+    
+    [progressView setPercentage:69/90.0f];
+    [progressView.centerLabel setText:[NSString stringWithFormat:@"%0.0f'",69.0f/90.0f]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

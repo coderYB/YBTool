@@ -95,6 +95,8 @@
 #import "BasePickerView.h"
 #import "DatePickerView.h"
 
+#import "YBCircularProgressView.h"
+
 #import "YBPopupMenuPath.h"
 #import "YBPopupMenu.h"
 #import "YBRectConst.h"
