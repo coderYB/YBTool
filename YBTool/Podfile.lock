@@ -33,7 +33,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - BlocksKit
     - FDFullscreenPopGesture
     - Masonry
@@ -51,6 +51,6 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 10318550d354c18372fe79124b0839b7e0906c5d
+PODFILE CHECKSUM: 1f25d50ef802b6e4e72c96441ad0088d41e1fba5
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
