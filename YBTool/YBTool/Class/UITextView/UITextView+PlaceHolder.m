@@ -17,18 +17,18 @@ static const void *yb_placeHolderKey;
 +(void)load{
     [super load];
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"layoutSubviews")),
-                                   class_getInstanceMethod(self.class, @selector(zbPlaceHolder_swizzling_layoutSubviews)));
+                                   class_getInstanceMethod(self.class, @selector(ybPlaceHolder_swizzling_layoutSubviews)));
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"dealloc")),
-                                   class_getInstanceMethod(self.class, @selector(zbPlaceHolder_swizzled_dealloc)));
+                                   class_getInstanceMethod(self.class, @selector(ybPlaceHolder_swizzled_dealloc)));
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"setText:")),
-                                   class_getInstanceMethod(self.class, @selector(zbPlaceHolder_swizzled_setText:)));
+                                   class_getInstanceMethod(self.class, @selector(ybPlaceHolder_swizzled_setText:)));
 }
 #pragma mark - swizzled
-- (void)zbPlaceHolder_swizzled_dealloc {
+- (void)ybPlaceHolder_swizzled_dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self zbPlaceHolder_swizzled_dealloc];
+    [self ybPlaceHolder_swizzled_dealloc];
 }
-- (void)zbPlaceHolder_swizzling_layoutSubviews {
+- (void)ybPlaceHolder_swizzling_layoutSubviews {
     if (self.yb_placeHolder) {
         UIEdgeInsets textContainerInset = self.textContainerInset;
         CGFloat lineFragmentPadding = self.textContainer.lineFragmentPadding;
@@ -38,10 +38,10 @@ static const void *yb_placeHolderKey;
         CGFloat height = [self.yb_placeHolderLabel sizeThatFits:CGSizeMake(width, 0)].height;
         self.yb_placeHolderLabel.frame = CGRectMake(x, y, width, height);
     }
-    [self zbPlaceHolder_swizzling_layoutSubviews];
+    [self ybPlaceHolder_swizzling_layoutSubviews];
 }
-- (void)zbPlaceHolder_swizzled_setText:(NSString *)text{
-    [self zbPlaceHolder_swizzled_setText:text];
+- (void)ybPlaceHolder_swizzled_setText:(NSString *)text{
+    [self ybPlaceHolder_swizzled_setText:text];
     if (self.yb_placeHolder) {
         [self updatePlaceHolder];
     }
@@ -50,14 +50,15 @@ static const void *yb_placeHolderKey;
 -(NSString *)yb_placeHolder{
     return objc_getAssociatedObject(self, &yb_placeHolderKey);
 }
--(void)setyb_placeHolder:(NSString *)yb_placeHolder{
+-(void)setYb_placeHolder:(NSString *)yb_placeHolder{
     objc_setAssociatedObject(self, &yb_placeHolderKey, yb_placeHolder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self updatePlaceHolder];
 }
 -(UIColor *)yb_placeHolderColor{
     return self.yb_placeHolderLabel.textColor;
 }
--(void)setyb_placeHolderColor:(UIColor *)yb_placeHolderColor{
+
+-(void)setYb_placeHolderColor:(UIColor *)yb_placeHolderColor{
     self.yb_placeHolderLabel.textColor = yb_placeHolderColor;
 }
 -(NSString *)placeholder{

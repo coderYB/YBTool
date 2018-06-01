@@ -29,14 +29,12 @@
  */
 + (UILabel *)labelWithTitle:(NSString *)title textAlignment:(NSTextAlignment)textAlignment font:(UIFont *)font color:(UIColor*)color;
 -(void)labelWithTitle:(NSString *)title textAlignment:(NSTextAlignment)textAlignment font:(UIFont *)font color:(UIColor*)color;
-/**
- *  加某一个字符串的某个字符的字间距
- *
- *  @param substr 摸个字符
- *  @param number 间距
- *
- *  @return <#return value description#>
- */
 
+/**
+ 加某一个字符串的某个字符的字间距
+
+ @param substr 摸个字符
+ @param number <#number description#>
+ */
 - (void)addKernAttributeForSubStr:(NSString *)substr  value:(int)number;
 @end

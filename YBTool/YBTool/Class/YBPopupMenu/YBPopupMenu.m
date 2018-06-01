@@ -133,20 +133,21 @@
 }
 
 - (void)dismiss{
+    __weak typeof(self) this = self;
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuBeganDismiss)]) {
         [self.delegate ybPopupMenuBeganDismiss];
     }
     [UIView animateWithDuration: 0.25 animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
         self.alpha = 0;
-        _menuBackView.alpha = 0;
+        this.menuBackView.alpha = 0;
     } completion:^(BOOL finished) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidDismiss)]) {
             [self.delegate ybPopupMenuDidDismiss];
         }
         self.delegate = nil;
         [self removeFromSuperview];
-        [_menuBackView removeFromSuperview];
+        [this.menuBackView removeFromSuperview];
     }];
 }
 
@@ -219,6 +220,7 @@
 
 #pragma mark - privates
 - (void)show{
+    __weak typeof(self) this = self;
     [YBMainWindow addSubview:_menuBackView];
     [YBMainWindow addSubview:self];
     YBPopupMenuCell *cell = [self getLastVisibleCell];
@@ -230,7 +232,7 @@
     [UIView animateWithDuration: 0.25 animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(1.0, 1.0);
         self.alpha = 1;
-        _menuBackView.alpha = 1;
+        this.menuBackView.alpha = 1;
     } completion:^(BOOL finished) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidShow)]) {
             [self.delegate ybPopupMenuDidShow];

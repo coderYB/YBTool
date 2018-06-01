@@ -10,7 +10,6 @@
 #import "UIColor+YBTool.h"
 #import "UIView+YBTool.h"
 const static int barItemFont = 14;
-const static int titleFont = 18;
 @implementation UIViewController (YBTool)
 /**
  *  添加导航按钮

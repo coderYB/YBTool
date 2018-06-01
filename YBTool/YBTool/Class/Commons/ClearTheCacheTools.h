@@ -12,11 +12,10 @@
 +(ClearTheCacheTools *)tool;
 
 /**
- *  获取文件夹尺寸
- *
- *  @param directoryPath 文件夹路径
- *
- *  @return 返回文件夹尺寸
+ 获取文件夹尺寸
+
+ @param directoryPath 文件夹路径
+ @param completion 返回文件夹尺寸
  */
 + (void)getFileSize:(NSString *)directoryPath completion:(void(^)(NSInteger))completion;
 
