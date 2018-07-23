@@ -5,8 +5,8 @@ target "YBTool" do
     pod 'SDWebImage'
     pod 'MJRefresh'
     pod 'MJExtension'
-    pod 'Masonry'
+#    pod 'Masonry'
     pod 'FDFullscreenPopGesture'
-    pod 'BlocksKit'
+#    pod 'BlocksKit'
 end
 
