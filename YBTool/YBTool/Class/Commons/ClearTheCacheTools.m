@@ -57,8 +57,6 @@ static ClearTheCacheTools * tool = nil;
  *  获取文件夹尺寸
  *
  *  @param directoryPath 文件夹路径
- *
- *  @return 返回文件夹尺寸
  */
 + (void)getFileSize:(NSString *)directoryPath completion:(void(^)(NSInteger))completion{
     // 获取文件管理者
