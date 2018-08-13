@@ -3,7 +3,7 @@
 //  YBTool
 //
 //  Created by 李亚斌 on 2018/5/31.
-//  Copyright © 2018年 zbwx. All rights reserved.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import "YBCircularProgressView.h"

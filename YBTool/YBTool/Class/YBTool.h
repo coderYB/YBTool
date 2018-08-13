@@ -2,8 +2,8 @@
 //  YBTool.h
 //  YBTool
 //
-//  Created by zbwx on 2018/4/4.
-//  Copyright © 2018年 zbwx. All rights reserved.
+//  Created by 李亚斌 on 2018/4/4.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #ifndef YBTool_h
@@ -12,13 +12,7 @@
 #import <MJExtension/MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/SDWebImageManager.h>
-//#import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
-
-
-#import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
-//#import <BlocksKit/BlocksKit.h>
-//#import <BlocksKit/BlocksKit+UIKit.h>
 
 #import "YBToolMacro.h"
 #import "YBThreadMethod.h"

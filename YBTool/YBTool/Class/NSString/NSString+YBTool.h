@@ -2,8 +2,8 @@
 //  NSString+YBTool.h
 //  YBTool
 //
-//  Created by zbwx on 2018/4/4.
-//  Copyright © 2018年 zbwx. All rights reserved.
+//  Created by 李亚斌 on 2018/4/4.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

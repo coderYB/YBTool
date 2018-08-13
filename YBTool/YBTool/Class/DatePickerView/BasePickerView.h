@@ -2,8 +2,8 @@
 //  BasePickerView.h
 //  testDome
 //
-//  Created by zbwx on 2017/12/29.
-//  Copyright © 2017年 zbwx. All rights reserved.
+//  Created by 李亚斌 on 2017/12/29.
+//  Copyright © 2017年 李亚斌. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

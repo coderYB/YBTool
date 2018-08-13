@@ -2,8 +2,8 @@
 //  UIView+YBTool.h
 //  YBTool
 //
-//  Created by zbwx on 2018/4/4.
-//  Copyright © 2018年 zbwx. All rights reserved.
+//  Created by 李亚斌 on 2018/4/4.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -129,18 +129,6 @@
  * lineColor:      虚线的颜色
  **/
 + (void)drawDashLine:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
-/**
- *  加line  color传nil  有默认的颜色
- *  如果加在cell上  一定要加在cell.contentview上   masnory在某个系统下（记不清了）  加在cell上的masnory会崩溃
- *  @param leftMargin   左边距
- *  @param bottomMargin 下边距
- *  @param height       高度
- */
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin bottemMargin:(float)bottomMargin AndHeight:(float)height color:(UIColor *)color;
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin rightMargin:(float)rightMargin bottemMargin:(float)bottomMargin AndHeight:(float)height color:(UIColor *)color;
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin rightMargin:(float)rightMargin topMargin:(float)topMargin AndHeight:(float)height color:(UIColor *)color;
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin topMargin:(float)topMargin AndHeight:(float)height color:(UIColor *)color;
-
 
 /**
  弹框动画

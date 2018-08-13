@@ -2,8 +2,8 @@
 //  UITextView+PlaceHolder.h
 //  StockProject
 //
-//  Created by zbwx on 2018/2/22.
-//  Copyright © 2018年 ZBWX. All rights reserved.
+//  Created by 李亚斌 on 2018/2/22.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

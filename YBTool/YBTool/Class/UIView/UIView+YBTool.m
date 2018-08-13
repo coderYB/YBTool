@@ -2,12 +2,11 @@
 //  UIView+YBTool.m
 //  YBTool
 //
-//  Created by zbwx on 2018/4/4.
-//  Copyright © 2018年 zbwx. All rights reserved.
+//  Created by 李亚斌 on 2018/4/4.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import "UIView+YBTool.h"
-//#import <Masonry/Masonry.h>
 #import "UIColor+YBTool.h"
 #import <objc/runtime.h>
 @implementation UIView (YBTool)
@@ -342,65 +341,7 @@
     //  把绘制好的虚线添加上来
     [lineView.layer addSublayer:shapeLayer];
 }
-/**
- *  加line  color传nil  有默认的颜色
- *  如果加在cell上  一定要加在cell.contentview上   masnory在某个系统下（记不清了）  加在cell上的masnory会崩溃
- *  @param leftMargin   左边距
- *  @param bottomMargin 下边距
- *  @param height       高度
- */
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin bottemMargin:(float)bottomMargin AndHeight:(float)height color:(UIColor *)color{
-//    UIView * line = [[UIView alloc]init];
-//    line.backgroundColor = color?:[UIColor colorWithHex:0xe5e5e5];
-//    [self addSubview:line];
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(leftMargin);
-//        make.right.mas_equalTo(-leftMargin);
-//        make.bottom.mas_equalTo(-bottomMargin);
-//        make.height.mas_equalTo(height);
-//    }];
-//    return line;
-//}
-//
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin rightMargin:(float)rightMargin bottemMargin:(float)bottomMargin AndHeight:(float)height color:(UIColor *)color{
-//    UIView * line = [[UIView alloc]init];
-//    line.backgroundColor = color?:[UIColor colorWithHex:0xe5e5e5];
-//    [self addSubview:line];
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(leftMargin);
-//        make.right.mas_equalTo(-rightMargin);
-//        make.bottom.mas_equalTo(-bottomMargin);
-//        make.height.mas_equalTo(height);
-//    }];
-//    return line;
-//}
-//
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin rightMargin:(float)rightMargin topMargin:(float)topMargin AndHeight:(float)height color:(UIColor *)color{
-//    UIView * line = [[UIView alloc]init];
-//    line.backgroundColor = color?:[UIColor colorWithHex:0xe5e5e5];
-//    [self addSubview:line];
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(leftMargin);
-//        make.right.mas_equalTo(rightMargin);
-//        make.top.mas_equalTo(topMargin);
-//        make.height.mas_equalTo(height);
-//    }];
-//    return line;
-//}
 
-
-//- (UIView *)addlineViewWithleftMargin:(float)leftMargin topMargin:(float)topMargin AndHeight:(float)height color:(UIColor *)color{
-//    UIView * line = [[UIView alloc]init];
-//    line.backgroundColor = color?:[UIColor colorWithHex:0xe5e5e5];
-//    [self addSubview:line];
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(leftMargin);
-//        make.right.mas_equalTo(-leftMargin);
-//        make.top.mas_equalTo(topMargin);
-//        make.height.mas_equalTo(height);
-//    }];
-//    return line;
-//}
 /**
  *  加圆角
  *

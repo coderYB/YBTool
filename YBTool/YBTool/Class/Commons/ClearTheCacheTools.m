@@ -2,8 +2,8 @@
 //  ClearTheCacheTools.m
 //  StockProject
 //
-//  Created by zbwx on 2018/3/15.
-//  Copyright © 2018年 ZBWX. All rights reserved.
+//  Created by 李亚斌 on 2018/3/15.
+//  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
 #import "ClearTheCacheTools.h"
@@ -21,11 +21,11 @@ static ClearTheCacheTools * tool = nil;
 }
 
 /**
- *  删除文件夹所有文件
- *
- *  @param directoryPath 文件夹路径
+ 删除文件夹所有文件
+
+ @param directoryPath 文件夹路径
  */
-+ (void)removeDirectoryPath:(NSString *)directoryPath{
+- (void)removeDirectoryPath:(NSString *)directoryPath{
     // 获取文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];
     
@@ -54,11 +54,12 @@ static ClearTheCacheTools * tool = nil;
     
 }
 /**
- *  获取文件夹尺寸
- *
- *  @param directoryPath 文件夹路径
+ 获取文件夹尺寸
+
+ @param directoryPath 文件夹路径
+ @param completion <#completion description#>
  */
-+ (void)getFileSize:(NSString *)directoryPath completion:(void(^)(NSInteger))completion{
+- (void)getFileSize:(NSString *)directoryPath completion:(void(^)(NSInteger))completion{
     // 获取文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];
     BOOL isDirectory;
@@ -109,14 +110,13 @@ static ClearTheCacheTools * tool = nil;
         });
     });
 }
-
 /**
  获取缓存尺寸字符串
- 
+
  @param totalSize <#totalSize description#>
  @return <#return value description#>
  */
-+ (NSString *)getFileSizeWithTotalSize:(NSInteger)totalSize{
+- (NSString *)getFileSizeWithTotalSize:(NSInteger)totalSize{
     NSString * fileSizeString = @"";
     // MB KB B
     if (totalSize > 1000 * 1000) {
