@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = "YBTool"
 
-s.version          = "1.0.5.3"
+s.version          = "1.0.6.1"
 s.summary          = "A marquee view used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Objective-C.
@@ -28,13 +28,10 @@ s.source_files  = 'YBTool/YBTool/Class/**/*.{h,m}'
 # s.osx.exclude_files = 'Classes/ios'
 # s.public_header_files = 'Classes/**/*.h'
 s.frameworks = 'Foundation', 'UIKit', 'AdSupport'
-#s.dependency 'Masonry'
 s.dependency 'SDWebImage'
 s.dependency 'MJRefresh'
 s.dependency 'MBProgressHUD'
-s.dependency 'FDFullscreenPopGesture'
 s.dependency 'MJExtension'
-#s.dependency 'BlocksKit'
 
 end
 
