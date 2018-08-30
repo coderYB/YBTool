@@ -91,6 +91,8 @@
 
 #import "YBCircularProgressView.h"
 
+#import "YBDeviceInfo.h"
+
 #import "YBPopupMenuPath.h"
 #import "YBPopupMenu.h"
 #import "YBRectConst.h"
