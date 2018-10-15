@@ -116,6 +116,7 @@
         NSLog(@"你长按了imageView,param = %@",param);
         //自定义处理事件
     }];
+    
     [YBCustomAlertView initWithTitle:@"" message:@"请点击self.view或者imageView即可触发点击事件" contentView:nil confirmButtonTitle:@"确定" cancleButtonTitle:nil alertBlock:^(YBCustomAlertView * _Nonnull customAlertView, NSInteger index) {
         
     } otherButtonTitles:nil, nil];
@@ -210,7 +211,7 @@
     NSLog(@"数组去重：%@",[array uniqueArray]);
 }
 
-- (IBAction)test_NSMutableArray{
+- (void)test_NSMutableArray{
     
     NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"1",@"2",@"3",@"1",@"4",@"1",@"2",@"3",@"4",@"5",@"1",@"2",@"3",@"1",@"4"];
     
@@ -420,7 +421,7 @@
 
 
 
-- (IBAction)test_NSUserDefaults{
+- (void)test_NSUserDefaults{
     [NSUserDefaults setObject:@"hello world" forKey:@"你好"];
     NSLog(@"取出数据 = %@",[NSUserDefaults objectForKey:@"你好"]);
     
