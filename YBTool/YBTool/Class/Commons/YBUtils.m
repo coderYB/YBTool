@@ -7,6 +7,8 @@
 //
 
 #import "YBUtils.h"
+#import <SDWebImage/SDImageCache.h>
+#import <SDWebImageManager.h>
 #import <SDWebImage/SDWebImageManager.h>
 #import <objc/runtime.h>
 #import <MJExtension/MJExtension.h>
