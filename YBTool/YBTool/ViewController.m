@@ -20,10 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-    [self createProgressView];
+
+    [self test_loadImage];
+}
+
+- (void) test_loadImage{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+    imageView.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:imageView];
     
-    [YBUtils loadImageWithUrl:@"" finishBlock:^(UIImage *image) {
-        
+    [YBUtils loadImageWithUrl:@"http://pic15.nipic.com/20110628/1369025_192645024000_2.jpg" finishBlock:^(UIImage *image) {
+        imageView.image = image;
     }];
 }
 

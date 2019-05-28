@@ -8,7 +8,6 @@
 
 #import "YBUtils.h"
 #import <SDWebImage/SDImageCache.h>
-#import <SDWebImageManager.h>
 #import <SDWebImage/SDWebImageManager.h>
 #import <objc/runtime.h>
 #import <MJExtension/MJExtension.h>
@@ -31,7 +30,7 @@
         
     } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
         if (finished&&image) {
-            [[SDWebImageManager sharedManager] saveImageToCache:image forURL:imageURL];
+            [[SDWebImageManager sharedManager] cacheKeyForURL:imageURL];
             
         }
         finishBlock(image);
