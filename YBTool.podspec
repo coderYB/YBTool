@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = "YBTool"
 
-s.version          = "1.2.3"
+s.version          = "1.3.0"
 s.summary          = "A tools used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Objective-C.
@@ -13,7 +13,7 @@ s.author           = { "coderYB" => "807110922@qq.com" }
 s.source           = { :git => "https://github.com/coderYB/YBTool.git", :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/NAME'
 
-s.platform     = :ios, '8.0'
+s.platform     = :ios, '9.0'
 # s.ios.deployment_target = '5.0'
 # s.osx.deployment_target = '10.7'
 s.requires_arc = true
