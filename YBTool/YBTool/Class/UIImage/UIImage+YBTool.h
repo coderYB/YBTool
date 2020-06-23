@@ -19,41 +19,41 @@
  *
  *  @return ·····
  */
-+ (id)createRoundedRectImage:(UIImage*)image size:(CGSize)size radius:(NSInteger)r;
++ (id)createRoundedRectImage:(UIImage *)image size:(CGSize)size radius:(NSInteger)r;
 /**
  图片合成
- 
+
  @param topImage 上边图片
  @param bottomImage 上边图片
  @param margin 两者间隔
  @return <#return value description#>
  */
-+ (UIImage *) combineWithTopImg:(UIImage*)topImage
-                      bottomImg:(UIImage*)bottomImage
-                     withMargin:(NSInteger)margin
-                          scale:(CGFloat)scale;
++ (UIImage *)combineWithTopImg:(UIImage *)topImage
+                     bottomImg:(UIImage *)bottomImage
+                    withMargin:(NSInteger)margin
+                         scale:(CGFloat)scale;
 
 /**
  <#Description#>
- 
+
  @param topImage    <#topImage description#>
  @param bottomImage <#bottomImage description#>
  @param imageWidth    图片的宽
  @param scale       <#scale description#>
- 
+
  @return <#return value description#>
  */
-+ (UIImage *) combineWithTopImg:(UIImage*)topImage
-                      bottomImg:(UIImage*)bottomImage
-                     ImageWidth:(float)imageWidth
-                          scale:(CGFloat)scale;
++ (UIImage *)combineWithTopImg:(UIImage *)topImage
+                     bottomImg:(UIImage *)bottomImage
+                    ImageWidth:(float)imageWidth
+                         scale:(CGFloat)scale;
 /**
  截取屏幕某一部分图片
- 
+
  @param frame <#frame description#>
  @return <#return value description#>
  */
-+(UIImage *)fullScreenshots:(CGSize)frame;
++ (UIImage *)fullScreenshots:(CGSize)frame;
 /**
  *  传入图片放缓一个像素大小的UIImage图片
  *
@@ -61,16 +61,16 @@
  *
  *  @return <#return value description#>
  */
-+(UIImage*)imageWithColor:(UIColor*)color;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 /**
  压缩图片至目标尺寸
- 
+
  @param sourceImage sourceImage 源图片
  @param targetWidt 图片最终尺寸的宽
  @return 返回按照源图片的宽、高比例压缩至目标宽、高的图片
  */
-+(UIImage *)compressImage:(UIImage *)sourceImage toTargetWidth:(CGFloat)targetWidt;
++ (UIImage *)compressImage:(UIImage *)sourceImage toTargetWidth:(CGFloat)targetWidt;
 
 /**
  *  对图片进行水印处理
@@ -123,7 +123,6 @@
  */
 + (instancetype)imageWithColor:(UIColor *)color size:(CGSize)size;
 
-
 /**
  *  对图片自定义角度旋转（以中心点为旋转点，以°为旋转单位，如90°）
  *
@@ -146,7 +145,6 @@
 
 + (instancetype)cutRoundimage:(UIImage *)image borderImage:(UIImage *)borderImage border:(int)border;
 
-
 //改变图片大小（不是压缩图片，会拉伸）
 + (instancetype)imageChangeSizeDrawWithImage:(UIImage *)image size:(CGSize)size;
 
@@ -154,7 +152,7 @@
 + (instancetype)imageChangeSizeUnDrawWithImage:(UIImage *)image size:(CGSize)size;
 
 //获取圆角图片
-+ (instancetype)getRadiusImage:(UIImage*)image size:(CGSize)size radius:(CGFloat)r;
++ (instancetype)getRadiusImage:(UIImage *)image size:(CGSize)size radius:(CGFloat)r;
 
 /* 根据UIView和大小生成图片*/
 + (instancetype)getImageWithView:(UIView *)view withSize:(CGSize)size;

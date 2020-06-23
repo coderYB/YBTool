@@ -6,9 +6,8 @@
 //  Copyright © 2018年 李亚斌. All rights reserved.
 //
 
-
 #import "NSMutableArray+YBTool.h"
-#import "NSArray+YBTool.m"
+
 @implementation NSMutableArray (YBTool)
 
 /**
@@ -22,7 +21,6 @@
     }
 }
 
-
 /**
  从数组里添加元素
 
@@ -34,7 +32,6 @@
     }
 }
 
-
 /**
  插入元素
 
@@ -42,7 +39,7 @@
  @param index <#index description#>
  */
 - (void)safeInsertObject:(id)object atIndex:(NSInteger)index {
-    if (object && (self.count > index) && index>=0) {
+    if (object && (self.count > index) && index >= 0) {
         [self insertObject:object atIndex:index];
     }
 }
@@ -53,13 +50,12 @@
  @param index <#index description#>
  @param object <#object description#>
  */
-- (void)safeReplaceObjectAtIndex:(NSInteger)index  withObject:(id)object
+- (void)safeReplaceObjectAtIndex:(NSInteger)index withObject:(id)object
 {
-    if (object&&(self.count>index)&&index>=0) {
+    if (object && (self.count > index) && index >= 0) {
         [self replaceObjectAtIndex:index withObject:object];
     }
 }
-
 
 /**
  添加基本类型数组元素
@@ -82,22 +78,21 @@
     [self safeAddObject:@(number)];
 }
 
-- (void)safeAddObjectWithRang:(NSRange)rang{
+- (void)safeAddObjectWithRang:(NSRange)rang {
     [self safeAddObject:NSStringFromRange(rang)];
 }
 
-- (void)safeAddObjectWithRect:(CGRect)rect{
+- (void)safeAddObjectWithRect:(CGRect)rect {
     [self safeAddObject:NSStringFromCGRect(rect)];
 }
 
-- (void)safeAddObjectWithPoint:(CGPoint)point{
+- (void)safeAddObjectWithPoint:(CGPoint)point {
     [self safeAddObject:NSStringFromCGPoint(point)];
 }
 
-- (void)safeAddObjectWithSize:(CGSize)size{
+- (void)safeAddObjectWithSize:(CGSize)size {
     [self safeAddObject:NSStringFromCGSize(size)];
 }
-
 
 /**
  删除元素
@@ -105,12 +100,10 @@
  @param index <#index description#>
  */
 - (void)safeRemoveObjectAtIndex:(NSInteger)index {
-    
     if ((self.count > index) && (index >= 0)) {
         [self removeObjectAtIndex:index];
     }
 }
-
 
 /**
  转换
@@ -118,17 +111,15 @@
  @param block <#block description#>
  */
 - (void)mapUsingBlock:(id (^)(id, NSInteger))block {
-    
     if (block) {
         __block NSMutableArray *array = [NSMutableArray array];
-        [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             [array safeAddObject:block(obj, idx)];
         }];
         [self removeAllObjects];
         [self safeAddObjectsFromArray:[array copy]];
     }
 }
-
 
 /**
  筛选
@@ -137,10 +128,9 @@
  @param stopWhenFind <#stopWhenFind description#>
  */
 - (void)filterUsingBlock:(BOOL (^) (id object))findBlock stopWhenFind:(BOOL)stopWhenFind {
-    
     if (findBlock) {
         __block NSMutableArray *array = [NSMutableArray array];
-        [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             if (findBlock(obj)) {
                 [array safeAddObject:obj];
                 *stop = stopWhenFind;
@@ -151,7 +141,6 @@
     }
 }
 
-
 /**
  删除符合条件的元素
 
@@ -159,10 +148,9 @@
  @param stopWhenDelete <#stopWhenDelete description#>
  */
 - (void)deleteUsingBlock:(BOOL (^)(id object))deleteBlock stopWhenDelete:(BOOL)stopWhenDelete {
-    
     if (deleteBlock) {
         __block NSMutableArray *array = [NSMutableArray array];
-        [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             if (deleteBlock(obj)) {
                 [array safeAddObject:obj];
                 *stop = stopWhenDelete;
@@ -178,15 +166,14 @@
 - (void)shuffle {
     NSMutableArray *copy = [self mutableCopy];
     [self removeAllObjects];
-    
+
     while (copy.count > 0) {
         int index = arc4random() % copy.count;
-        id objectToMove = [copy safeObjectAtIndex:index];
+        id objectToMove = [copy objectAtIndex:index];
         [self safeAddObject:objectToMove];
         [copy safeRemoveObjectAtIndex:index];
     }
 }
-
 
 /**
  数组倒序
@@ -197,18 +184,18 @@
     [self safeAddObjectsFromArray:reversedArray];
 }
 
-
 /**
  数组去重
  */
 - (void)unique {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([array containsObject:obj] == NO){
+    [self enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        if ([array containsObject:obj] == NO) {
             [array addObject:obj];
         }
     }];
     [self removeAllObjects];
     [self safeAddObjectsFromArray:[array mutableCopy]];
 }
+
 @end

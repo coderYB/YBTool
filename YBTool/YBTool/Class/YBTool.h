@@ -21,14 +21,13 @@
 #import "YBRSA.h"
 #import "YBKeyChain.h"
 
-#import "VideoCompressTools.h"
+#import "YBVideoCompressTools.h"
 
-#import "ClearTheCacheTools.h"
+#import "YBClearTheCacheTools.h"
 
 #import "NSNumber+YBTool.h"
 
 #import "NSArray+YBLog.h"
-#import "NSArray+YBTool.h"
 #import "NSMutableArray+YBTool.h"
 #import "NSMutableArray+Swizzling.h"
 
@@ -86,8 +85,8 @@
 #import "UIView+EmptyView.h"
 #import "UIView+YBEvent.h"
 
-#import "BasePickerView.h"
-#import "DatePickerView.h"
+#import "YBBasePickerView.h"
+#import "YBDatePickerView.h"
 
 #import "YBCircularProgressView.h"
 

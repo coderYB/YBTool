@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface YBCustomAlertView : UIView
-typedef void(^CustomAlertBlock)( YBCustomAlertView * _Nonnull customAlertView ,NSInteger index);
-@property(nonatomic,copy) _Nonnull CustomAlertBlock block;
+    typedef void (^CustomAlertBlock)(YBCustomAlertView *_Nonnull customAlertView, NSInteger index);
+@property (nonatomic, copy) _Nonnull CustomAlertBlock block;
 
-+(void)initWithTitle:(nullable NSString*)title message:(nullable NSString*)message contentView:(nullable UIView*)contentView confirmButtonTitle:(nullable NSString*)confirmButtonTitle cancleButtonTitle:(nullable NSString*)cancleButtonTitle alertBlock:(nullable CustomAlertBlock)alertBlock otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
++ (void)initWithTitle:(nullable NSString *)title message:(nullable NSString *)message contentView:(nullable UIView *)contentView confirmButtonTitle:(nullable NSString *)confirmButtonTitle cancleButtonTitle:(nullable NSString *)cancleButtonTitle alertBlock:(nullable CustomAlertBlock)alertBlock otherButtonTitles:(nullable NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 @end

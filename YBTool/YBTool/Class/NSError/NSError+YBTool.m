@@ -12,36 +12,36 @@
 + (NSError *)errorWithDomain:(NSString *)domain
                         code:(NSInteger)code
                  description:(NSString *)description {
-    
     NSError *error = [NSError errorWithDomain:domain
                                          code:code
-                                     userInfo:[NSDictionary dictionaryWithObjectsAndKeys:description,NSLocalizedDescriptionKey,nil]];
+                                     userInfo:[NSDictionary dictionaryWithObjectsAndKeys:description, NSLocalizedDescriptionKey, nil]];
     return error;
 }
-
 
 + (NSError *)errorWithDomain:(NSString *)domain
                         code:(NSInteger)code
                  description:(NSString *)description
                failureReason:(NSString *)failureReason {
-    
     NSError *error = [NSError errorWithDomain:domain
                                          code:code
                                      userInfo:[NSDictionary dictionaryWithObjectsAndKeys:description, NSLocalizedDescriptionKey,
-                                               failureReason, NSLocalizedFailureReasonErrorKey,nil]];
+                                               failureReason, NSLocalizedFailureReasonErrorKey, nil]];
     return error;
 }
 
-- (NSString *)getErrorDomain{
+- (NSString *)getErrorDomain {
     return [self domain];
 }
-- (NSInteger)getErrorCode{
+
+- (NSInteger)getErrorCode {
     return [self code];
 }
-- (NSString *)getErrorDescription{
+
+- (NSString *)getErrorDescription {
     return [self localizedDescription];
 }
-- (NSString *)getErrorReason{
+
+- (NSString *)getErrorReason {
     return [self localizedFailureReason];
 }
 

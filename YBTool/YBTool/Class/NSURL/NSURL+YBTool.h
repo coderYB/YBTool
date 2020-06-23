@@ -10,7 +10,6 @@
 
 @interface NSURL (YBTool)
 
-
 /**
  创建一个url
 
@@ -25,5 +24,5 @@
  @param otherURL <#otherURL description#>
  @return <#return value description#>
  */
-- (BOOL) isEqualToURL:(NSURL*)otherURL;
+- (BOOL)isEqualToURL:(NSURL *)otherURL;
 @end

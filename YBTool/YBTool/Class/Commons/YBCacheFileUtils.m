@@ -11,25 +11,25 @@
 @implementation YBCacheFileUtils
 + (void)archiveListObject:(id)objc
                  pathName:(NSString *)fileName
-                   userId:(NSString*)userId{
-    NSString * realfileName = fileName;
-    NSString * path = realfileName = [NSString stringWithFormat:@"%@_%@",userId?:@"",fileName];
+                   userId:(NSString *)userId {
+    NSString *realfileName = fileName;
+    NSString *path = realfileName = [NSString stringWithFormat:@"%@_%@", userId ? : @"", fileName];
     path = [self cacheListPathwithFilename:realfileName];
     [NSKeyedArchiver archiveRootObject:objc toFile:path];
 }
 
 + (instancetype)unarchivedListObjectwithFilePathName:(NSString *)fileName
-                                              userId:(NSString*)userId{
-    NSString * realfileName = fileName;
-    NSString * path = realfileName = [NSString stringWithFormat:@"%@_%@",userId?:@"",fileName];
+                                              userId:(NSString *)userId {
+    NSString *realfileName = fileName;
+    NSString *path = realfileName = [NSString stringWithFormat:@"%@_%@", userId ? : @"", fileName];
     path = [self cacheListPathwithFilename:realfileName];
     return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
 
 + (BOOL)deleteListObjectwithFilePathName:(NSString *)fileName
-                                  userId:(NSString*)userId{
-    NSString * realfileName = fileName;
-    NSString * path = realfileName = [NSString stringWithFormat:@"%@_%@",userId?:@"",fileName];;
+                                  userId:(NSString *)userId {
+    NSString *realfileName = fileName;
+    NSString *path = realfileName = [NSString stringWithFormat:@"%@_%@", userId ? : @"", fileName];
     path = [self cacheListPathwithFilename:realfileName];
     return [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
 }
@@ -39,11 +39,11 @@
  *
  *  @return <#return value description#>
  */
-+ (NSString *)cacheListPath{
-    NSString * removeCache = [self canRemovePath];
-    NSString * path = [removeCache stringByAppendingPathComponent:@"ListDataChe_cache"];
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:path]){
++ (NSString *)cacheListPath {
+    NSString *removeCache = [self canRemovePath];
+    NSString *path = [removeCache stringByAppendingPathComponent:@"ListDataChe_cache"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:path]) {
         [fileManager createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
     return path;
@@ -54,24 +54,26 @@
  *
  *  @return <#return value description#>
  */
-+ (NSString *)canRemovePath{
-    NSString * documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString * path = [documentPath stringByAppendingPathComponent:@"canRemove_cache"];
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:path]){
++ (NSString *)canRemovePath {
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [documentPath stringByAppendingPathComponent:@"canRemove_cache"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:path]) {
         [fileManager createDirectoryAtPath:path withIntermediateDirectories:TRUE attributes:nil error:nil];
     }
     return path;
 }
-+ (NSString *)cacheListPathwithFilename:(NSString *)fileName{
+
++ (NSString *)cacheListPathwithFilename:(NSString *)fileName {
     return [[self cacheListPath] stringByAppendingPathComponent:fileName];
 }
 
-+(BOOL)archiveModalObject:(id)objc withFilePath:(NSString *)path{
++ (BOOL)archiveModalObject:(id)objc withFilePath:(NSString *)path {
     return [NSKeyedArchiver archiveRootObject:objc toFile:path];
 }
 
-+(instancetype)unarchivedModalObjectwithPath:(NSString *)path{
++ (instancetype)unarchivedModalObjectwithPath:(NSString *)path {
     return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
+
 @end

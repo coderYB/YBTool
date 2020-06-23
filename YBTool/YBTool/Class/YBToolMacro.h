@@ -23,6 +23,14 @@
 #define SCALE_IPHONE_X_SCREEN SCALE_TO_SCREEN(1125.f,2436.f)
 
 
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+
 //app框架高度
 #define APP_FRAME_HEIGHT [[UIScreen mainScreen] applicationFrame].size.height
 //app框架宽度

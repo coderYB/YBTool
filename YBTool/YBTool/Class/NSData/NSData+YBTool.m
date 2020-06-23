@@ -19,8 +19,8 @@
  *
  *  @return <#return value description#>
  */
-- (NSData *)aes256_encrypt:(NSString *)key{
-    char keyPtr[kCCKeySizeAES256+1];
+- (NSData *)aes256_encrypt:(NSString *)key {
+    char keyPtr[kCCKeySizeAES256 + 1];
     bzero(keyPtr, sizeof(keyPtr));
     [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     NSUInteger dataLength = [self length];
@@ -48,8 +48,8 @@
  *
  *  @return <#return value description#>
  */
-- (NSData *)aes256_decrypt:(NSString *)key{
-    char keyPtr[kCCKeySizeAES256+1];
+- (NSData *)aes256_decrypt:(NSString *)key {
+    char keyPtr[kCCKeySizeAES256 + 1];
     bzero(keyPtr, sizeof(keyPtr));
     [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     NSUInteger dataLength = [self length];
@@ -65,11 +65,11 @@
                                           &numBytesDecrypted);
     if (cryptStatus == kCCSuccess) {
         return [NSData dataWithBytesNoCopy:buffer length:numBytesDecrypted];
-        
     }
     free(buffer);
     return nil;
 }
+
 /**
  *  des加密
  *
@@ -77,7 +77,7 @@
  *
  *  @return <#return value description#>
  */
--(NSData*)desEncryptWithKey:(NSString*)key{
+- (NSData *)desEncryptWithKey:(NSString *)key {
     return [[[[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding] desEncryptWithKey:key] dataUsingEncoding:NSUTF8StringEncoding];
 }
 
@@ -88,25 +88,24 @@
  *
  *  @return <#return value description#>
  */
--(NSData*)desDecrypttWithKey:(NSString*)key{
+- (NSData *)desDecrypttWithKey:(NSString *)key {
     return [[[[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding] desDecryptWithKey:key] dataUsingEncoding:NSUTF8StringEncoding];
 }
-
 
 /**
  *  转16进制字符串
  *
  *  @return <#return value description#>
  */
-- (NSString*)encryptHex {
+- (NSString *)encryptHex {
     Byte *bytes = (Byte *)[self bytes];
     //下面是Byte 转换为16进制。
     NSString *hexStr = @"";
-    for(int i = 0; i < [self length]; i++){
-        NSString *newHexStr = [NSString stringWithFormat:@"%x", bytes[i]&0xff];///16进制数
-        if([newHexStr length] == 1){
+    for (int i = 0; i < [self length]; i++) {
+        NSString *newHexStr = [NSString stringWithFormat:@"%x", bytes[i] & 0xff];///16进制数
+        if ([newHexStr length] == 1) {
             hexStr = [NSString stringWithFormat:@"%@0%@", hexStr, newHexStr];
-        }else{
+        } else {
             hexStr = [NSString stringWithFormat:@"%@%@", hexStr, newHexStr];
         }
     }
@@ -118,7 +117,7 @@
 
  @return <#return value description#>
  */
-- (NSString *)getString{
+- (NSString *)getString {
     return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
 }
 
@@ -127,10 +126,11 @@
 
  @return <#return value description#>
  */
-- (NSString *)getAPNSToken{
+- (NSString *)getAPNSToken {
     return [[[[self description]
-              stringByReplacingOccurrencesOfString: @"<" withString: @""]
-             stringByReplacingOccurrencesOfString: @">" withString: @""]
-            stringByReplacingOccurrencesOfString: @" " withString: @""];
+              stringByReplacingOccurrencesOfString:@"<" withString:@""]
+             stringByReplacingOccurrencesOfString:@">" withString:@""]
+            stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
+
 @end

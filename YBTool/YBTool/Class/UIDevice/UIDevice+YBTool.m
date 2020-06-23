@@ -76,6 +76,15 @@
     if ([platform isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
     if ([platform isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
     if ([platform isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
+    if ([platform isEqualToString:@"iPhone10,1"])   return @"iPhone 8";//国行(A1863)、日行(A1906)
+    if ([platform isEqualToString:@"iPhone10,4"])   return @"iPhone 8";//美版(Global/A1905)
+    if ([platform isEqualToString:@"iPhone10,2"])   return @"iPhone 8 Plus";//国行(A1864)、日行(A1898)
+    if ([platform isEqualToString:@"iPhone10,5"])   return @"iPhone 8 Plus";//美版(Global/A1897)
+    if ([platform isEqualToString:@"iPhone10,3"])   return @"iPhone X";//国行(A1865)、日行(A1902)
+    if ([platform isEqualToString:@"iPhone10,6"])   return @"iPhone X";//美版(Global/A1901)
+    if ([platform isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
+    if ([platform isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
+    if ([platform isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
     
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -331,74 +340,6 @@
     CTTelephonyNetworkInfo *telephonyInfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *carrier = [telephonyInfo subscriberCellularProvider];
     return  [carrier carrierName];
-}
-
-
-/**
- 获取网络类型
-
- @return <#return value description#>
- */
-+ (NetworkType)getNetworkType {
-    
-    NSArray *subviews = [[[[UIApplication sharedApplication] valueForKey:@"statusBar"] valueForKey:@"foregroundView"]subviews];
-    NSNumber *dataNetworkItemView = nil;
-    
-    for (id subview in subviews) {
-        if([subview isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
-            dataNetworkItemView = subview;
-            break;
-        }
-    }
-    switch ([[dataNetworkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-        case 0:
-            return NetworkTypeUnknown;
-            break;
-            
-        case 1:
-            return NetworkType2G;
-            break;
-            
-        case 2:
-            return NetworkType3G;
-            break;
-            
-        case 3:
-            return NetworkType4G;
-            break;
-            
-        case 4:
-            return NetworkTypeLTE;
-            break;
-            
-        case 5:
-            return NetworkTypeWifi;
-            break;
-    }
-    
-    return NetworkTypeUnknown;
-}
-
-
-/**
- 获取网络类型名称
-
- @return <#return value description#>
- */
-+ (NSString *)getNetworkTypeName{
-    NetworkType type = [UIDevice getNetworkType];
-    if (type == NetworkType4G) {
-        return @"4G";
-    }else if (type == NetworkTypeWifi) {
-        return @"Wifi";
-    }else if (type == NetworkType2G) {
-        return @"2G";
-    }else if (type == NetworkType3G) {
-        return @"3G";
-    }else if (type == NetworkTypeLTE) {
-        return @"LTE";
-    }
-    return @"无服务";
 }
 
 @end

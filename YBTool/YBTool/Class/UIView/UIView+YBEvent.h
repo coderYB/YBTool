@@ -13,8 +13,7 @@ typedef void (^ActionBlock)(NSDictionary *param);
 /**
  如果需要传参，请给param赋值
  */
-@property(nonatomic, copy) NSDictionary *param;
-
+@property (nonatomic, copy) NSDictionary *param;
 
 /**
  添加tap手势
@@ -27,7 +26,6 @@ typedef void (^ActionBlock)(NSDictionary *param);
  移除所有tap手势
  */
 - (void)removeAllTapGesture;
-
 
 /**
  添加长按手势

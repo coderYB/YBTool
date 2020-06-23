@@ -34,7 +34,7 @@
  *
  *  @return <#return value description#>
  */
--(NSData*)desEncryptWithKey:(NSString*)key;
+- (NSData *)desEncryptWithKey:(NSString *)key;
 
 /**
  *  des解密
@@ -43,14 +43,14 @@
  *
  *  @return <#return value description#>
  */
--(NSData*)desDecrypttWithKey:(NSString*)key;
+- (NSData *)desDecrypttWithKey:(NSString *)key;
 
 /**
  *  转16进制字符串
  *
  *  @return <#return value description#>
  */
-- (NSString*)encryptHex;
+- (NSString *)encryptHex;
 
 /**
  NSData-->String
@@ -58,7 +58,6 @@
  @return <#return value description#>
  */
 - (NSString *)getString;
-
 
 /**
  将APNS NSData类型token 格式化成字符串

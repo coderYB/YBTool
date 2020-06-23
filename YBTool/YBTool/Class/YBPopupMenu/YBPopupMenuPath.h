@@ -1,6 +1,6 @@
 //
-//  YBPopupMenuPath.h
-//  YBPopupMenu
+//  YBToolPath.h
+//  YBTool
 //
 //  Created by lyb on 2017/5/9.
 //  Copyright © 2017年 lyb. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, YBPopupMenuArrowDirection) {
+typedef NS_ENUM (NSInteger, YBPopupMenuArrowDirection) {
     YBPopupMenuArrowDirectionTop = 0,  //箭头朝上
     YBPopupMenuArrowDirectionBottom,   //箭头朝下
     YBPopupMenuArrowDirectionLeft,     //箭头朝左

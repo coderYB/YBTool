@@ -10,13 +10,13 @@
 
 #pragma mark - Enums
 
-typedef NS_ENUM(NSUInteger, YBProgressBackgroundMode) {
+typedef NS_ENUM (NSUInteger, YBProgressBackgroundMode) {
     YBProgressBackgroundModeNone,
     YBProgressBackgroundModeCircle,
     YBProgressBackgroundModeCircumference
 };
 
-typedef NS_ENUM(NSUInteger, YBProgressMode) {
+typedef NS_ENUM (NSUInteger, YBProgressMode) {
     YBProgressModeFill,
     YBProgressModeDeplete
 };
@@ -34,12 +34,12 @@ typedef NS_ENUM(NSUInteger, YBProgressMode) {
 @property (nonatomic) YBProgressBackgroundMode progressBackgroundMode;
 @property (nonatomic) BOOL clockwise;
 
-- (id)initWithCenter:(CGPoint)center
-              radius:(CGFloat)radius
-           lineWidth:(CGFloat)lineWidth
-        progressMode:(YBProgressMode)progressMode
-       progressColor:(UIColor *)progressColor
-progressBackgroundMode:(YBProgressBackgroundMode)backgroundMode
-progressBackgroundColor:(UIColor *)progressBackgroundColor
-          percentage:(CGFloat)percentage;
+- (id)       initWithCenter:(CGPoint)center
+                     radius:(CGFloat)radius
+                  lineWidth:(CGFloat)lineWidth
+               progressMode:(YBProgressMode)progressMode
+              progressColor:(UIColor *)progressColor
+     progressBackgroundMode:(YBProgressBackgroundMode)backgroundMode
+    progressBackgroundColor:(UIColor *)progressBackgroundColor
+                 percentage:(CGFloat)percentage;
 @end

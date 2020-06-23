@@ -15,7 +15,7 @@
 
  @param urlString <#urlString description#>
  */
-+ (void)quickOpenURLString:(NSString *)urlString{
++ (void)quickOpenURLString:(NSString *)urlString {
     UIApplication *app = [UIApplication sharedApplication];
     NSURL *url = [NSURL URLWithString:urlString];
     if ([app canOpenURL:url]) {
@@ -23,11 +23,10 @@
     }
 }
 
-
 /**
  跳转到app设置页面
  */
-+ (void)goToAppSetting{
++ (void)goToAppSetting {
     [UIApplication quickOpenURLString:UIApplicationOpenSettingsURLString];
 }
 
@@ -36,8 +35,9 @@
 
  @param telephone <#telephone description#>
  */
-+ (void)goToTelephone:(NSString *)telephone{
++ (void)goToTelephone:(NSString *)telephone {
     NSString *urlString = [@"tel://" stringByAppendingString:telephone];
     [UIApplication quickOpenURLString:urlString];
 }
+
 @end

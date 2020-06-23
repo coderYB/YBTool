@@ -18,11 +18,11 @@
  *  @param isLeft         左边或是右边  Yes为左
  *  @param selector       触发函数
  */
-- (UIButton * )addNavBtnNormalImage:(NSString *)image HighlightedImage:(NSString *)highlightImage TItle:(NSString*)title Isleft:(BOOL) isLeft Selector:(SEL)selector;
-- (UIButton * )addNavBtnWithTitle:(NSString*)title Isleft:(BOOL) isLeft Selector:(SEL)selector;
-- (UIButton * )addNavBtnNormalImage:(NSString *)image HighlightedImage:(NSString *)highlightImage Isleft:(BOOL) isLeft Selector:(SEL)selector;
+- (UIButton *)addNavBtnNormalImage:(NSString *)image HighlightedImage:(NSString *)highlightImage TItle:(NSString *)title Isleft:(BOOL)isLeft Selector:(SEL)selector;
+- (UIButton *)addNavBtnWithTitle:(NSString *)title Isleft:(BOOL)isLeft Selector:(SEL)selector;
+- (UIButton *)addNavBtnNormalImage:(NSString *)image HighlightedImage:(NSString *)highlightImage Isleft:(BOOL)isLeft Selector:(SEL)selector;
 /**
  *  处理初始高度
  */
--(void)dealViewHeight;
+- (void)dealViewHeight;
 @end

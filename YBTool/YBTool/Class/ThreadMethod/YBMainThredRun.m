@@ -8,7 +8,8 @@
 
 #import "YBMainThredRun.h"
 
-void YBMainThreadRun(void(^run)(void)){
+void YBMainThreadRun(void (^run)(void))
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         if (run) {
             run();

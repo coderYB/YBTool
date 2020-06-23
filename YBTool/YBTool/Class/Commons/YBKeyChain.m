@@ -11,20 +11,20 @@
 @implementation YBKeyChain
 + (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-            (id)kSecClassGenericPassword,(id)kSecClass,
+            (id)kSecClassGenericPassword, (id)kSecClass,
             service, (id)kSecAttrService,
             service, (id)kSecAttrAccount,
-            (id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible,
+            (id)kSecAttrAccessibleAfterFirstUnlock, (id)kSecAttrAccessible,
             nil];
 }
 
 /**
  <#Description#>
- 
+
  @param key 保存东西到钥匙串
  @param data <#data description#>
  */
-+ (void)saveWithKey:(NSString *)key data:(id)data{
++ (void)saveWithKey:(NSString *)key data:(id)data {
     //Get search dictionary
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
     //Delete old item before add new item
@@ -37,11 +37,11 @@
 
 /**
  加载钥匙串里的内容
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-+ (id)loadWithKey:(NSString *)key{
++ (id)loadWithKey:(NSString *)key {
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
     //Configure the search setting
@@ -56,17 +56,16 @@
         } @finally {
         }
     }
-    if (keyData)
-    CFRelease(keyData);
+    if (keyData) CFRelease(keyData);
     return ret;
 }
 
 /**
  删除钥匙串内容
- 
+
  @param key <#key description#>
  */
-+ (void)deleteWithKey:(NSString *)key{
++ (void)deleteWithKey:(NSString *)key {
     NSMutableDictionary *keychainQuery = [self getKeychainQuery:key];
     SecItemDelete((CFDictionaryRef)keychainQuery);
 }

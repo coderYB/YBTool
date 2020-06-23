@@ -11,26 +11,26 @@
 @interface UIView (EmptyView)
 /**
  显示空view
- 
+
  @param text <#text description#>
  @param image <#image description#>
  */
--(void)showEmptyViewWithText:(NSString *)text image:(NSString *)image;
+- (void)showEmptyViewWithText:(NSString *)text image:(NSString *)image;
 
 /**
  *  隐藏空view
  */
--(void)hiddenEmptyView;
+- (void)hiddenEmptyView;
 
 /**
  *  获取空view
  */
--(UIView*)emptyView;
+- (UIView *)emptyView;
 
 /**
  *  点击空视图回调
  *
  *  @param handleBlock <#handleBlock description#>
  */
--(void)emptyViewHandle:(void (^)(void))handleBlock;
+- (void)emptyViewHandle:(void (^)(void))handleBlock;
 @end

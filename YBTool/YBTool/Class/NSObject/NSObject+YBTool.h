@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NSObject (YBTool)
 /**
  runtime 扩展属性
  */
-@property (nonatomic,strong) NSMutableDictionary *extentObject;
+@property (nonatomic, strong) NSMutableDictionary *extentObject;
 
 /**
  归档

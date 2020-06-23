@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^LBBlurredImageCompletionBlock)(void);
+typedef void (^LBBlurredImageCompletionBlock)(void);
 
 extern CGFloat const kLBBlurredImageDefaultBlurRadius;
 @interface UIImageView (YBTool)

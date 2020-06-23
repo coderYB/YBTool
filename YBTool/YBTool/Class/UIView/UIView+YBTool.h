@@ -29,7 +29,6 @@
  */
 @property (nonatomic) CGFloat top;
 
-
 /**
  宽度
  */
@@ -65,24 +64,24 @@
  *
  *  @return <#return value description#>
  */
--(UIViewController *)viewController;
+- (UIViewController *)viewController;
 
 /**
  view截图
- 
+
  @return <#return value description#>
  */
 - (UIImage *)convertToScreenScaleImage;
 
 /**
  view截图
- 
+
  @return <#return value description#>
  */
 - (UIImage *)convertToImageWithScale:(CGFloat)scale;
 /**
  设置边框
- 
+
  @param width 宽度
  @param color 颜色
  */
@@ -90,7 +89,7 @@
 
 /**
  设置圆角
- 
+
  @param cornerRadius 度数
  */
 - (void)setCornerRadius:(CGFloat)cornerRadius;
@@ -98,7 +97,6 @@
 // Frame Origin
 @property (nonatomic) CGFloat x;
 @property (nonatomic) CGFloat y;
-
 
 // Middle Point
 @property (nonatomic, readonly) CGPoint middlePoint;
@@ -111,7 +109,7 @@
  *  @param point     <#point description#>
  *  @param animation <#animation description#>
  */
-- (void) moveToPoint:(CGPoint) point animation:(BOOL)animation;
+- (void)moveToPoint:(CGPoint)point animation:(BOOL)animation;
 
 /**
  *  加圆角
@@ -137,7 +135,7 @@
  @param bgView <#bgView description#>
  @param alpha <#alpha description#>
  */
-- (void) shakeToShow:(UIView*)aView bgView:(UIView*)bgView alpha:(CGFloat)alpha;
+- (void)shakeToShow:(UIView *)aView bgView:(UIView *)bgView alpha:(CGFloat)alpha;
 
 /**
  获取view所在的ViewController的name
@@ -145,7 +143,6 @@
  @return <#return value description#>
  */
 - (NSString *)viewControllerName;
-
 
 /**
  通过名称获取nib
@@ -155,7 +152,6 @@
  */
 + (UINib *)nibWithName:(NSString *)name;
 
-
 /**
  通过NIb名称获取内部View视图集合
 
@@ -163,7 +159,6 @@
  @return <#return value description#>
  */
 + (NSArray *)viewsWithNibName:(NSString *)name;
-
 
 /**
  设置圆角
@@ -183,7 +178,6 @@
  */
 - (CGRect)convertSubview:(UIView *)subview toTargetView:(UIView *)targetView;
 
-
 /**
  把view在父视图的frame转换为self中的frame
 
@@ -191,7 +185,6 @@
  @return <#return value description#>
  */
 - (CGRect)convertView:(UIView *)view;
-
 
 /**
  处理点击空白收键盘

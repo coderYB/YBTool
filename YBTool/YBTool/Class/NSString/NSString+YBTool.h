@@ -40,7 +40,6 @@
  */
 - (BOOL)isBarcode;
 
-
 /**
  判断是否是url
 
@@ -67,50 +66,50 @@
  *
  *  @return <#return value description#>
  */
--(BOOL)validateIDCardNumber;
+- (BOOL)validateIDCardNumber;
 /**
  *  判断是否为手机号码
  *
  *  @return <#return value description#>
  */
--(BOOL)validatePhoneNumber;
+- (BOOL)validatePhoneNumber;
 /**
  *  简单的11位手机号码校验
  *
  *  @return <#return value description#>
  */
--(BOOL)simpleValidatePhone;
+- (BOOL)simpleValidatePhone;
 /**
  *  判断是否为身份证
  *
  *  @return <#return value description#>
  */
--(BOOL) validateIdentityCard;
+- (BOOL)validateIdentityCard;
 /**
  *  判断是否为车牌号
  *
  *  @return <#return value description#>
  */
--(BOOL) validateCarNo;
+- (BOOL)validateCarNo;
 /**
  *  判断是否为邮箱
  *
  *  @return <#return value description#>
  */
--(BOOL) validateEmail;
+- (BOOL)validateEmail;
 /**
  *  字符串去首位空格
  *
  *  @return <#return value description#>
  */
--(NSString*)trim;
+- (NSString *)trim;
 
 /**
  *  SHA1加密
  *
  *  @return <#return value description#>
  */
--(NSString*)sha1;
+- (NSString *)sha1;
 
 /**
  *  SHA256加密
@@ -138,65 +137,64 @@
  *
  *  @return <#return value description#>
  */
--(NSString*)urlEncode;
+- (NSString *)urlEncode;
 /**
  *  url解码
  *
  *  @return <#return value description#>
  */
--(NSString*)urlDecode;
+- (NSString *)urlDecode;
 /**
  *  md5
  *
  *  @return <#return value description#>
  */
--(NSString*)md5;
-
+- (NSString *)md5;
 
 /**
  DES+Base64加密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)desEncryptWithKey:(NSString*)key;
+- (NSString *)desEncryptWithKey:(NSString *)key;
 
 /**
  DES+Base64解密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)desDecryptWithKey:(NSString*)key;
+- (NSString *)desDecryptWithKey:(NSString *)key;
 
 /**
  AES加密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)aesEncryptWitKey:(NSString*)key;
+- (NSString *)aesEncryptWitKey:(NSString *)key;
 
 /**
  AES解密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)aesDecryptWitKey:(NSString*)key;
+- (NSString *)aesDecryptWitKey:(NSString *)key;
 
 /**
  *  base64编码
  *
  *  @return <#return value description#>
  */
--(NSString*)base64Encoding;
+- (NSString *)base64Encoding;
 /**
  *  base64解码
  *
  *  @return <#return value description#>
  */
--(NSString*)base64Decodeing;
+- (NSString *)base64Decodeing;
 
 /**
  *  截取URL中的参数
@@ -206,7 +204,7 @@
 - (NSMutableDictionary *)getURLParameters;
 /**
  将某段字符串处理成带富文本属性的字符串
- 
+
  @param partOfStr 需要将字符串中那些子串进行处理
  @param color 处理成的颜色
  @param font 处理成的字体
@@ -232,7 +230,6 @@
  */
 + (NSString *)getUUID;
 
-
 /**
  获取字符串所占size(font,限制最大size)
 
@@ -242,14 +239,12 @@
  */
 - (CGSize)getSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)constrainSize;
 
-
 /**
  NSString转为NSData
 
  @return <#return value description#>
  */
 - (NSData *)getData;
-
 
 /**
  NSString转为Char

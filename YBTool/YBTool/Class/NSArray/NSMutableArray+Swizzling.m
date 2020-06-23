@@ -20,6 +20,7 @@
         [objc_getClass("__NSArrayM") methodSwizzlingWithOriginalSelector:@selector(objectAtIndex:) bySwizzledSelector:@selector(yb_ObjectAtIndex:)];
     });
 }
+
 - (void)yb_AddObject:(id)obj {
     if (obj == nil) {
         NSLog(@"%s can add nil object into NSMutableArray", __FUNCTION__);
@@ -27,6 +28,7 @@
         [self yb_AddObject:obj];
     }
 }
+
 - (void)yb_RemoveObject:(id)obj {
     if (obj == nil) {
         NSLog(@"%s call -removeObject:, but argument obj is nil", __FUNCTION__);
@@ -34,6 +36,7 @@
     }
     [self yb_RemoveObject:obj];
 }
+
 - (void)yb_InsertObject:(id)anObject atIndex:(NSUInteger)index {
     if (anObject == nil) {
         NSLog(@"%s can't insert nil into NSMutableArray", __FUNCTION__);
@@ -43,6 +46,7 @@
         [self yb_InsertObject:anObject atIndex:index];
     }
 }
+
 - (id)yb_ObjectAtIndex:(NSUInteger)index {
     if (self.count == 0) {
         NSLog(@"%s can't get any object from an empty array", __FUNCTION__);
@@ -54,6 +58,7 @@
     }
     return [self yb_ObjectAtIndex:index];
 }
+
 - (void)yb_RemoveObjectAtIndex:(NSUInteger)index {
     if (self.count <= 0) {
         NSLog(@"%s can't get any object from an empty array", __FUNCTION__);

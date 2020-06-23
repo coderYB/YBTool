@@ -8,7 +8,8 @@
 
 #import "YBAsyncRun.h"
 
-void YBAsyncRun(void(^run)(void)){
+void YBAsyncRun(void (^run)(void))
+{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (run) {
             run();

@@ -1,6 +1,6 @@
 //
 //  UITextView+PlaceHolder.m
-//  StockProject
+//  YBTool
 //
 //  Created by 李亚斌 on 2018/2/22.
 //  Copyright © 2018年 李亚斌. All rights reserved.
@@ -14,7 +14,7 @@ static const void *yb_placeHolderKey;
 @end
 
 @implementation UITextView (PlaceHolder)
-+(void)load{
++ (void)load {
     [super load];
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"layoutSubviews")),
                                    class_getInstanceMethod(self.class, @selector(ybPlaceHolder_swizzling_layoutSubviews)));
@@ -23,63 +23,73 @@ static const void *yb_placeHolderKey;
     method_exchangeImplementations(class_getInstanceMethod(self.class, NSSelectorFromString(@"setText:")),
                                    class_getInstanceMethod(self.class, @selector(ybPlaceHolder_swizzled_setText:)));
 }
+
 #pragma mark - swizzled
 - (void)ybPlaceHolder_swizzled_dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self ybPlaceHolder_swizzled_dealloc];
 }
+
 - (void)ybPlaceHolder_swizzling_layoutSubviews {
     if (self.yb_placeHolder) {
         UIEdgeInsets textContainerInset = self.textContainerInset;
         CGFloat lineFragmentPadding = self.textContainer.lineFragmentPadding;
         CGFloat x = lineFragmentPadding + textContainerInset.left + self.layer.borderWidth;
         CGFloat y = textContainerInset.top + self.layer.borderWidth;
-        CGFloat width = CGRectGetWidth(self.bounds) - x - textContainerInset.right - 2*self.layer.borderWidth;
+        CGFloat width = CGRectGetWidth(self.bounds) - x - textContainerInset.right - 2 * self.layer.borderWidth;
         CGFloat height = [self.yb_placeHolderLabel sizeThatFits:CGSizeMake(width, 0)].height;
         self.yb_placeHolderLabel.frame = CGRectMake(x, y, width, height);
     }
     [self ybPlaceHolder_swizzling_layoutSubviews];
 }
-- (void)ybPlaceHolder_swizzled_setText:(NSString *)text{
+
+- (void)ybPlaceHolder_swizzled_setText:(NSString *)text {
     [self ybPlaceHolder_swizzled_setText:text];
     if (self.yb_placeHolder) {
         [self updatePlaceHolder];
     }
 }
+
 #pragma mark - associated
--(NSString *)yb_placeHolder{
+- (NSString *)yb_placeHolder {
     return objc_getAssociatedObject(self, &yb_placeHolderKey);
 }
--(void)setYb_placeHolder:(NSString *)yb_placeHolder{
+
+- (void)setYb_placeHolder:(NSString *)yb_placeHolder {
     objc_setAssociatedObject(self, &yb_placeHolderKey, yb_placeHolder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self updatePlaceHolder];
 }
--(UIColor *)yb_placeHolderColor{
+
+- (UIColor *)yb_placeHolderColor {
     return self.yb_placeHolderLabel.textColor;
 }
 
--(void)setYb_placeHolderColor:(UIColor *)yb_placeHolderColor{
+- (void)setYb_placeHolderColor:(UIColor *)yb_placeHolderColor {
     self.yb_placeHolderLabel.textColor = yb_placeHolderColor;
 }
--(NSString *)placeholder{
+
+- (NSString *)placeholder {
     return self.yb_placeHolder;
 }
--(void)setPlaceholder:(NSString *)placeholder{
+
+- (void)setPlaceholder:(NSString *)placeholder {
     self.yb_placeHolder = placeholder;
 }
+
 #pragma mark - update
-- (void)updatePlaceHolder{
+- (void)updatePlaceHolder {
     if (self.text.length) {
         [self.yb_placeHolderLabel removeFromSuperview];
         return;
     }
-    self.yb_placeHolderLabel.font = self.font?self.font:self.cacutDefaultFont;
+    self.yb_placeHolderLabel.font = self.font ? self.font : self.cacutDefaultFont;
     self.yb_placeHolderLabel.textAlignment = self.textAlignment;
     self.yb_placeHolderLabel.text = self.yb_placeHolder;
     [self insertSubview:self.yb_placeHolderLabel atIndex:0];
 }
+
 #pragma mark - lazzing
--(UILabel *)yb_placeHolderLabel{
+- (UILabel *)yb_placeHolderLabel {
     UILabel *placeHolderLab = objc_getAssociatedObject(self, @selector(yb_placeHolderLabel));
     if (!placeHolderLab) {
         placeHolderLab = [[UILabel alloc] init];
@@ -90,7 +100,8 @@ static const void *yb_placeHolderKey;
     }
     return placeHolderLab;
 }
-- (UIFont *)cacutDefaultFont{
+
+- (UIFont *)cacutDefaultFont {
     static UIFont *font = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -100,4 +111,5 @@ static const void *yb_placeHolderKey;
     });
     return font;
 }
+
 @end

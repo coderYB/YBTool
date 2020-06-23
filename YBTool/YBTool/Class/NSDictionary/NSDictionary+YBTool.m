@@ -19,6 +19,7 @@
 - (BOOL)hasKey:(id)key {
     return [self objectForKey:key] != nil;
 }
+
 /**
  赋值
 
@@ -47,8 +48,7 @@
     return nil;
 }
 
-
-- (NSString*)stringForKey:(id)key {
+- (NSString *)stringForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -57,30 +57,29 @@
         return nil;
     }
     if ([value isKindOfClass:[NSString class]]) {
-        return (NSString*)value;
+        return (NSString *)value;
     }
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value stringValue];
     }
-    
+
     return nil;
 }
 
-- (NSNumber*)numberForKey:(id)key {
+- (NSNumber *)numberForKey:(id)key {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSNumber class]]) {
-        return (NSNumber*)value;
+        return (NSNumber *)value;
     }
     if ([value isKindOfClass:[NSString class]]) {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        return [f numberFromString:(NSString*)value];
+        return [f numberFromString:(NSString *)value];
     }
     return nil;
 }
 
-
-- (NSArray*)arrayForKey:(id)key {
+- (NSArray *)arrayForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -91,8 +90,7 @@
     return nil;
 }
 
-
-- (NSDictionary*)dictionaryForKey:(id)key {
+- (NSDictionary *)dictionaryForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -116,7 +114,7 @@
 
 - (BOOL)boolForKey:(id)key {
     id value = [self objectForKey:key];
-    
+
     if (value == nil || value == [NSNull null]) {
         return NO;
     }
@@ -131,7 +129,7 @@
 
 - (double)doubleForKey:(id)key {
     id value = [self objectForKey:key];
-    
+
     if (value == nil || value == [NSNull null]) {
         return 0;
     }
@@ -149,18 +147,17 @@
  @return <#return value description#>
  */
 + (NSMutableDictionary *)safeDictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2 {
-    NSMutableDictionary * result = [NSMutableDictionary dictionaryWithDictionary:dict1];
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:dict1];
     [dict2 enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
         if (![dict1 objectForKey:key]) {
             if ([obj isKindOfClass:[NSDictionary class]]) {
-                NSDictionary * newVal = [[dict1 objectForKey: key] safeDictionaryByMergingWith: (NSDictionary *) obj];
+                NSDictionary *newVal = [[dict1 objectForKey:key] safeDictionaryByMergingWith:(NSDictionary *)obj];
                 if (newVal && key) {
-                    [result setObject: newVal forKey: key];
+                    [result setObject:newVal forKey:key];
                 }
-                
             } else {
                 if (obj && key) {
-                    [result setObject: obj forKey: key];
+                    [result setObject:obj forKey:key];
                 }
             }
         }
@@ -169,7 +166,7 @@
 }
 
 - (NSMutableDictionary *)safeDictionaryByMergingWith:(NSDictionary *)dict {
-    return [[self class] safeDictionaryByMerging:self with: dict];
+    return [[self class] safeDictionaryByMerging:self with:dict];
 }
 
 /**
@@ -213,7 +210,7 @@
 - (NSDictionary *)mapDictionaryUsingBlock:(id (^)(id object, NSString *key))block {
     if (block) {
         __block NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [self enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
             [dict setObject:block(obj, key) forKey:key];
         }];
         return [dict copy];
@@ -231,16 +228,16 @@
 - (NSDictionary *)filterDictionaryUsingBlock:(BOOL (^) (id object, NSString *key))findBlock stopWhenFind:(BOOL)stopWhenFind {
     if (findBlock) {
         __block NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        
-        [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if (findBlock (obj, key)) {
+
+        [self enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+            if (findBlock(obj, key)) {
                 [dict setObject:obj forKey:key];
                 *stop = stopWhenFind;
             }
         }];
         return [dict copy];
     }
-    
+
     return self;
 }
 
@@ -252,13 +249,12 @@
  @return <#return value description#>
  */
 - (NSDictionary *)deleteDictionaryUsingBlock:(BOOL (^)(id object, NSString *key))deleteBlock stopWhenDelete:(BOOL)stopWhenDelete {
-    
     if (deleteBlock) {
         __block NSMutableArray *keys = [NSMutableArray array];
         NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:self];
-        
-        [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if (deleteBlock(obj,key)) {
+
+        [dict enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+            if (deleteBlock(obj, key)) {
                 [keys addObject:key];
                 *stop = stopWhenDelete;
             }
@@ -266,7 +262,7 @@
         [dict removeObjectsForKeys:keys];
         return [dict copy];
     }
-    
+
     return self;
 }
 
@@ -275,12 +271,11 @@
 
  @return <#return value description#>
  */
-- (NSString *)URLQueryString{
-    
+- (NSString *)URLQueryString {
     NSMutableString *string = [NSMutableString string];
     NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
     NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
-    
+
     for (NSString *key in [self allKeys]) {
         if ([string length]) {
             [string appendString:@"&"];
@@ -296,12 +291,11 @@
 
  @return <#return value description#>
  */
-- (NSDictionary *)URLQueryDictionary{
-    
+- (NSDictionary *)URLQueryDictionary {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
     NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
-    
+
     for (NSString *key in [self allKeys]) {
         NSString *encodedUrl = [self[key] stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
         if (key && encodedUrl) {
@@ -317,13 +311,12 @@
  @param query <#query description#>
  @return <#return value description#>
  */
-+ (NSDictionary *)dictionaryWithURLQuery:(NSString *)query{
-    
++ (NSDictionary *)dictionaryWithURLQuery:(NSString *)query {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSArray *parameters = [query componentsSeparatedByString:@"&"];
-    for(NSString *parameter in parameters) {
+    for (NSString *parameter in parameters) {
         NSArray *contents = [parameter componentsSeparatedByString:@"="];
-        if(contents.count == 2) {
+        if (contents.count == 2) {
             NSString *key = [contents objectAtIndex:0];
             NSString *value = [contents objectAtIndex:1];
             value = [value stringByRemovingPercentEncoding];
@@ -336,7 +329,6 @@
 }
 
 @end
-
 
 #pragma mark - ------------- 可变字典 -------------
 @implementation NSMutableDictionary (YBTool)
@@ -364,16 +356,19 @@
         [self setObject:@(number) forKey:key];
     }
 }
+
 - (void)safeSetIntObject:(int)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
     }
 }
+
 - (void)safeSetIntegerObject:(NSInteger)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
     }
 }
+
 - (void)safeSetUnsignedIntegerObject:(NSUInteger)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
@@ -385,16 +380,19 @@
         [self setObject:@(c) forKey:key];
     }
 }
+
 - (void)safeSetDoubleObject:(double)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
     }
 }
+
 - (void)safeSetFloatObject:(float)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
     }
 }
+
 - (void)safeSetLongLongObject:(long long)number forKey:(id)key {
     if (key) {
         [self setObject:@(number) forKey:key];
@@ -406,16 +404,19 @@
         [self setObject:@(f) forKey:key];
     }
 }
+
 - (void)safeSetPointObject:(CGPoint)point forKey:(id)key {
     if (key) {
         [self setObject:NSStringFromCGPoint(point) forKey:key];
     }
 }
+
 - (void)safeSetSizeObject:(CGSize)size forKey:(id)key {
     if (key) {
         [self setObject:NSStringFromCGSize(size) forKey:key];
     }
 }
+
 - (void)safeSetRectObject:(CGRect)rect forKey:(id)key {
     if (key) {
         [self setObject:NSStringFromCGRect(rect) forKey:key];
@@ -438,14 +439,12 @@
 
  @param block <#block description#>
  */
-- (void)mapUsingBlock:(id (^)(id object, NSString *key))block{
-    
+- (void)mapUsingBlock:(id (^)(id object, NSString *key))block {
     if (block) {
-        [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [self enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
             [self safeSetObject:block(obj, key) forKey:key];
         }];
     }
-    
 }
 
 /**
@@ -455,12 +454,11 @@
  @param stopWhenFind <#stopWhenFind description#>
  */
 - (void)filterUsingBlock:(BOOL (^) (id object, NSString *key))findBlock stopWhenFind:(BOOL)stopWhenFind {
-    
     if (findBlock) {
         __block NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        
-        [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if (findBlock (obj, key)) {
+
+        [self enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+            if (findBlock(obj, key)) {
                 [dict safeSetObject:obj forKey:key];
                 *stop = stopWhenFind;
             }
@@ -470,7 +468,6 @@
     }
 }
 
-
 /**
  删除符合条件的元素
 
@@ -478,11 +475,10 @@
  @param stopWhenDelete <#stopWhenDelete description#>
  */
 - (void)deleteUsingBlock:(BOOL (^)(id object, NSString *key))deleteBlock stopWhenDelete:(BOOL)stopWhenDelete {
-    
     if (deleteBlock) {
         __block NSMutableArray *keys = [NSMutableArray array];
-        [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if (deleteBlock(obj,key)) {
+        [self enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+            if (deleteBlock(obj, key)) {
                 [keys addObject:key];
                 *stop = stopWhenDelete;
             }
@@ -490,4 +486,5 @@
         [self removeObjectsForKeys:keys];
     }
 }
+
 @end

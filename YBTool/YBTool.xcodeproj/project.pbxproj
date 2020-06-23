@@ -19,9 +19,9 @@
 		EA6E86BB207F62FE00EAADED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86BA207F62FE00EAADED /* Assets.xcassets */; };
 		EA6E86BE207F62FE00EAADED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6E86BC207F62FE00EAADED /* LaunchScreen.storyboard */; };
 		EA6E86C1207F62FE00EAADED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86C0207F62FE00EAADED /* main.m */; };
-		EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */; };
-		EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CC207F63DA00EAADED /* BasePickerView.m */; };
-		EA6E8704207F63DB00EAADED /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CE207F63DA00EAADED /* DatePickerView.m */; };
+		EA6E8702207F63DB00EAADED /* YBClearTheCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86C9207F63DA00EAADED /* YBClearTheCacheTools.m */; };
+		EA6E8703207F63DB00EAADED /* YBBasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CC207F63DA00EAADED /* YBBasePickerView.m */; };
+		EA6E8704207F63DB00EAADED /* YBDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86CE207F63DA00EAADED /* YBDatePickerView.m */; };
 		EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */; };
 		EA6E8706207F63DB00EAADED /* NSObject+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D2207F63DA00EAADED /* NSObject+YBTool.m */; };
 		EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86D4207F63DA00EAADED /* NSString+YBTool.m */; };
@@ -37,7 +37,7 @@
 		EA6E8711207F63DB00EAADED /* UIView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86E8207F63DA00EAADED /* UIView+EmptyView.m */; };
 		EA6E8712207F63DB00EAADED /* UIView+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */; };
 		EA6E8713207F63DB00EAADED /* UIViewController+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */; };
-		EA6E8714207F63DB00EAADED /* VideoCompressTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */; };
+		EA6E8714207F63DB00EAADED /* YBVideoCompressTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86EF207F63DA00EAADED /* YBVideoCompressTools.m */; };
 		EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F1207F63DA00EAADED /* YBAlertView.m */; };
 		EA6E8716207F63DB00EAADED /* YBCacheFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */; };
 		EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E86F5207F63DA00EAADED /* YBKeyChain.m */; };
@@ -63,7 +63,6 @@
 		EA8DF52420804A9C00486F41 /* NSDate+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52320804A9C00486F41 /* NSDate+YBTool.m */; };
 		EA8DF52820804ADF00486F41 /* NSError+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52720804ADF00486F41 /* NSError+YBTool.m */; };
 		EA8DF52C20804B3800486F41 /* NSArray+YBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */; };
-		EA8DF52F20804B7200486F41 /* NSArray+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */; };
 		EA8DF53220804CBF00486F41 /* NSMutableArray+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */; };
 		EA8DF5362080517100486F41 /* NSNumber+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF5352080517100486F41 /* NSNumber+YBTool.m */; };
 		EA8DF53A208051B000486F41 /* NSDictionary+YBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8DF539208051B000486F41 /* NSDictionary+YBTool.m */; };
@@ -95,12 +94,12 @@
 		EA6E86BD207F62FE00EAADED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6E86BF207F62FE00EAADED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6E86C0207F62FE00EAADED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearTheCacheTools.h; sourceTree = "<group>"; };
-		EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearTheCacheTools.m; sourceTree = "<group>"; };
-		EA6E86CB207F63DA00EAADED /* BasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePickerView.h; sourceTree = "<group>"; };
-		EA6E86CC207F63DA00EAADED /* BasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePickerView.m; sourceTree = "<group>"; };
-		EA6E86CD207F63DA00EAADED /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
-		EA6E86CE207F63DA00EAADED /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		EA6E86C8207F63DA00EAADED /* YBClearTheCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBClearTheCacheTools.h; sourceTree = "<group>"; };
+		EA6E86C9207F63DA00EAADED /* YBClearTheCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBClearTheCacheTools.m; sourceTree = "<group>"; };
+		EA6E86CB207F63DA00EAADED /* YBBasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBBasePickerView.h; sourceTree = "<group>"; };
+		EA6E86CC207F63DA00EAADED /* YBBasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBBasePickerView.m; sourceTree = "<group>"; };
+		EA6E86CD207F63DA00EAADED /* YBDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBDatePickerView.h; sourceTree = "<group>"; };
+		EA6E86CE207F63DA00EAADED /* YBDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBDatePickerView.m; sourceTree = "<group>"; };
 		EA6E86CF207F63DA00EAADED /* NSData+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YBTool.h"; sourceTree = "<group>"; };
 		EA6E86D0207F63DA00EAADED /* NSData+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YBTool.m"; sourceTree = "<group>"; };
 		EA6E86D1207F63DA00EAADED /* NSObject+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YBTool.h"; sourceTree = "<group>"; };
@@ -131,8 +130,8 @@
 		EA6E86EA207F63DA00EAADED /* UIView+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YBTool.m"; sourceTree = "<group>"; };
 		EA6E86EB207F63DA00EAADED /* UIViewController+YBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YBTool.h"; sourceTree = "<group>"; };
 		EA6E86EC207F63DA00EAADED /* UIViewController+YBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YBTool.m"; sourceTree = "<group>"; };
-		EA6E86EE207F63DA00EAADED /* VideoCompressTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCompressTools.h; sourceTree = "<group>"; };
-		EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCompressTools.m; sourceTree = "<group>"; };
+		EA6E86EE207F63DA00EAADED /* YBVideoCompressTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBVideoCompressTools.h; sourceTree = "<group>"; };
+		EA6E86EF207F63DA00EAADED /* YBVideoCompressTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBVideoCompressTools.m; sourceTree = "<group>"; };
 		EA6E86F0207F63DA00EAADED /* YBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBAlertView.h; sourceTree = "<group>"; };
 		EA6E86F1207F63DA00EAADED /* YBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBAlertView.m; sourceTree = "<group>"; };
 		EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCacheFileUtils.h; sourceTree = "<group>"; };
@@ -183,8 +182,6 @@
 		EA8DF52720804ADF00486F41 /* NSError+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+YBTool.m"; sourceTree = "<group>"; };
 		EA8DF52A20804B3800486F41 /* NSArray+YBLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YBLog.h"; sourceTree = "<group>"; };
 		EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YBLog.m"; sourceTree = "<group>"; };
-		EA8DF52D20804B7200486F41 /* NSArray+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YBTool.h"; sourceTree = "<group>"; };
-		EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YBTool.m"; sourceTree = "<group>"; };
 		EA8DF53020804CBF00486F41 /* NSMutableArray+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YBTool.h"; sourceTree = "<group>"; };
 		EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+YBTool.m"; sourceTree = "<group>"; };
 		EA8DF5342080517100486F41 /* NSNumber+YBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+YBTool.h"; sourceTree = "<group>"; };
@@ -330,10 +327,10 @@
 		EA6E86CA207F63DA00EAADED /* DatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				EA6E86CB207F63DA00EAADED /* BasePickerView.h */,
-				EA6E86CC207F63DA00EAADED /* BasePickerView.m */,
-				EA6E86CD207F63DA00EAADED /* DatePickerView.h */,
-				EA6E86CE207F63DA00EAADED /* DatePickerView.m */,
+				EA6E86CB207F63DA00EAADED /* YBBasePickerView.h */,
+				EA6E86CC207F63DA00EAADED /* YBBasePickerView.m */,
+				EA6E86CD207F63DA00EAADED /* YBDatePickerView.h */,
+				EA6E86CE207F63DA00EAADED /* YBDatePickerView.m */,
 			);
 			path = DatePickerView;
 			sourceTree = "<group>";
@@ -341,8 +338,8 @@
 		EA6E86ED207F63DA00EAADED /* VideoCompressTools */ = {
 			isa = PBXGroup;
 			children = (
-				EA6E86EE207F63DA00EAADED /* VideoCompressTools.h */,
-				EA6E86EF207F63DA00EAADED /* VideoCompressTools.m */,
+				EA6E86EE207F63DA00EAADED /* YBVideoCompressTools.h */,
+				EA6E86EF207F63DA00EAADED /* YBVideoCompressTools.m */,
 			);
 			path = VideoCompressTools;
 			sourceTree = "<group>";
@@ -459,8 +456,8 @@
 		EA8DF5112080439800486F41 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				EA6E86C8207F63DA00EAADED /* ClearTheCacheTools.h */,
-				EA6E86C9207F63DA00EAADED /* ClearTheCacheTools.m */,
+				EA6E86C8207F63DA00EAADED /* YBClearTheCacheTools.h */,
+				EA6E86C9207F63DA00EAADED /* YBClearTheCacheTools.m */,
 				EA6E86F2207F63DA00EAADED /* YBCacheFileUtils.h */,
 				EA6E86F3207F63DA00EAADED /* YBCacheFileUtils.m */,
 				EA6E86F4207F63DA00EAADED /* YBKeyChain.h */,
@@ -599,8 +596,6 @@
 			children = (
 				EA8DF52A20804B3800486F41 /* NSArray+YBLog.h */,
 				EA8DF52B20804B3800486F41 /* NSArray+YBLog.m */,
-				EA8DF52D20804B7200486F41 /* NSArray+YBTool.h */,
-				EA8DF52E20804B7200486F41 /* NSArray+YBTool.m */,
 				EA8DF53020804CBF00486F41 /* NSMutableArray+YBTool.h */,
 				EA8DF53120804CBF00486F41 /* NSMutableArray+YBTool.m */,
 				EA6A65B22087581B009675FC /* NSMutableArray+Swizzling.h */,
@@ -767,21 +762,20 @@
 				EA6E8715207F63DB00EAADED /* YBAlertView.m in Sources */,
 				EA8DF53220804CBF00486F41 /* NSMutableArray+YBTool.m in Sources */,
 				EA6E8705207F63DB00EAADED /* NSData+YBTool.m in Sources */,
-				EA6E8702207F63DB00EAADED /* ClearTheCacheTools.m in Sources */,
+				EA6E8702207F63DB00EAADED /* YBClearTheCacheTools.m in Sources */,
 				EA6E870D207F63DB00EAADED /* UILabel+YBTool.m in Sources */,
 				EA6E870A207F63DB00EAADED /* UIFont+YBTool.m in Sources */,
 				EA8DF53A208051B000486F41 /* NSDictionary+YBTool.m in Sources */,
 				EA6E876A207F8E0D00EAADED /* YBOnceRun.m in Sources */,
 				EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */,
-				EA8DF52F20804B7200486F41 /* NSArray+YBTool.m in Sources */,
 				EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */,
 				EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */,
-				EA6E8703207F63DB00EAADED /* BasePickerView.m in Sources */,
+				EA6E8703207F63DB00EAADED /* YBBasePickerView.m in Sources */,
 				EA8DF5362080517100486F41 /* NSNumber+YBTool.m in Sources */,
 				EA6E874F207F836300EAADED /* UIView+YBEvent.m in Sources */,
 				EA6E8773207F8E8800EAADED /* YBMainThredRun.m in Sources */,
 				EA6E870F207F63DB00EAADED /* UIScrollView+YBTool.m in Sources */,
-				EA6E8704207F63DB00EAADED /* DatePickerView.m in Sources */,
+				EA6E8704207F63DB00EAADED /* YBDatePickerView.m in Sources */,
 				EA6E8770207F8E7700EAADED /* YBAsyncRun.m in Sources */,
 				EA8DF52420804A9C00486F41 /* NSDate+YBTool.m in Sources */,
 				EA6E86B6207F62FC00EAADED /* ViewController.m in Sources */,
@@ -789,7 +783,7 @@
 				EA6E86C1207F62FE00EAADED /* main.m in Sources */,
 				EA6E870E207F63DB00EAADED /* UINavigationBar+YBTool.m in Sources */,
 				EA6E870C207F63DB00EAADED /* UIImageView+YBTool.m in Sources */,
-				EA6E8714207F63DB00EAADED /* VideoCompressTools.m in Sources */,
+				EA6E8714207F63DB00EAADED /* YBVideoCompressTools.m in Sources */,
 				EA6E8709207F63DB00EAADED /* UIColor+YBTool.m in Sources */,
 				EA8DF53E2080530400486F41 /* NSFileManager+YBTool.m in Sources */,
 				EA6E8763207F8C0D00EAADED /* UIApplication+YBTool.m in Sources */,
@@ -962,14 +956,14 @@
 					"\"${PODS_ROOT}/Headers/Public/YBTool\"",
 				);
 				INFOPLIST_FILE = YBTool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Test.YBTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -989,14 +983,14 @@
 					"\"${PODS_ROOT}/Headers/Public/YBTool\"",
 				);
 				INFOPLIST_FILE = YBTool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Test.YBTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

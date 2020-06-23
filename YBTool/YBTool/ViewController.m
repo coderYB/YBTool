@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "YBTool.h"
-
 @interface ViewController (){
     YBCircularProgressView * progressView;
 }
@@ -89,7 +88,6 @@
     NSLog(@"可用磁盘容量 = %lld",[UIDevice getAvailableDiskSize]);
     NSLog(@"当前语言 = %@",[UIDevice getDeviceLanguage]);
     NSLog(@"运营商 = %@",[UIDevice getCarrierName]);
-    NSLog(@"网络类型 = %@",[UIDevice getNetworkTypeName]);
 }
 
 /**
@@ -180,46 +178,6 @@
     NSArray *array = @[@"123",@"abcdefg",@"这是汉语",@{@"empty":@""}];
     NSDictionary *dict = @{@"hello world!":@"你好 世界！",@"empty":@"",@"array":array};
     NSLog(@"%@\n%@",array,dict);
-}
-
-- (void)test_NSArray{
-    NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"1",@"2",@"3",@"1",@"4"];
-    NSLog(@"取越界数据%@",[array safeObjectAtIndex:100]);
-    NSLog(@"不可变数组添加对象返回新的可变数组：%@",[array safeAddObject:@"3"]);
-    NSLog(@"不可变数组删除对象返回新的可变数组：%@",[array safeArrayRemoveObjectAtIndex:1]);
-    
-    NSArray *newArray = [array mapArrayUsingBlock:^id(id object, NSInteger index) {
-        if (index % 2 == 1) {
-            return @"100";
-        }
-        return object;
-    }];
-    NSLog(@"转换数组对象：%@",newArray);
-    
-    
-    NSArray *newArray1 = [array filterArrayUsingBlock:^BOOL(id object) {
-        if ([object integerValue] <4) {
-            return YES;
-        }else{
-            return NO;
-        }
-    } stopWhenFind:NO];
-    
-    NSLog(@"筛选数组对象：%@",newArray1);
-    
-    NSArray *newArray2 = [array deleteArrayUsingBlock:^BOOL(id object) {
-        if ([object integerValue] <4) {
-            return YES;
-        }else{
-            return NO;
-        }
-    } stopWhenDelete:NO];
-    
-    NSLog(@"删除特定数组对象：%@",newArray2);
-    
-    NSLog(@"数组乱序：%@",[array shuffledArray]);
-    NSLog(@"数组倒序：%@",[array reversedArray]);
-    NSLog(@"数组去重：%@",[array uniqueArray]);
 }
 
 - (void)test_NSMutableArray{
@@ -449,7 +407,7 @@
     
     NSDate *nowDate = [NSDate date];
     
-    NSLog(@"今天一个星期的第%lu天",[nowDate weekday]);
+    NSLog(@"今天一个星期的第%lu天",(unsigned long)[nowDate weekday]);
     NSDate *testDate = [NSDate dateWithYYYYMMddHHmmss:@"2017-08-09 12:00:00"];
     NSLog(@"是否是同一周：%d", [nowDate sameWeekWithDate:testDate]);
     

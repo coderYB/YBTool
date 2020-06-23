@@ -15,7 +15,7 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getDirHome{
++ (NSString *)getDirHome {
     return NSHomeDirectory();
 }
 
@@ -24,7 +24,7 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getDirDocumentsPath{
++ (NSString *)getDirDocumentsPath {
     return [self getPathForDirectory:NSDocumentDirectory];
 }
 
@@ -33,9 +33,8 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getDirLibraryPath{
++ (NSString *)getDirLibraryPath {
     return [self getPathForDirectory:NSLibraryDirectory];
-    
 }
 
 /**
@@ -43,7 +42,7 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getDirCachePath{
++ (NSString *)getDirCachePath {
     return [self getPathForDirectory:NSCachesDirectory];
 }
 
@@ -52,11 +51,11 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getDirTmpPath{
++ (NSString *)getDirTmpPath {
     return NSTemporaryDirectory();
 }
 
-+ (NSString *)getPathForDirectory:(NSSearchPathDirectory)directory{
++ (NSString *)getPathForDirectory:(NSSearchPathDirectory)directory {
     return NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES)[0];
 }
 
@@ -66,7 +65,7 @@
  @param path <#path description#>
  @return <#return value description#>
  */
-+ (BOOL)fileExistsAtPath:(NSString *)path{
++ (BOOL)fileExistsAtPath:(NSString *)path {
     return [[self defaultManager] fileExistsAtPath:path];
 }
 
@@ -76,7 +75,7 @@
  @param path <#path description#>
  @return <#return value description#>
  */
-+ (NSArray *)getSubpathsAtPath:(NSString *)path{
++ (NSArray *)getSubpathsAtPath:(NSString *)path {
     if ([self fileExistsAtPath:path]) {
         return [[self defaultManager] subpathsAtPath:path];
     }
@@ -89,14 +88,14 @@
  @param path <#path description#>
  @return <#return value description#>
  */
-+ (NSArray *)getContentsOfDirectoryAtPath:(NSString *)path{
++ (NSArray *)getContentsOfDirectoryAtPath:(NSString *)path {
     NSError *error;
     if ([self fileExistsAtPath:path]) {
         NSArray *fileArray = [[self defaultManager] contentsOfDirectoryAtPath:path error:&error];
         if (!error) {
             return fileArray;
-        }else{
-            NSLog(@"getContentsOfDirectoryAtPath error:%@",error);
+        } else {
+            NSLog(@"getContentsOfDirectoryAtPath error:%@", error);
         }
     }
     return nil;
@@ -109,14 +108,13 @@
  @param dirName <#dirName description#>
  @return <#return value description#>
  */
-+ (BOOL)createDirectoryAtPath:(NSString *)path dirName:(NSString *)dirName{
-    
++ (BOOL)createDirectoryAtPath:(NSString *)path dirName:(NSString *)dirName {
     if ([self fileExistsAtPath:path]) {
         NSString *newDirectory = [path stringByAppendingPathComponent:dirName];
         // 创建目录
-        BOOL res=[[self defaultManager] createDirectoryAtPath:newDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        BOOL res = [[self defaultManager] createDirectoryAtPath:newDirectory withIntermediateDirectories:YES attributes:nil error:nil];
         return res;
-    }else{
+    } else {
         NSLog(@"the path is not exist！");
     }
     return NO;
@@ -129,8 +127,7 @@
  @param fileName <#fileName description#>
  @return <#return value description#>
  */
-+ (BOOL)createFileAtPath:(NSString *)path fileName:(NSString *)fileName{
-    
++ (BOOL)createFileAtPath:(NSString *)path fileName:(NSString *)fileName {
     if ([self fileExistsAtPath:path]) {
         NSString *newFile = [path stringByAppendingPathComponent:fileName];
         if ([self fileExistsAtPath:newFile]) {
@@ -138,9 +135,9 @@
             return YES;
         }
         // 创建文件
-        BOOL res=[[self defaultManager] createFileAtPath:newFile contents:nil attributes:nil];
+        BOOL res = [[self defaultManager] createFileAtPath:newFile contents:nil attributes:nil];
         return res;
-    }else{
+    } else {
         NSLog(@"the path is not exist！");
     }
     return NO;
@@ -154,7 +151,7 @@
  @param fileName <#fileName description#>
  @return <#return value description#>
  */
-+ (BOOL)writeWithData:(NSData *)data toPath:(NSString *)path fileName:(NSString *)fileName{
++ (BOOL)writeWithData:(NSData *)data toPath:(NSString *)path fileName:(NSString *)fileName {
     if ([self fileExistsAtPath:path]) {
         NSString *newFile = [path stringByAppendingPathComponent:fileName];
         return [data writeToFile:newFile atomically:YES];
@@ -168,7 +165,7 @@
  @param path <#path description#>
  @return <#return value description#>
  */
-+ (NSData *)readFileAtPath:(NSString *)path{
++ (NSData *)readFileAtPath:(NSString *)path {
     BOOL isDir = NO;
     if ([[self defaultManager] fileExistsAtPath:path isDirectory:&isDir]) {
         if (!isDir) {
@@ -185,7 +182,7 @@
  @param path <#path description#>
  @return <#return value description#>
  */
-+ (BOOL)deleteFileOrDicAtPath:(NSString *)path{
++ (BOOL)deleteFileOrDicAtPath:(NSString *)path {
     if ([self fileExistsAtPath:path]) {
         return [[self defaultManager] removeItemAtPath:path error:nil];
     }
@@ -199,7 +196,7 @@
  @param dstPath <#dstPath description#>
  @return <#return value description#>
  */
-+ (BOOL)moveItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath{
++ (BOOL)moveItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath {
     if ([self fileExistsAtPath:srcPath]) {
         return [[self defaultManager] moveItemAtPath:srcPath toPath:dstPath error:nil];
     }
@@ -213,7 +210,7 @@
  @param dstPath <#dstPath description#>
  @return <#return value description#>
  */
-+ (BOOL)copyItemAtPath:(NSString *)scrPath toPath:(NSString *)dstPath{
++ (BOOL)copyItemAtPath:(NSString *)scrPath toPath:(NSString *)dstPath {
     if ([self fileExistsAtPath:scrPath]) {
         return [[self defaultManager] copyItemAtPath:scrPath toPath:dstPath error:nil];
     }

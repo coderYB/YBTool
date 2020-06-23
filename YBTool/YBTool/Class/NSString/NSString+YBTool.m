@@ -21,14 +21,14 @@
  @param string <#string description#>
  @return <#return value description#>
  */
-+ (BOOL)isEmptyWithString:(NSString *)string{
++ (BOOL)isEmptyWithString:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;
     }
     if ([string isKindOfClass:[NSNull class]]) {
         return YES;
     }
-    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
         return YES;
     }
     return NO;
@@ -40,7 +40,7 @@
  @param string <#string description#>
  @return <#return value description#>
  */
-- (BOOL)containString:(NSString *)string{
+- (BOOL)containString:(NSString *)string {
     if (![NSString isEmptyWithString:self]) {
         return ([self rangeOfString:string].location == NSNotFound) ? NO : YES;
     }
@@ -55,7 +55,7 @@
 - (BOOL)containsChineseCharacter {
     for (int i = 0; i < self.length; i++) {
         unichar c = [self characterAtIndex:i];
-        if (c >=0x4E00 && c <=0x9FFF) {
+        if (c >= 0x4E00 && c <= 0x9FFF) {
             return YES;
         }
     }
@@ -106,11 +106,11 @@
         NSString *year = nil;
         NSString *month = nil;
         NSString *day = nil;
-        
+
         year = [self substringWithRange:NSMakeRange(6, 4)];
         month = [self substringWithRange:NSMakeRange(10, 2)];
         day = [self substringWithRange:NSMakeRange(12, 2)];
-        
+
         [result appendString:year];
         [result appendString:@"-"];
         [result appendString:month];
@@ -121,53 +121,51 @@
     return nil;
 }
 
-
 /**
  *  判断身份证号码是否正确
  *
  *  @return <#return value description#>
  */
--(BOOL)validateIDCardNumber{
-    NSString  *value = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+- (BOOL)validateIDCardNumber {
+    NSString *value = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSInteger length = 0;
     if (!value) {
         return NO;
-    }else {
+    } else {
         length = value.length;
-        if (length !=15 && length !=18) {
+        if (length != 15 && length != 18) {
             return NO;
         }
     }
     // 省份代码
-    NSArray *areasArray = @[@"11",@"12", @"13",@"14", @"15",@"21", @"22",@"23", @"31",@"32", @"33",@"34", @"35",@"36", @"37",@"41", @"42",@"43", @"44",@"45", @"46",@"50", @"51",@"52", @"53",@"54", @"61",@"62", @"63",@"64", @"65",@"71", @"81",@"82", @"91"];
-    
+    NSArray *areasArray = @[@"11", @"12", @"13", @"14", @"15", @"21", @"22", @"23", @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"41", @"42", @"43", @"44", @"45", @"46", @"50", @"51", @"52", @"53", @"54", @"61", @"62", @"63", @"64", @"65", @"71", @"81", @"82", @"91"];
+
     NSString *valueStart2 = [value substringToIndex:2];
-    BOOL areaFlag =NO;
+    BOOL areaFlag = NO;
     for (NSString *areaCode in areasArray) {
         if ([areaCode isEqualToString:valueStart2]) {
-            areaFlag =YES;
+            areaFlag = YES;
             break;
         }
     }
-    
+
     if (!areaFlag) {
         return false;
     }
-    
+
     NSRegularExpression *regularExpression;
     NSUInteger numberofMatch;
-    
-    int year =0;
+
+    int year = 0;
     switch (length) {
-            case 15:
-            year = [value substringWithRange:NSMakeRange(6,2)].intValue +1900;
-            
-            if (year %4 ==0 || (year %100 ==0 && year %4 ==0)) {
-                
+        case 15:
+            year = [value substringWithRange:NSMakeRange(6, 2)].intValue + 1900;
+
+            if (year % 4 == 0 || (year % 100 == 0 && year % 4 == 0)) {
                 regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}$"
                                                                          options:NSRegularExpressionCaseInsensitive
                                                                            error:nil];//测试出生日期的合法性
-            }else {
+            } else {
                 regularExpression = [[NSRegularExpression alloc] initWithPattern:@"^[1-9][0-9]{5}[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}$"
                                                                          options:NSRegularExpressionCaseInsensitive
                                                                            error:nil];//测试出生日期的合法性
@@ -176,21 +174,20 @@
                                                                options:NSMatchingReportProgress
                                                                  range:NSMakeRange(0, value.length)];
             regularExpression = nil;
-            
-            if(numberofMatch >0) {
+
+            if (numberofMatch > 0) {
                 return YES;
-            }else {
+            } else {
                 return NO;
             }
-            case 18:
-            
-            year = [value substringWithRange:NSMakeRange(6,4)].intValue;
-            if (year %4 ==0 || (year %100 ==0 && year %4 ==0)) {
-                
+        case 18:
+
+            year = [value substringWithRange:NSMakeRange(6, 4)].intValue;
+            if (year % 4 == 0 || (year % 100 == 0 && year % 4 == 0)) {
                 regularExpression = [[NSRegularExpression alloc]initWithPattern:@"^[1-9][0-9]{5}19[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|[1-2][0-9]))[0-9]{3}[0-9Xx]$"
                                                                         options:NSRegularExpressionCaseInsensitive
                                                                           error:nil];//测试出生日期的合法性
-            }else {
+            } else {
                 regularExpression = [[NSRegularExpression alloc]initWithPattern:@"^[1-9][0-9]{5}19[0-9]{2}((01|03|05|07|08|10|12)(0[1-9]|[1-2][0-9]|3[0-1])|(04|06|09|11)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))[0-9]{3}[0-9Xx]$"
                                                                         options:NSRegularExpressionCaseInsensitive
                                                                           error:nil];//测试出生日期的合法性
@@ -199,20 +196,19 @@
                                                                options:NSMatchingReportProgress
                                                                  range:NSMakeRange(0, value.length)];
             regularExpression = nil;
-            
-            if(numberofMatch >0) {
-                int S = ([value substringWithRange:NSMakeRange(0,1)].intValue + [value substringWithRange:NSMakeRange(10,1)].intValue) *7 + ([value substringWithRange:NSMakeRange(1,1)].intValue + [value substringWithRange:NSMakeRange(11,1)].intValue) *9 + ([value substringWithRange:NSMakeRange(2,1)].intValue + [value substringWithRange:NSMakeRange(12,1)].intValue) *10 + ([value substringWithRange:NSMakeRange(3,1)].intValue + [value substringWithRange:NSMakeRange(13,1)].intValue) *5 + ([value substringWithRange:NSMakeRange(4,1)].intValue + [value substringWithRange:NSMakeRange(14,1)].intValue) *8 + ([value substringWithRange:NSMakeRange(5,1)].intValue + [value substringWithRange:NSMakeRange(15,1)].intValue) *4 + ([value substringWithRange:NSMakeRange(6,1)].intValue + [value substringWithRange:NSMakeRange(16,1)].intValue) *2 + [value substringWithRange:NSMakeRange(7,1)].intValue *1 + [value substringWithRange:NSMakeRange(8,1)].intValue *6 + [value substringWithRange:NSMakeRange(9,1)].intValue *3;
-                int Y = S %11;
-                NSString *M =@"F";
-                NSString *JYM =@"10X98765432";
-                M = [JYM substringWithRange:NSMakeRange(Y,1)];// 判断校验位
-                if ([M isEqualToString:[value substringWithRange:NSMakeRange(17,1)]]) {
+
+            if (numberofMatch > 0) {
+                int S = ([value substringWithRange:NSMakeRange(0, 1)].intValue + [value substringWithRange:NSMakeRange(10, 1)].intValue) * 7 + ([value substringWithRange:NSMakeRange(1, 1)].intValue + [value substringWithRange:NSMakeRange(11, 1)].intValue) * 9 + ([value substringWithRange:NSMakeRange(2, 1)].intValue + [value substringWithRange:NSMakeRange(12, 1)].intValue) * 10 + ([value substringWithRange:NSMakeRange(3, 1)].intValue + [value substringWithRange:NSMakeRange(13, 1)].intValue) * 5 + ([value substringWithRange:NSMakeRange(4, 1)].intValue + [value substringWithRange:NSMakeRange(14, 1)].intValue) * 8 + ([value substringWithRange:NSMakeRange(5, 1)].intValue + [value substringWithRange:NSMakeRange(15, 1)].intValue) * 4 + ([value substringWithRange:NSMakeRange(6, 1)].intValue + [value substringWithRange:NSMakeRange(16, 1)].intValue) * 2 + [value substringWithRange:NSMakeRange(7, 1)].intValue * 1 + [value substringWithRange:NSMakeRange(8, 1)].intValue * 6 + [value substringWithRange:NSMakeRange(9, 1)].intValue * 3;
+                int Y = S % 11;
+                NSString *M = @"F";
+                NSString *JYM = @"10X98765432";
+                M = [JYM substringWithRange:NSMakeRange(Y, 1)];// 判断校验位
+                if ([M isEqualToString:[value substringWithRange:NSMakeRange(17, 1)]]) {
                     return YES;// 检测ID的校验位
-                }else {
+                } else {
                     return NO;
                 }
-                
-            }else {
+            } else {
                 return NO;
             }
         default:
@@ -225,61 +221,63 @@
  *
  *  @return <#return value description#>
  */
--(BOOL)validatePhoneNumber{
-    NSString * MOBILE = @"^1(3[0-9]|4[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
-    
-    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[2378])\\d)\\d{7}$";
-    
-    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
-    
-    NSString * CT = @"^1((33|53|77|8[019])[0-9]|349)\\d{7}$";
-    
-    NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
-    
+- (BOOL)validatePhoneNumber {
+    NSString *MOBILE = @"^1(3[0-9]|4[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
+
+    NSString *CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[2378])\\d)\\d{7}$";
+
+    NSString *CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
+
+    NSString *CT = @"^1((33|53|77|8[019])[0-9]|349)\\d{7}$";
+
+    NSString *PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
+
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
     NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
     NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
     NSPredicate *regextestphs = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", PHS];
-    
+
     BOOL res1 = [regextestmobile evaluateWithObject:self];
     BOOL res2 = [regextestcm evaluateWithObject:self];
     BOOL res3 = [regextestcu evaluateWithObject:self];
     BOOL res4 = [regextestct evaluateWithObject:self];
     BOOL res5 = [regextestphs evaluateWithObject:self];
-    
-    if (res1 || res2 || res3 || res4 ||res5) {
+
+    if (res1 || res2 || res3 || res4 || res5) {
         return YES;
-    }else{
+    } else {
         return NO;
     }
 }
+
 /**
  *  简单的11位手机号码校验
  *
  *  @return <#return value description#>
  */
 
--(BOOL)simpleValidatePhone{
+- (BOOL)simpleValidatePhone {
     NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^\\d{11}$"];
     if ([regextestmobile evaluateWithObject:self]) {
         return YES;
     }
     return NO;
 }
+
 /**
  *  身份证号
  *
  *  @return <#return value description#>
  */
--(BOOL) validateIdentityCard{
+- (BOOL)validateIdentityCard {
     BOOL flag;
     if (self.length <= 0) {
         flag = NO;
         return flag;
     }
     NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
-    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex2];
     return [identityCardPredicate evaluateWithObject:self];
 }
 
@@ -288,9 +286,9 @@
  *
  *  @return <#return value description#>
  */
--(BOOL) validateCarNo{
+- (BOOL)validateCarNo {
     NSString *carRegex = @"^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fa5]$";
-    NSPredicate *carTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",carRegex];
+    NSPredicate *carTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", carRegex];
     return [carTest evaluateWithObject:self];
 }
 
@@ -299,45 +297,47 @@
  *
  *  @return <#return value description#>
  */
--(BOOL) validateEmail{
+- (BOOL)validateEmail {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:self];
 }
+
 /**
  *  字符串去首位空格
  *
  *  @return <#return value description#>
  */
--(NSString*)trim{
+- (NSString *)trim {
     NSString *tmp = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return [tmp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 //SHA1加密
--(NSString*)sha1{
+- (NSString *)sha1 {
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (unsigned int)data.length, digest);
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
     return output;
 }
+
 /**
  *  SHA256加密
  *
  *  @return <#return value description#>
  */
-- (NSString *)sha256{
+- (NSString *)sha256 {
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-    NSMutableString* result = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH *2];
-    for(int i =0; i < CC_SHA256_DIGEST_LENGTH; i++) {
+    NSMutableString *result = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
         [result appendFormat:@"%02x", digest[i]];
     }
     return result;
@@ -348,13 +348,13 @@
  *
  *  @return <#return value description#>
  */
-- (NSString *)sha384{
+- (NSString *)sha384 {
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
     uint8_t digest[CC_SHA384_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-    NSMutableString* result = [NSMutableString stringWithCapacity:CC_SHA384_DIGEST_LENGTH *2];
-    for(int i =0; i < CC_SHA384_DIGEST_LENGTH; i++) {
+    NSMutableString *result = [NSMutableString stringWithCapacity:CC_SHA384_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA384_DIGEST_LENGTH; i++) {
         [result appendFormat:@"%02x", digest[i]];
     }
     return result;
@@ -365,14 +365,15 @@
  *
  *  @return <#return value description#>
  */
-- (NSString *)sha512{
+- (NSString *)sha512 {
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512(data.bytes, (CC_LONG)data.length, digest);
-    NSMutableString* result = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH *2];
-    for(int i =0; i < CC_SHA512_DIGEST_LENGTH; i++)
+    NSMutableString *result = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++) {
         [result appendFormat:@"%02x", digest[i]];
+    }
     return result;
 }
 
@@ -381,20 +382,17 @@
  *
  *  @return <#return value description#>
  */
--(NSString*)urlEncode{
-    return (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                                  (CFStringRef)self,
-                                                                                  NULL,
-                                                                                  (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                  kCFStringEncodingUTF8));
+- (NSString *)urlEncode {
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@""]];
 }
+
 /**
  *  url解码
  *
  *  @return <#return value description#>
  */
--(NSString*)urlDecode{
-    return (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)self, CFSTR(""), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+- (NSString *)urlDecode {
+    return [self stringByRemovingPercentEncoding];
 }
 
 /**
@@ -402,34 +400,34 @@
  *
  *  @return <#return value description#>
  */
--(NSString*)md5{
+- (NSString *)md5 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
-    CC_MD5( cStr, (CC_LONG)strlen(cStr), result );
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
     return [NSString stringWithFormat:
             @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],
             result[8], result[9], result[10], result[11], result[12], result[13], result[14], result[15]
-            ];
+    ];
 }
 
 /**
  DES+Base64加密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)desEncryptWithKey:(NSString*)key{
+- (NSString *)desEncryptWithKey:(NSString *)key {
     return [self encrypt:self encryptOrDecrypt:kCCEncrypt key:key];
 }
 
 /**
  DES+Base64解密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)desDecryptWithKey:(NSString*)key{
+- (NSString *)desDecryptWithKey:(NSString *)key {
     //kCCDecrypt 解密
     return [self encrypt:self encryptOrDecrypt:kCCDecrypt key:key];
 }
@@ -443,29 +441,29 @@
  *
  *  @return <#return value description#>
  */
-- (NSString *)encrypt:(NSString *)sText encryptOrDecrypt:(CCOperation)encryptOperation key:(NSString *)key{
+- (NSString *)encrypt:(NSString *)sText encryptOrDecrypt:(CCOperation)encryptOperation key:(NSString *)key {
     const void *vplainText;
     size_t plainTextBufferSize;
     NSData *data = [sText dataUsingEncoding:NSUTF8StringEncoding];
-    if (encryptOperation == kCCDecrypt){//解密
+    if (encryptOperation == kCCDecrypt) {//解密
         NSData *encryptData = [[NSData alloc] initWithBase64EncodedData:data options:NSDataBase64DecodingIgnoreUnknownCharacters];
         plainTextBufferSize = [encryptData length];
         vplainText = [encryptData bytes];
-    }else{//加密
+    } else {//加密
         plainTextBufferSize = [data length];
         vplainText = (const void *)[data bytes];
     }
-    
+
     CCCryptorStatus ccStatus;
     uint8_t *bufferPtr = NULL;
     size_t bufferPtrSize = 0;
     size_t movedBytes = 0;
-    
+
     bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES) & ~(kCCBlockSize3DES - 1);
-    bufferPtr = malloc( bufferPtrSize * sizeof(uint8_t));
+    bufferPtr = malloc(bufferPtrSize * sizeof(uint8_t));
     memset((void *)bufferPtr, 0x0, bufferPtrSize);
     // memset((void *) iv, 0x0, (size_t) sizeof(iv));
-    
+
     // const void *vkey = (const void *)[DESKEY UTF8String];
     const void *vkey = (const void *)[[key dataUsingEncoding:NSUTF8StringEncoding] bytes];
     // NSString *initVec = @"init Vec";
@@ -483,47 +481,47 @@
                        bufferPtrSize,
                        &movedBytes);
     NSString *result;
-    
-    if (encryptOperation == kCCDecrypt){
+
+    if (encryptOperation == kCCDecrypt) {
         result = [[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)bufferPtr
                                                                length:(NSUInteger)movedBytes]
                                        encoding:NSUTF8StringEncoding];
-    }else{
+    } else {
         NSData *myData = [NSData dataWithBytes:(const void *)bufferPtr length:(NSUInteger)movedBytes];
         return [myData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     }
-    
+
     return result;
 }
 
 /**
  AES加密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)aesEncryptWitKey:(NSString*)key{
+- (NSString *)aesEncryptWitKey:(NSString *)key {
     NSData *data = [[self dataUsingEncoding:NSUTF8StringEncoding] aes256_encrypt:key];
     NSString *aesEncryp = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return aesEncryp;
 }
 
-
 /**
  AES解密
- 
+
  @param key <#key description#>
  @return <#return value description#>
  */
-- (NSString *)aesDecryptWitKey:(NSString*)key{
+- (NSString *)aesDecryptWitKey:(NSString *)key {
     return [[NSString alloc] initWithData:[[self dataUsingEncoding:NSUTF8StringEncoding] aes256_encrypt:key] encoding:NSUTF8StringEncoding];
 }
+
 /**
  *  base64编码
  *
  *  @return <#return value description#>
  */
--(NSString*)base64Encoding{
+- (NSString *)base64Encoding {
     NSString *encodeString = [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     //去掉oc自带算法的换行符
     encodeString = [encodeString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -535,18 +533,17 @@
  *
  *  @return <#return value description#>
  */
--(NSString*)base64Decodeing{
+- (NSString *)base64Decodeing {
     NSString *string =  [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters] encoding:NSUTF8StringEncoding];
     return string;
 }
-
 
 /**
  *  截取URL中的参数
  *
  *  @return NSMutableDictionary parameters
  */
-- (NSMutableDictionary *)getURLParameters{
+- (NSMutableDictionary *)getURLParameters {
     // 查找参数
     NSRange range = [self rangeOfString:@"?"];
     if (range.location == NSNotFound) {
@@ -556,12 +553,12 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // 截取参数
     NSString *parametersString = [self substringFromIndex:range.location + 1];
-    
+
     // 判断参数是单个参数还是多个参数
     if ([parametersString containsString:@"&"]) {
         // 多个参数，分割参数
         NSArray *urlComponents = [parametersString componentsSeparatedByString:@"&"];
-        
+
         for (NSString *keyValuePair in urlComponents) {
             // 生成Key/Value
             NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
@@ -578,7 +575,7 @@
                     // 已存在的值生成数组
                     NSMutableArray *items = [NSMutableArray arrayWithArray:existValue];
                     [items addObject:value];
-                    
+
                     [params setValue:items forKey:key];
                 } else {
                     // 非数组
@@ -591,7 +588,7 @@
         }
     } else {
         // 单个参数
-        
+
         // 生成Key/Value
         NSArray *pairComponents = [parametersString componentsSeparatedByString:@"="];
         // 只有一个参数，没有值
@@ -610,26 +607,26 @@
     }
     return params;
 }
+
 /**
  将某段字符串处理成带富文本属性的字符串
- 
+
  @param partOfStr 需要将字符串中那些子串进行处理
  @param color 处理成的颜色
  @param font 处理成的字体
  @return <#return value description#>
  */
-- (NSMutableAttributedString *)mutableAttributedStringWithPartStr:(NSString *)partOfStr changeToColor:(UIColor *)color font:(UIFont *)font{
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithString:self];
-    if(partOfStr.length){
+- (NSMutableAttributedString *)mutableAttributedStringWithPartStr:(NSString *)partOfStr changeToColor:(UIColor *)color font:(UIFont *)font {
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:self];
+    if (partOfStr.length) {
         [attrStr addAttribute:NSFontAttributeName value:font range:[self rangeOfString:partOfStr]];
         [attrStr addAttribute:NSForegroundColorAttributeName value:color range:[self rangeOfString:partOfStr]];
     }
     return attrStr;
 }
 
-
-- (NSMutableAttributedString *)mutableAttributedStringWithPartStrRange:(NSRange)range changeToColor:(UIColor *)color font:(UIFont *)font{
-    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithString:self];
+- (NSMutableAttributedString *)mutableAttributedStringWithPartStrRange:(NSRange)range changeToColor:(UIColor *)color font:(UIFont *)font {
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:self];
     [attrStr addAttribute:NSFontAttributeName value:font range:range];
     [attrStr addAttribute:NSForegroundColorAttributeName value:color range:range];
     return attrStr;
@@ -643,21 +640,19 @@
  *  @return <#return value description#>
  */
 
-+ (NSString *)separatedDigitStringWithStr:(NSString *)digitString{
-    
++ (NSString *)separatedDigitStringWithStr:(NSString *)digitString {
     if (digitString.length <= 6) {
         return digitString;
     } else {
-        NSString *string=[digitString substringToIndex:digitString.length-3];
-        
+        NSString *string = [digitString substringToIndex:digitString.length - 3];
+
         NSMutableString *processString = [NSMutableString stringWithString:string];
         NSInteger location = processString.length - 3;
         NSMutableArray *processArray = [NSMutableArray array];
         while (location >= 0) {
             NSString *temp = [processString substringWithRange:NSMakeRange(location, 3)];
             [processArray addObject:temp];
-            if (location < 3 && location > 0)
-            {
+            if (location < 3 && location > 0) {
                 NSString *t = [processString substringWithRange:NSMakeRange(0, location)];
                 [processArray addObject:t];
             }
@@ -665,12 +660,10 @@
         }
         NSMutableArray *resultsArray = [NSMutableArray array];
         int k = 0;
-        for (NSString *str in processArray)
-        {
+        for (NSString *str in processArray) {
             k++;
             NSMutableString *tmp = [NSMutableString stringWithString:str];
-            if (str.length > 2 && k < processArray.count )
-            {
+            if (str.length > 2 && k < processArray.count) {
                 [tmp insertString:@"," atIndex:0];
                 [resultsArray addObject:tmp];
             } else {
@@ -678,14 +671,12 @@
             }
         }
         NSMutableString *resultString = [NSMutableString string];
-        for (NSInteger i = resultsArray.count - 1 ; i >= 0; i--)
-        {
+        for (NSInteger i = resultsArray.count - 1; i >= 0; i--) {
             NSString *tmp = [resultsArray objectAtIndex:i];
             [resultString appendString:tmp];
         }
-        return [resultString stringByAppendingString:[digitString substringFromIndex:digitString.length-3]];
+        return [resultString stringByAppendingString:[digitString substringFromIndex:digitString.length - 3]];
     }
-    
 }
 
 /**
@@ -693,7 +684,7 @@
 
  @return <#return value description#>
  */
-+ (NSString *)getUUID{
++ (NSString *)getUUID {
     if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
         if (idfa) {
@@ -715,13 +706,13 @@
  @param constrainSize <#constrainSize description#>
  @return <#return value description#>
  */
-- (CGSize)getSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)constrainSize{
+- (CGSize)getSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)constrainSize {
     CGSize size = CGSizeZero;
     CGRect rect = [self boundingRectWithSize:constrainSize
                                      options:NSStringDrawingTruncatesLastVisibleLine
                    | NSStringDrawingUsesFontLeading
                    | NSStringDrawingUsesLineFragmentOrigin
-                                  attributes:@{NSFontAttributeName : font}
+                                  attributes:@{ NSFontAttributeName: font }
                                      context:nil];
     size = rect.size;
     return size;
@@ -729,20 +720,20 @@
 
 /**
  NSString转为NSData
- 
+
  @return <#return value description#>
  */
-- (NSData *)getData{
+- (NSData *)getData {
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-
 /**
  NSString转为Char
- 
+
  @return <#return value description#>
  */
-- (const char *)getChar{
+- (const char *)getChar {
     return [self UTF8String];
 }
+
 @end

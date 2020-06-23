@@ -14,10 +14,10 @@ static const void *extendObjectKey = @"extentObject";
 @implementation NSObject (YBTool)
 /**
  runtime 扩展属性
- 
+
  @return <#return value description#>
  */
--(NSMutableDictionary *)extentObject{
+- (NSMutableDictionary *)extentObject {
     NSMutableDictionary *object = objc_getAssociatedObject(self, &extendObjectKey);
     if (object == nil) {
         object = [NSMutableDictionary dictionary];
@@ -26,20 +26,19 @@ static const void *extendObjectKey = @"extentObject";
     return object;
 }
 
--(void)setExtentObject:(NSMutableDictionary *)extentObject{
+- (void)setExtentObject:(NSMutableDictionary *)extentObject {
     objc_setAssociatedObject(self, &extendObjectKey, extentObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 
 /**
  归档
 
  @param aCoder <#aCoder description#>
  */
-- (void)encodeObjectWithCoder:(NSCoder *)aCoder{
+- (void)encodeObjectWithCoder:(NSCoder *)aCoder {
     unsigned int count = 0;
     Ivar *ivars = class_copyIvarList([self class], &count);
-    
+
     for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];
         const char *name = ivar_getName(ivar);
@@ -50,13 +49,12 @@ static const void *extendObjectKey = @"extentObject";
     free(ivars);
 }
 
-
 /**
  解档
 
  @param aDecoder <#aDecoder description#>
  */
-- (void)decodeObjectCoder:(NSCoder *)aDecoder{
+- (void)decodeObjectCoder:(NSCoder *)aDecoder {
     unsigned int count = 0;
     Ivar *ivars = class_copyIvarList([self class], &count);
     for (int i = 0; i < count; i++) {
@@ -70,11 +68,12 @@ static const void *extendObjectKey = @"extentObject";
     }
     free(ivars);
 }
+
 /* 获取对象的成员变量*/
-- (NSArray *)getAllIvars{
+- (NSArray *)getAllIvars {
     unsigned int count = 0;
     Ivar *ivars = class_copyIvarList([self class], &count);
-    
+
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < count; i++) {
         const char *ivarName = ivar_getName(ivars[i]);
@@ -85,10 +84,10 @@ static const void *extendObjectKey = @"extentObject";
 }
 
 /* 获取对象的所有属性*/
-- (NSArray *)getAllProperties{
+- (NSArray *)getAllProperties {
     unsigned int count = 0;
     objc_property_t *properties = class_copyPropertyList([self class], &count);
-    
+
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < count; i++) {
         const char *propertyName = property_getName(properties[i]);
@@ -99,21 +98,20 @@ static const void *extendObjectKey = @"extentObject";
 }
 
 /* 获取对象的所有方法*/
-- (NSArray *)getAllMethods{
-    
-    unsigned int count =0;
-    Method* methodList = class_copyMethodList([self class],&count);
-    
+- (NSArray *)getAllMethods {
+    unsigned int count = 0;
+    Method *methodList = class_copyMethodList([self class], &count);
+
     NSMutableArray *array = [NSMutableArray array];
-    
-    for(int i = 0; i<count; i++){
+
+    for (int i = 0; i < count; i++) {
         Method method = methodList[i];
         SEL sel = method_getName(method);
         const char *name = sel_getName(sel);
         [array addObject:[NSString stringWithUTF8String:name]];
     }
     free(methodList);
-    
+
     return [array copy];
 }
 

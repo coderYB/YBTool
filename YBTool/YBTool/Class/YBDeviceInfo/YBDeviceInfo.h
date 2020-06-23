@@ -15,28 +15,27 @@
 
  @return 设备IDFA
  */
-+(NSString *)yb_getDeviceIDFA;
++ (NSString *)yb_getDeviceIDFA;
 
 /**
  获取设备IDFV
 
  @return 设备IDFV
  */
-+(NSString *)yb_getDeviceIDFV;
-
++ (NSString *)yb_getDeviceIDFV;
 
 /**
  获取设备MAC
 
  @return 设备MAC
  */
-+(NSString*)yb_getDeviceMAC;
++ (NSString *)yb_getDeviceMAC;
 
 /**
  获取设备UUID
 
  @return 设备UUID
  */
-+(NSString*)yb_getDeviceUUID;
++ (NSString *)yb_getDeviceUUID;
 
 @end

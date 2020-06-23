@@ -17,12 +17,10 @@
  */
 + (void)quickOpenURLString:(NSString *)urlString;
 
-
 /**
  跳转到app设置页面
  */
 + (void)goToAppSetting;
-
 
 /**
  拨打电话
@@ -30,7 +28,5 @@
  @param telephone <#telephone description#>
  */
 + (void)goToTelephone:(NSString *)telephone;
-
-
 
 @end

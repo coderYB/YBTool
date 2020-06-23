@@ -9,17 +9,19 @@
 #import "UIButton+YBTool.h"
 #import <objc/runtime.h>
 #import "UIImage+YBTool.h"
-@interface HandlerInvoke : NSObject <NSCopying>{}
+@interface HandlerInvoke : NSObject <NSCopying>
+{
+}
 
 - (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents;
 @property (nonatomic) UIControlEvents controlEvents;
-@property (nonatomic, copy) void (^handler)(id sender);
+@property (nonatomic, copy) void (^ handler)(id sender);
 
 @end
 
 @implementation HandlerInvoke
 
-- (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents{
+- (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents {
     self = [super init];
     if (self) {
         self.handler = handler;
@@ -28,16 +30,15 @@
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone{
+- (id)copyWithZone:(NSZone *)zone {
     return [[HandlerInvoke alloc] initWithHandler:self.handler forControlEvents:self.controlEvents];
 }
 
-- (void)invoke:(id)sender{
+- (void)invoke:(id)sender {
     self.handler(sender);
 }
 
--(void)dealloc{
-    
+- (void)dealloc {
 }
 
 @end
@@ -45,8 +46,8 @@
 static const void *LHandlersKey = &LHandlersKey;
 
 @implementation UIButton (YBTool)
-+ (UIButton *)buttonWithNormalTitle:(NSString *)title selectedTitle:(NSString *)selectedtitle font:(UIFont *)font NormaltitleColor:(UIColor *)color selectedTitleColor:(UIColor *)selectedColor normalImage:(UIImage *)image selectedImage:(UIImage *)selectedImage withBlock:(void(^)(id sender))block{
-    UIButton * btn = [[UIButton alloc]init];
++ (UIButton *)buttonWithNormalTitle:(NSString *)title selectedTitle:(NSString *)selectedtitle font:(UIFont *)font NormaltitleColor:(UIColor *)color selectedTitleColor:(UIColor *)selectedColor normalImage:(UIImage *)image selectedImage:(UIImage *)selectedImage withBlock:(void (^)(id sender))block {
+    UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:title forState:UIControlStateNormal];
     btn.titleLabel.font = font;
     [btn setTitleColor:color forState:UIControlStateNormal];
@@ -68,20 +69,23 @@ static const void *LHandlersKey = &LHandlersKey;
     return btn;
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color withBlock:(void(^)(id sender))block{
-    return  [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:nil selectedImage:nil withBlock:block];
++ (UIButton *)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color withBlock:(void (^)(id sender))block {
+    return [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:nil selectedImage:nil withBlock:block];
 }
 
-+ (UIButton *)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color normalImage:(UIImage *)image withBlock:(void(^)(id sender))block{
-    return  [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:image selectedImage:nil withBlock:block];
++ (UIButton *)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color normalImage:(UIImage *)image withBlock:(void (^)(id sender))block {
+    return [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:image selectedImage:nil withBlock:block];
 }
-- (void)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color withBlock:(void(^)(id sender))block{
+
+- (void)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color withBlock:(void (^)(id sender))block {
     [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:nil selectedImage:nil withBlock:block];
 }
-- (void)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color normalImage:(UIImage *)image withBlock:(void(^)(id sender))block{
+
+- (void)buttonWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)color normalImage:(UIImage *)image withBlock:(void (^)(id sender))block {
     [self buttonWithNormalTitle:title selectedTitle:nil font:font NormaltitleColor:color selectedTitleColor:nil normalImage:image selectedImage:nil withBlock:block];
 }
-- (void)buttonWithNormalTitle:(NSString *)title selectedTitle:(NSString *)selectedtitle font:(UIFont *)font NormaltitleColor:(UIColor *)color selectedTitleColor:(UIColor *)selectedColor normalImage:(UIImage *)image selectedImage:(UIImage *)selectedImage withBlock:(void(^)(id sender))block{
+
+- (void)buttonWithNormalTitle:(NSString *)title selectedTitle:(NSString *)selectedtitle font:(UIFont *)font NormaltitleColor:(UIColor *)color selectedTitleColor:(UIColor *)selectedColor normalImage:(UIImage *)image selectedImage:(UIImage *)selectedImage withBlock:(void (^)(id sender))block {
     [self setTitle:title forState:UIControlStateNormal];
     self.titleLabel.font = font;
     [self setTitleColor:color forState:UIControlStateNormal];
@@ -102,58 +106,57 @@ static const void *LHandlersKey = &LHandlersKey;
     }
 }
 
-
 /**
  设置Normal下的图片
- 
+
  @param image 图片
  */
-- (void)setNormalImage:(UIImage *)image{
+- (void)setNormalImage:(UIImage *)image {
     [self setImage:image forState:UIControlStateNormal];
 }
 
 /**
  设置hlighted]下的图片
- 
+
  @param image 图片
  */
-- (void)setHighlightedImage:(UIImage *)image{
+- (void)setHighlightedImage:(UIImage *)image {
     [self setImage:image forState:UIControlStateHighlighted];
 }
 
 /**
  设置Selected下的图片
- 
+
  @param image 图片
  */
-- (void)setSelectedImage:(UIImage *)image{
+- (void)setSelectedImage:(UIImage *)image {
     [self setImage:image forState:UIControlStateSelected];
 }
 
 /**
  设置Normal下的图片
- 
+
  @param name 图片名
  */
-- (void)setNormalImageName:(NSString *)name{
+- (void)setNormalImageName:(NSString *)name {
     [self setImage:YBNameImage(name) forState:UIControlStateNormal];
 }
 
 /**
  设置hlighted]下的图片
- 
+
  @param name 图片名
  */
-- (void)setHighlightedImageName:(NSString *)name{
+- (void)setHighlightedImageName:(NSString *)name {
     [self setImage:YBNameImage(name) forState:UIControlStateHighlighted];
 }
 
 /**
  设置Selected下的图片
- 
+
  @param name 图片名
  */
-- (void)setSelectedImageName:(NSString *)name{
+- (void)setSelectedImageName:(NSString *)name {
     [self setImage:YBNameImage(name) forState:UIControlStateSelected];
 }
 
@@ -161,7 +164,7 @@ static const void *LHandlersKey = &LHandlersKey;
  设置Normal下的背景图片
  @param image 图片
  */
--(void)setNormalBackgroundImage:(UIImage*)image{
+- (void)setNormalBackgroundImage:(UIImage *)image {
     [self setBackgroundImage:image forState:UIControlStateNormal];
 }
 
@@ -169,7 +172,7 @@ static const void *LHandlersKey = &LHandlersKey;
  设置hlighted]下的背景图片
  @param image 图片
  */
--(void)setHighlightedBackgroundImage:(UIImage*)image{
+- (void)setHighlightedBackgroundImage:(UIImage *)image {
     [self setBackgroundImage:image forState:UIControlStateHighlighted];
 }
 
@@ -177,7 +180,7 @@ static const void *LHandlersKey = &LHandlersKey;
  设置Selected下的背景图片
  @param image 图片
  */
--(void)setSelectedBackgroundImage:(UIImage*)image{
+- (void)setSelectedBackgroundImage:(UIImage *)image {
     [self setBackgroundImage:image forState:UIControlStateSelected];
 }
 
@@ -185,7 +188,7 @@ static const void *LHandlersKey = &LHandlersKey;
  设置Normal下的背景图片
  @param name 图片名
  */
--(void)setNormalBackgroundImageName:(NSString*)name{
+- (void)setNormalBackgroundImageName:(NSString *)name {
     [self setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
 }
 
@@ -193,7 +196,7 @@ static const void *LHandlersKey = &LHandlersKey;
  设置Highlighted下的背景图片
  @param name 图片名
  */
--(void)setHighlightedBackgroundImageName:(NSString*)name{
+- (void)setHighlightedBackgroundImageName:(NSString *)name {
     [self setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateHighlighted];
 }
 
@@ -201,69 +204,71 @@ static const void *LHandlersKey = &LHandlersKey;
  设置Selected下的背景图片
  @param name 图片名
  */
--(void)setSelectedBackgroundImageName:(NSString*)name{
+- (void)setSelectedBackgroundImageName:(NSString *)name {
     [self setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateSelected];
 }
 
 /**
  设置Normal下的Title
- 
+
  @param title <#title description#>
  */
--(void)setNormalTitle:(NSString*)title{
+- (void)setNormalTitle:(NSString *)title {
     [self setTitle:title forState:UIControlStateNormal];
 }
 
 /**
  设置Highlighted下的Title
- 
+
  @param title <#title description#>
  */
--(void)setHighlightedTitle:(NSString*)title{
+- (void)setHighlightedTitle:(NSString *)title {
     [self setTitle:title forState:UIControlStateHighlighted];
 }
 
 /**
  设置Selected下的Title
- 
+
  @param title <#title description#>
  */
--(void)setSelectedTitle:(NSString*)title{
+- (void)setSelectedTitle:(NSString *)title {
     [self setTitle:title forState:UIControlStateSelected];
 }
 
 /**
  设置Normal下的Title Color
- 
+
  @param color <#color description#>
  */
--(void)setNormalTitleColor:(UIColor *)color{
+- (void)setNormalTitleColor:(UIColor *)color {
     [self setTitleColor:color forState:UIControlStateNormal];
 }
 
 /**
  设置Highlighted下的Title Color
- 
+
  @param color <#color description#>
  */
--(void)setHighlightedTitleColor:(UIColor *)color{
+- (void)setHighlightedTitleColor:(UIColor *)color {
     [self setTitleColor:color forState:UIControlStateHighlighted];
 }
+
 /**
  设置Selected下的Title Color
- 
+
  @param color <#color description#>
  */
--(void)setSelectedTitleColor:(UIColor *)color{
+- (void)setSelectedTitleColor:(UIColor *)color {
     [self setTitleColor:color forState:UIControlStateSelected];
 }
+
 /**
  创建便捷的通用点击事件
- 
+
  @param controlEvent button事件
  @param handler 回调block
  */
--(void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler{
+- (void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler {
     NSMutableArray *events = objc_getAssociatedObject(self, LHandlersKey);
     if (!events) {
         events = [NSMutableArray array];
@@ -276,22 +281,22 @@ static const void *LHandlersKey = &LHandlersKey;
 
 /**
  创建最常用的TouchUpInside点击
- 
+
  @param handler 回调block
  */
--(void)handlerTouchUpInsideEvent:(void (^)(id sender))handler{
+- (void)handlerTouchUpInsideEvent:(void (^)(id sender))handler {
     [self handlerControlEvent:UIControlEventTouchUpInside handler:handler];
 }
 
 /**
  移除target
- 
+
  @param event <#event description#>
  */
--(void)removeTargetWithEvent:(UIControlEvents)event{
+- (void)removeTargetWithEvent:(UIControlEvents)event {
     NSMutableArray *events = objc_getAssociatedObject(self, LHandlersKey);
     NSMutableArray *copyArray = [events mutableCopy];
-    [copyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [copyArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         HandlerInvoke *target = events[idx];
         if (target.controlEvents == event) {
             [self removeTarget:target action:NULL forControlEvents:event];
@@ -306,7 +311,6 @@ static const void *LHandlersKey = &LHandlersKey;
  */
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
     [self setBackgroundImage:[UIImage imageWithColor:backgroundColor] forState:state];
-    
 }
 
 @end

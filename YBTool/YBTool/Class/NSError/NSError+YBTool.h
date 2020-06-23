@@ -27,7 +27,6 @@
                         code:(NSInteger)code
                  description:(NSString *)description;
 
-
 /**
  获取error信息
 

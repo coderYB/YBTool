@@ -263,5 +263,4 @@
 
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
 
-
 @end

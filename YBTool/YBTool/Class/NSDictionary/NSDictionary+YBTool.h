@@ -20,7 +20,6 @@
  */
 - (BOOL)hasKey:(id)key;
 
-
 /**
  赋值
 
@@ -28,7 +27,6 @@
  @param key <#key description#>
  */
 - (void)safeSetValue:(id)value forKey:(id)key;
-
 
 /**
  取值
@@ -38,14 +36,13 @@
  */
 - (id)safeValueForKey:(id)key;
 
-- (NSString*)stringForKey:(id)key;
-- (NSNumber*)numberForKey:(id)key;
-- (NSArray*)arrayForKey:(id)key;
-- (NSDictionary*)dictionaryForKey:(id)key;
+- (NSString *)stringForKey:(id)key;
+- (NSNumber *)numberForKey:(id)key;
+- (NSArray *)arrayForKey:(id)key;
+- (NSDictionary *)dictionaryForKey:(id)key;
 - (NSInteger)integerForKey:(id)key;
 - (BOOL)boolForKey:(id)key;
 - (double)doubleForKey:(id)key;
-
 
 /**
  合并
@@ -57,15 +54,12 @@
 + (NSMutableDictionary *)safeDictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2;
 - (NSMutableDictionary *)safeDictionaryByMergingWith:(NSDictionary *)dict;
 
-
-
 /**
  转换为json字符串
 
  @return <#return value description#>
  */
 - (NSString *)safeJSONString;
-
 
 /**
  删除元素
@@ -75,7 +69,6 @@
  */
 - (NSDictionary *)safeDictionaryRemoveObjectForKey:(id)key;
 
-
 /**
  遍历字典转化修改
 
@@ -83,7 +76,6 @@
  @return <#return value description#>
  */
 - (NSDictionary *)mapDictionaryUsingBlock:(id (^)(id object, NSString *key))block;
-
 
 /**
  筛选符合条件的键值对
@@ -93,7 +85,6 @@
  @return <#return value description#>
  */
 - (NSDictionary *)filterDictionaryUsingBlock:(BOOL (^) (id object, NSString *key))findBlock stopWhenFind:(BOOL)stopWhenFind;
-
 
 /**
  删除符合条件的元素
@@ -118,7 +109,6 @@
  */
 - (NSDictionary *)URLQueryDictionary;
 
-
 /**
  根据url编码字符串获取参数字典
 
@@ -127,14 +117,10 @@
  */
 + (NSDictionary *)dictionaryWithURLQuery:(NSString *)query;
 
-
-
 @end
-
 
 #pragma mark - ------------- 可变字典 -------------
 @interface NSMutableDictionary (YBTool)
-
 
 /**
  对象赋值
@@ -143,7 +129,6 @@
  @param key <#key description#>
  */
 - (void)safeSetObject:(id)object forKey:(id)key;
-
 
 /**
  基本类型赋值
@@ -166,7 +151,6 @@
 - (void)safeSetSizeObject:(CGSize)size forKey:(id)key;
 - (void)safeSetRectObject:(CGRect)rect forKey:(id)key;
 
-
 /**
  删除元素
 
@@ -174,14 +158,12 @@
  */
 - (void)safeRemoveObjectForKey:(id)key;
 
-
 /**
  遍历字典转化修改
 
  @param block <#block description#>
  */
 - (void)mapUsingBlock:(id (^)(id object, NSString *key))block;
-
 
 /**
  筛选符合条件的键值对
@@ -191,7 +173,6 @@
  */
 - (void)filterUsingBlock:(BOOL (^) (id object, NSString *key))findBlock stopWhenFind:(BOOL)stopWhenFind;
 
-
 /**
  删除符合条件的元素
 
@@ -199,6 +180,5 @@
  @param stopWhenDelete <#stopWhenDelete description#>
  */
 - (void)deleteUsingBlock:(BOOL (^)(id object, NSString *key))deleteBlock stopWhenDelete:(BOOL)stopWhenDelete;
-
 
 @end

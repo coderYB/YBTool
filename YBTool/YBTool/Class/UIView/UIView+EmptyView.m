@@ -19,43 +19,42 @@ typedef void (^ActionBlock)(void);
 static char emptyViewKey;
 /**
  显示空view
- 
+
  @param text <#text description#>
  @param image <#image description#>
  */
--(void)showEmptyViewWithText:(NSString *)text image:(NSString *)image{
+- (void)showEmptyViewWithText:(NSString *)text image:(NSString *)image {
     [self hiddenEmptyView];
-    
+
     UIView *emptyView = [[UIView alloc] initWithFrame:self.bounds];
     [emptyView setTag:5463156];
     [emptyView setBackgroundColor:[UIColor whiteColor]];
     [self addSubview:emptyView];
-    
+
     UIImageView *iconImageView = [[UIImageView alloc] initWithImage:YBNameImage(image)];
-    [iconImageView setCenter:CGPointMake(emptyView.width/2, emptyView.height/2-iconImageView.height/2)];
+    [iconImageView setCenter:CGPointMake(emptyView.width / 2, emptyView.height / 2 - iconImageView.height / 2)];
     [emptyView addSubview:iconImageView];
-    
-    
-    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, iconImageView.bottom+15, emptyView.width, 14)];
+
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, iconImageView.bottom + 15, emptyView.width, 14)];
     [textLabel setTextColor:[UIColor colorWithHex:0xcccccc]];
     [textLabel setFont:YBSystemFont(15)];
     [textLabel setTextAlignment:NSTextAlignmentCenter];
     [textLabel setText:text];
     [textLabel setNumberOfLines:0];
     [emptyView addSubview:textLabel];
-    
+
     if ([image length]) {
-        [iconImageView setCenter:CGPointMake(emptyView.width/2, emptyView.height/2-iconImageView.height/2)];
-        [textLabel setFrame:CGRectMake(0, iconImageView.bottom+24, emptyView.width, textLabel.textHeight)];
-    }else{
+        [iconImageView setCenter:CGPointMake(emptyView.width / 2, emptyView.height / 2 - iconImageView.height / 2)];
+        [textLabel setFrame:CGRectMake(0, iconImageView.bottom + 24, emptyView.width, textLabel.textHeight)];
+    } else {
         [iconImageView setFrame:CGRectMake(0, 0, 0, 0)];
-        [textLabel setFrame:CGRectMake(0, (emptyView.height-textLabel.textHeight)/2, emptyView.width, textLabel.textHeight)];
+        [textLabel setFrame:CGRectMake(0, (emptyView.height - textLabel.textHeight) / 2, emptyView.width, textLabel.textHeight)];
     }
-    
+
     UIButton *reloadButton = [[UIButton alloc] initWithFrame:emptyView.bounds];
     [reloadButton setBackgroundColor:[UIColor clearColor]];
     [emptyView addSubview:reloadButton];
-    __weak typeof(self)weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     [reloadButton handlerTouchUpInsideEvent:^(id sender) {
         ActionBlock block = (ActionBlock)objc_getAssociatedObject(weakSelf, &emptyViewKey);
         if (block) {
@@ -63,10 +62,11 @@ static char emptyViewKey;
         }
     }];
 }
+
 /**
  *  隐藏空view
  */
--(void)hiddenEmptyView{
+- (void)hiddenEmptyView {
     UIView *emptyView = [self viewWithTag:5463156];
     if (emptyView) {
         [emptyView removeFromSuperview];
@@ -77,17 +77,17 @@ static char emptyViewKey;
 /**
  *  获取空view
  */
--(UIView*)emptyView{
+- (UIView *)emptyView {
     return [self viewWithTag:5463156];
 }
-
 
 /**
  *  点击空视图回调
  *
  *  @param handleBlock <#handleBlock description#>
  */
--(void)emptyViewHandle:(void (^)(void))handleBlock{
+- (void)emptyViewHandle:(void (^)(void))handleBlock {
     objc_setAssociatedObject(self, &emptyViewKey, handleBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
+
 @end

@@ -15,14 +15,12 @@
 
  @return <#return value description#>
  */
-+ (UIViewController *)getCurrentPresentedVC{
-    
++ (UIViewController *)getCurrentPresentedVC {
     UIWindow *keywindow = [[[UIApplication sharedApplication] delegate] window];
     UIViewController *topVC = keywindow.rootViewController;
-    
-    while (topVC.presentedViewController) {
+
+    while (topVC.presentedViewController)
         topVC = topVC.presentedViewController;
-    }
     return topVC;
 }
 
@@ -31,17 +29,15 @@
 
  @return <#return value description#>
  */
-+ (UIViewController *)getCurrentVC{
++ (UIViewController *)getCurrentVC {
     UIViewController *currentViewController = [UIWindow getCurrentPresentedVC];
-    
+
     while ([currentViewController isKindOfClass:[UINavigationController class]]
-           && [(UINavigationController *) currentViewController topViewController]) {
-        
+           && [(UINavigationController *) currentViewController topViewController])
+
         currentViewController = [(UINavigationController *) currentViewController topViewController];
-    }
-    
+
     return currentViewController;
-    
 }
 
 @end

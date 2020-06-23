@@ -1,6 +1,6 @@
 //
-//  YBPopupMenu.m
-//  YBPopupMenu
+//  YBTool.m
+//  YBTool
 //
 //  Created by lyb on 2017/5/10.
 //  Copyright © 2017年 lyb. All rights reserved.
@@ -9,9 +9,9 @@
 #import "YBPopupMenu.h"
 #import "YBPopupMenuPath.h"
 
-#define YBScreenWidth [UIScreen mainScreen].bounds.size.width
+#define YBScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define YBScreenHeight [UIScreen mainScreen].bounds.size.height
-#define YBMainWindow  [UIApplication sharedApplication].keyWindow
+#define YBMainWindow   [UIApplication sharedApplication].keyWindow
 #define YB_SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
 
 #pragma mark - /////////////
@@ -19,12 +19,12 @@
 
 @interface YBPopupMenuCell : UITableViewCell
 @property (nonatomic, assign) BOOL isShowSeparator;
-@property (nonatomic, strong) UIColor * separatorColor;
+@property (nonatomic, strong) UIColor *separatorColor;
 @end
 
 @implementation YBPopupMenuCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _isShowSeparator = YES;
@@ -34,17 +34,17 @@
     return self;
 }
 
-- (void)setIsShowSeparator:(BOOL)isShowSeparator{
+- (void)setIsShowSeparator:(BOOL)isShowSeparator {
     _isShowSeparator = isShowSeparator;
     [self setNeedsDisplay];
 }
 
-- (void)setSeparatorColor:(UIColor *)separatorColor{
+- (void)setSeparatorColor:(UIColor *)separatorColor {
     _separatorColor = separatorColor;
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect{
+- (void)drawRect:(CGRect)rect {
     if (!_isShowSeparator) return;
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, rect.size.height - 0.5, rect.size.width, 0.5)];
     [_separatorColor setFill];
@@ -54,26 +54,24 @@
 
 @end
 
+@interface YBPopupMenu ()<UITableViewDelegate, UITableViewDataSource>
 
-
-@interface YBPopupMenu ()<UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic, strong) UIView      * menuBackView;
-@property (nonatomic) CGRect                relyRect;
-@property (nonatomic, strong) UITableView * tableView;
-@property (nonatomic, assign) CGFloat       minSpace;
-@property (nonatomic, assign) CGFloat       itemWidth;
-@property (nonatomic, strong) NSArray     * titles;
-@property (nonatomic, strong) NSArray     * images;
-@property (nonatomic) CGPoint               point;
-@property (nonatomic, assign) BOOL          isCornerChanged;
-@property (nonatomic, strong) UIColor     * separatorColor;
-@property (nonatomic, assign) BOOL          isChangeDirection;
+@property (nonatomic, strong) UIView *menuBackView;
+@property (nonatomic) CGRect relyRect;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) CGFloat minSpace;
+@property (nonatomic, assign) CGFloat itemWidth;
+@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *images;
+@property (nonatomic) CGPoint point;
+@property (nonatomic, assign) BOOL isCornerChanged;
+@property (nonatomic, strong) UIColor *separatorColor;
+@property (nonatomic, assign) BOOL isChangeDirection;
 @end
 
 @implementation YBPopupMenu
 
-- (instancetype)init{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self setDefaultSettings];
@@ -82,7 +80,7 @@
 }
 
 #pragma mark - publics
-+ (YBPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate{
++ (YBPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate {
     YBPopupMenu *popupMenu = [[YBPopupMenu alloc] init];
     popupMenu.point = point;
     popupMenu.titles = titles;
@@ -93,7 +91,7 @@
     return popupMenu;
 }
 
-+ (YBPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate{
++ (YBPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate {
     CGRect absoluteRect = [view convertRect:view.bounds toView:YBMainWindow];
     CGPoint relyPoint = CGPointMake(absoluteRect.origin.x + absoluteRect.size.width / 2, absoluteRect.origin.y + absoluteRect.size.height);
     YBPopupMenu *popupMenu = [[YBPopupMenu alloc] init];
@@ -107,18 +105,18 @@
     return popupMenu;
 }
 
-+ (YBPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (YBPopupMenu * popupMenu))otherSetting{
++ (YBPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (YBPopupMenu *popupMenu))otherSetting {
     YBPopupMenu *popupMenu = [[YBPopupMenu alloc] init];
     popupMenu.point = point;
     popupMenu.titles = titles;
     popupMenu.images = icons;
     popupMenu.itemWidth = itemWidth;
-    YB_SAFE_BLOCK(otherSetting,popupMenu);
+    YB_SAFE_BLOCK(otherSetting, popupMenu);
     [popupMenu show];
     return popupMenu;
 }
 
-+ (YBPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (YBPopupMenu * popupMenu))otherSetting{
++ (YBPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (YBPopupMenu *popupMenu))otherSetting {
     CGRect absoluteRect = [view convertRect:view.bounds toView:YBMainWindow];
     CGPoint relyPoint = CGPointMake(absoluteRect.origin.x + absoluteRect.size.width / 2, absoluteRect.origin.y + absoluteRect.size.height);
     YBPopupMenu *popupMenu = [[YBPopupMenu alloc] init];
@@ -127,17 +125,17 @@
     popupMenu.titles = titles;
     popupMenu.images = icons;
     popupMenu.itemWidth = itemWidth;
-    YB_SAFE_BLOCK(otherSetting,popupMenu);
+    YB_SAFE_BLOCK(otherSetting, popupMenu);
     [popupMenu show];
     return popupMenu;
 }
 
-- (void)dismiss{
+- (void)dismiss {
     __weak typeof(self) this = self;
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuBeganDismiss)]) {
         [self.delegate ybPopupMenuBeganDismiss];
     }
-    [UIView animateWithDuration: 0.25 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
         self.alpha = 0;
         this.menuBackView.alpha = 0;
@@ -152,12 +150,12 @@
 }
 
 #pragma mark tableViewDelegate & dataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _titles.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString * identifier = @"ybPopupMenu";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"ybPopupMenu";
     YBPopupMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[YBPopupMenuCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
@@ -168,50 +166,49 @@
     cell.textLabel.font = [UIFont systemFontOfSize:_fontSize];
     if ([_titles[indexPath.row] isKindOfClass:[NSAttributedString class]]) {
         cell.textLabel.attributedText = _titles[indexPath.row];
-    }else if ([_titles[indexPath.row] isKindOfClass:[NSString class]]) {
+    } else if ([_titles[indexPath.row] isKindOfClass:[NSString class]]) {
         cell.textLabel.text = _titles[indexPath.row];
-    }else {
+    } else {
         cell.textLabel.text = nil;
     }
     cell.separatorColor = _separatorColor;
     if (_images.count >= indexPath.row + 1) {
         if ([_images[indexPath.row] isKindOfClass:[NSString class]]) {
             cell.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
-        }else if ([_images[indexPath.row] isKindOfClass:[UIImage class]]){
+        } else if ([_images[indexPath.row] isKindOfClass:[UIImage class]]) {
             cell.imageView.image = _images[indexPath.row];
-        }else {
+        } else {
             cell.imageView.image = nil;
         }
-    }else {
+    } else {
         cell.imageView.image = nil;
     }
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_dismissOnSelected) [self dismiss];
-    
+
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidSelectedAtIndex:ybPopupMenu:)]) {
-        
         [self.delegate ybPopupMenuDidSelectedAtIndex:indexPath.row ybPopupMenu:self];
     }
 }
 
 #pragma mark - scrollViewDelegate
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     YBPopupMenuCell *cell = [self getLastVisibleCell];
     cell.isShowSeparator = YES;
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     YBPopupMenuCell *cell = [self getLastVisibleCell];
     cell.isShowSeparator = NO;
 }
 
-- (YBPopupMenuCell *)getLastVisibleCell{
-    NSArray <NSIndexPath *>*indexPaths = [self.tableView indexPathsForVisibleRows];
-    indexPaths = [indexPaths sortedArrayUsingComparator:^NSComparisonResult(NSIndexPath *  _Nonnull obj1, NSIndexPath *  _Nonnull obj2) {
+- (YBPopupMenuCell *)getLastVisibleCell {
+    NSArray <NSIndexPath *> *indexPaths = [self.tableView indexPathsForVisibleRows];
+    indexPaths = [indexPaths sortedArrayUsingComparator:^NSComparisonResult (NSIndexPath *_Nonnull obj1, NSIndexPath *_Nonnull obj2) {
         return obj1.row < obj2.row;
     }];
     NSIndexPath *indexPath = indexPaths.firstObject;
@@ -219,7 +216,7 @@
 }
 
 #pragma mark - privates
-- (void)show{
+- (void)show {
     __weak typeof(self) this = self;
     [YBMainWindow addSubview:_menuBackView];
     [YBMainWindow addSubview:self];
@@ -229,7 +226,7 @@
         [self.delegate ybPopupMenuBeganShow];
     }
     self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
-    [UIView animateWithDuration: 0.25 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(1.0, 1.0);
         self.alpha = 1;
         this.menuBackView.alpha = 1;
@@ -240,7 +237,7 @@
     }];
 }
 
-- (void)setDefaultSettings{
+- (void)setDefaultSettings {
     _cornerRadius = 5.0;
     _rectCorner = UIRectCornerAllCorners;
     self.isShowShadow = YES;
@@ -267,14 +264,14 @@
     _menuBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YBScreenWidth, YBScreenHeight)];
     _menuBackView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
     _menuBackView.alpha = 0;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
-    [_menuBackView addGestureRecognizer: tap];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchOutSide)];
+    [_menuBackView addGestureRecognizer:tap];
     self.alpha = 0;
     self.backgroundColor = [UIColor clearColor];
     [self addSubview:self.tableView];
 }
 
-- (UITableView *)tableView{
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.backgroundColor = [UIColor clearColor];
@@ -286,179 +283,179 @@
     return _tableView;
 }
 
-- (void)touchOutSide{
+- (void)touchOutSide {
     if (_dismissOnTouchOutside) {
         [self dismiss];
     }
 }
 
-- (void)setIsShowShadow:(BOOL)isShowShadow{
+- (void)setIsShowShadow:(BOOL)isShowShadow {
     _isShowShadow = isShowShadow;
     self.layer.shadowOpacity = isShowShadow ? 0.5 : 0;
     self.layer.shadowOffset = CGSizeMake(0, 0);
     self.layer.shadowRadius = isShowShadow ? 2.0 : 0;
 }
 
-- (void)setShowMaskView:(BOOL)showMaskView{
+- (void)setShowMaskView:(BOOL)showMaskView {
     _showMaskView = showMaskView;
     _menuBackView.backgroundColor = showMaskView ? [[UIColor blackColor] colorWithAlphaComponent:0.1] : [UIColor clearColor];
 }
 
-- (void)setType:(YBPopupMenuType)type{
+- (void)setType:(YBPopupMenuType)type {
     _type = type;
     switch (type) {
-        case YBPopupMenuTypeDark:{
+        case YBPopupMenuTypeDark: {
             _textColor = [UIColor lightGrayColor];
             _backColor = [UIColor colorWithRed:0.25 green:0.27 blue:0.29 alpha:1];
             _separatorColor = [UIColor lightGrayColor];
         }
-            break;
-            
-        default:{
+        break;
+
+        default: {
             _textColor = [UIColor blackColor];
             _backColor = [UIColor whiteColor];
             _separatorColor = [UIColor lightGrayColor];
         }
-            break;
+        break;
     }
     [self updateUI];
 }
 
-- (void)setFontSize:(CGFloat)fontSize{
+- (void)setFontSize:(CGFloat)fontSize {
     _fontSize = fontSize;
     [self.tableView reloadData];
 }
 
-- (void)setTextColor:(UIColor *)textColor{
+- (void)setTextColor:(UIColor *)textColor {
     _textColor = textColor;
     [self.tableView reloadData];
 }
 
-- (void)setPoint:(CGPoint)point{
+- (void)setPoint:(CGPoint)point {
     _point = point;
     [self updateUI];
 }
 
-- (void)setItemWidth:(CGFloat)itemWidth{
+- (void)setItemWidth:(CGFloat)itemWidth {
     _itemWidth = itemWidth;
     [self updateUI];
 }
 
-- (void)setItemHeight:(CGFloat)itemHeight{
+- (void)setItemHeight:(CGFloat)itemHeight {
     _itemHeight = itemHeight;
     self.tableView.rowHeight = itemHeight;
     [self updateUI];
 }
 
-- (void)setBorderWidth:(CGFloat)borderWidth{
+- (void)setBorderWidth:(CGFloat)borderWidth {
     _borderWidth = borderWidth;
     [self updateUI];
 }
 
-- (void)setBorderColor:(UIColor *)borderColor{
+- (void)setBorderColor:(UIColor *)borderColor {
     _borderColor = borderColor;
     [self updateUI];
 }
 
-- (void)setArrowPosition:(CGFloat)arrowPosition{
+- (void)setArrowPosition:(CGFloat)arrowPosition {
     _arrowPosition = arrowPosition;
     [self updateUI];
 }
 
-- (void)setArrowWidth:(CGFloat)arrowWidth{
+- (void)setArrowWidth:(CGFloat)arrowWidth {
     _arrowWidth = arrowWidth;
     [self updateUI];
 }
 
-- (void)setArrowHeight:(CGFloat)arrowHeight{
+- (void)setArrowHeight:(CGFloat)arrowHeight {
     _arrowHeight = arrowHeight;
     [self updateUI];
 }
 
-- (void)setArrowDirection:(YBPopupMenuArrowDirection)arrowDirection{
+- (void)setArrowDirection:(YBPopupMenuArrowDirection)arrowDirection {
     _arrowDirection = arrowDirection;
     [self updateUI];
 }
 
-- (void)setMaxVisibleCount:(NSInteger)maxVisibleCount{
+- (void)setMaxVisibleCount:(NSInteger)maxVisibleCount {
     _maxVisibleCount = maxVisibleCount;
     [self updateUI];
 }
 
-- (void)setBackColor:(UIColor *)backColor{
+- (void)setBackColor:(UIColor *)backColor {
     _backColor = backColor;
     [self updateUI];
 }
 
-- (void)setTitles:(NSArray *)titles{
+- (void)setTitles:(NSArray *)titles {
     _titles = titles;
     [self updateUI];
 }
 
-- (void)setImages:(NSArray *)images{
+- (void)setImages:(NSArray *)images {
     _images = images;
     [self updateUI];
 }
 
-- (void)setPriorityDirection:(YBPopupMenuPriorityDirection)priorityDirection{
+- (void)setPriorityDirection:(YBPopupMenuPriorityDirection)priorityDirection {
     _priorityDirection = priorityDirection;
     [self updateUI];
 }
 
-- (void)setRectCorner:(UIRectCorner)rectCorner{
+- (void)setRectCorner:(UIRectCorner)rectCorner {
     _rectCorner = rectCorner;
     [self updateUI];
 }
 
-- (void)setCornerRadius:(CGFloat)cornerRadius{
+- (void)setCornerRadius:(CGFloat)cornerRadius {
     _cornerRadius = cornerRadius;
     [self updateUI];
 }
 
-- (void)setOffset:(CGFloat)offset{
+- (void)setOffset:(CGFloat)offset {
     _offset = offset;
     [self updateUI];
 }
 
-- (void)updateUI{
+- (void)updateUI {
     CGFloat height;
     if (_titles.count > _maxVisibleCount) {
         height = _itemHeight * _maxVisibleCount + _borderWidth * 2;
         self.tableView.bounces = YES;
-    }else {
+    } else {
         height = _itemHeight * _titles.count + _borderWidth * 2;
         self.tableView.bounces = NO;
     }
-     _isChangeDirection = NO;
+    _isChangeDirection = NO;
     if (_priorityDirection == YBPopupMenuPriorityDirectionTop) {
         if (_point.y + height + _arrowHeight > YBScreenHeight - _minSpace) {
             _arrowDirection = YBPopupMenuArrowDirectionBottom;
             _isChangeDirection = YES;
-        }else {
+        } else {
             _arrowDirection = YBPopupMenuArrowDirectionTop;
             _isChangeDirection = NO;
         }
-    }else if (_priorityDirection == YBPopupMenuPriorityDirectionBottom) {
+    } else if (_priorityDirection == YBPopupMenuPriorityDirectionBottom) {
         if (_point.y - height - _arrowHeight < _minSpace) {
             _arrowDirection = YBPopupMenuArrowDirectionTop;
             _isChangeDirection = YES;
-        }else {
+        } else {
             _arrowDirection = YBPopupMenuArrowDirectionBottom;
             _isChangeDirection = NO;
         }
-    }else if (_priorityDirection == YBPopupMenuPriorityDirectionLeft) {
+    } else if (_priorityDirection == YBPopupMenuPriorityDirectionLeft) {
         if (_point.x + _itemWidth + _arrowHeight > YBScreenWidth - _minSpace) {
             _arrowDirection = YBPopupMenuArrowDirectionRight;
             _isChangeDirection = YES;
-        }else {
+        } else {
             _arrowDirection = YBPopupMenuArrowDirectionLeft;
             _isChangeDirection = NO;
         }
-    }else if (_priorityDirection == YBPopupMenuPriorityDirectionRight) {
+    } else if (_priorityDirection == YBPopupMenuPriorityDirectionRight) {
         if (_point.x - _itemWidth - _arrowHeight < _minSpace) {
             _arrowDirection = YBPopupMenuArrowDirectionLeft;
             _isChangeDirection = YES;
-        }else {
+        } else {
             _arrowDirection = YBPopupMenuArrowDirectionRight;
             _isChangeDirection = NO;
         }
@@ -466,45 +463,44 @@
     [self setArrowPosition];
     [self setRelyRect];
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
-        CGFloat y = _isChangeDirection ? _point.y  : _point.y;
+        CGFloat y = _isChangeDirection ? _point.y : _point.y;
         if (_arrowPosition > _itemWidth / 2) {
             self.frame = CGRectMake(YBScreenWidth - _minSpace - _itemWidth, y, _itemWidth, height + _arrowHeight);
-        }else if (_arrowPosition < _itemWidth / 2) {
+        } else if (_arrowPosition < _itemWidth / 2) {
             self.frame = CGRectMake(_minSpace, y, _itemWidth, height + _arrowHeight);
-        }else {
+        } else {
             self.frame = CGRectMake(_point.x - _itemWidth / 2, y, _itemWidth, height + _arrowHeight);
         }
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
         CGFloat y = _isChangeDirection ? _point.y - _arrowHeight - height : _point.y - _arrowHeight - height;
         if (_arrowPosition > _itemWidth / 2) {
             self.frame = CGRectMake(YBScreenWidth - _minSpace - _itemWidth, y, _itemWidth, height + _arrowHeight);
-        }else if (_arrowPosition < _itemWidth / 2) {
+        } else if (_arrowPosition < _itemWidth / 2) {
             self.frame = CGRectMake(_minSpace, y, _itemWidth, height + _arrowHeight);
-        }else {
+        } else {
             self.frame = CGRectMake(_point.x - _itemWidth / 2, y, _itemWidth, height + _arrowHeight);
         }
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
         CGFloat x = _isChangeDirection ? _point.x : _point.x;
         if (_arrowPosition < _itemHeight / 2) {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
-        }else if (_arrowPosition > _itemHeight / 2) {
+        } else if (_arrowPosition > _itemHeight / 2) {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
-        }else {
+        } else {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
         }
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
         CGFloat x = _isChangeDirection ? _point.x - _itemWidth - _arrowHeight : _point.x - _itemWidth - _arrowHeight;
         if (_arrowPosition < _itemHeight / 2) {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
-        }else if (_arrowPosition > _itemHeight / 2) {
+        } else if (_arrowPosition > _itemHeight / 2) {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
-        }else {
+        } else {
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
         }
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionNone) {
-        
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionNone) {
     }
-    
+
     if (_isChangeDirection) {
         [self changeRectCorner];
     }
@@ -514,36 +510,35 @@
     [self setNeedsDisplay];
 }
 
-- (void)setRelyRect{
+- (void)setRelyRect {
     if (CGRectEqualToRect(_relyRect, CGRectZero)) {
         return;
     }
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         _point.y = _relyRect.size.height + _relyRect.origin.y;
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
         _point.y = _relyRect.origin.y;
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
         _point = CGPointMake(_relyRect.origin.x + _relyRect.size.width, _relyRect.origin.y + _relyRect.size.height / 2);
-    }else {
+    } else {
         _point = CGPointMake(_relyRect.origin.x, _relyRect.origin.y + _relyRect.size.height / 2);
     }
 }
 
-
-- (void)setFrame:(CGRect)frame{
+- (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         self.tableView.frame = CGRectMake(_borderWidth, _borderWidth + _arrowHeight, frame.size.width - _borderWidth * 2, frame.size.height - _arrowHeight);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
         self.tableView.frame = CGRectMake(_borderWidth, _borderWidth, frame.size.width - _borderWidth * 2, frame.size.height - _arrowHeight);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
-        self.tableView.frame = CGRectMake(_borderWidth + _arrowHeight, _borderWidth , frame.size.width - _borderWidth * 2 - _arrowHeight, frame.size.height);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
-        self.tableView.frame = CGRectMake(_borderWidth , _borderWidth , frame.size.width - _borderWidth * 2 - _arrowHeight, frame.size.height);
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
+        self.tableView.frame = CGRectMake(_borderWidth + _arrowHeight, _borderWidth, frame.size.width - _borderWidth * 2 - _arrowHeight, frame.size.height);
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
+        self.tableView.frame = CGRectMake(_borderWidth, _borderWidth, frame.size.width - _borderWidth * 2 - _arrowHeight, frame.size.height);
     }
 }
 
-- (void)changeRectCorner{
+- (void)changeRectCorner {
     if (_isCornerChanged || _rectCorner == UIRectCornerAllCorners) {
         return;
     }
@@ -560,84 +555,82 @@
     if (_rectCorner & UIRectCornerBottomRight) {
         haveBottomRightCorner = YES;
     }
-    
+
     if (_arrowDirection == YBPopupMenuArrowDirectionTop || _arrowDirection == YBPopupMenuArrowDirectionBottom) {
-        
         if (haveTopLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerBottomLeft;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerBottomLeft);
         }
         if (haveTopRightCorner) {
             _rectCorner = _rectCorner | UIRectCornerBottomRight;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerBottomRight);
         }
         if (haveBottomLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerTopLeft;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerTopLeft);
         }
         if (haveBottomRightCorner) {
             _rectCorner = _rectCorner | UIRectCornerTopRight;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerTopRight);
         }
-        
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
         if (haveTopLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerTopRight;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerTopRight);
         }
         if (haveTopRightCorner) {
             _rectCorner = _rectCorner | UIRectCornerTopLeft;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerTopLeft);
         }
         if (haveBottomLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerBottomRight;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerBottomRight);
         }
         if (haveBottomRightCorner) {
             _rectCorner = _rectCorner | UIRectCornerBottomLeft;
-        }else {
+        } else {
             _rectCorner = _rectCorner & (~UIRectCornerBottomLeft);
         }
     }
-    
+
     _isCornerChanged = YES;
 }
 
-- (void)setOffset{
+- (void)setOffset {
     if (_itemWidth == 0) return;
-    
+
     CGRect originRect = self.frame;
-    
+
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         originRect.origin.y += _offset;
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
         originRect.origin.y -= _offset;
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
         originRect.origin.x += _offset;
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
         originRect.origin.x -= _offset;
     }
     self.frame = originRect;
 }
 
-- (void)setAnchorPoint{
+- (void)setAnchorPoint {
     if (_itemWidth == 0) return;
-    
+
     CGPoint point = CGPointMake(0.5, 0.5);
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         point = CGPointMake(_arrowPosition / _itemWidth, 0);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
         point = CGPointMake(_arrowPosition / _itemWidth, 1);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft) {
         point = CGPointMake(0, (_itemHeight - _arrowPosition) / _itemHeight);
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionRight) {
         point = CGPointMake(1, (_itemHeight - _arrowPosition) / _itemHeight);
     }
     CGRect originRect = self.frame;
@@ -645,20 +638,19 @@
     self.frame = originRect;
 }
 
-- (void)setArrowPosition{
+- (void)setArrowPosition {
     if (_priorityDirection == YBPopupMenuPriorityDirectionNone) {
         return;
     }
     if (_arrowDirection == YBPopupMenuArrowDirectionTop || _arrowDirection == YBPopupMenuArrowDirectionBottom) {
         if (_point.x + _itemWidth / 2 > YBScreenWidth - _minSpace) {
             _arrowPosition = _itemWidth - (YBScreenWidth - _minSpace - _point.x);
-        }else if (_point.x < _itemWidth / 2 + _minSpace) {
+        } else if (_point.x < _itemWidth / 2 + _minSpace) {
             _arrowPosition = _point.x - _minSpace;
-        }else {
+        } else {
             _arrowPosition = _itemWidth / 2;
         }
-        
-    }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
+    } else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
 //        if (_point.y + _itemHeight / 2 > YBScreenHeight - _minSpace) {
 //            _arrowPosition = _itemHeight - (YBScreenHeight - _minSpace - _point.y);
 //        }else if (_point.y < _itemHeight / 2 + _minSpace) {
@@ -669,7 +661,7 @@
     }
 }
 
-- (void)drawRect:(CGRect)rect{
+- (void)drawRect:(CGRect)rect {
     UIBezierPath *bezierPath = [YBPopupMenuPath yb_bezierPathWithRect:rect rectCorner:_rectCorner cornerRadius:_cornerRadius borderWidth:_borderWidth borderColor:_borderColor backgroundColor:_backColor arrowWidth:_arrowWidth arrowHeight:_arrowHeight arrowPosition:_arrowPosition arrowDirection:_arrowDirection];
     [bezierPath fill];
     [bezierPath stroke];

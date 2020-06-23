@@ -44,7 +44,7 @@
         timeInterval = timeIntervalInMilliSecond / 1000;
     }
     ret = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    
+
     return ret;
 }
 
@@ -54,10 +54,10 @@
 + (NSTimeInterval)timeDifferenceFromDate:(NSString *)fromDateStr toDate:(NSString *)toDateStr {
     NSDate *beginDate = [NSDate dateWithTimeIntervalSince1970:[fromDateStr doubleValue]];
     NSTimeInterval beginInterval = [beginDate timeIntervalSince1970];
-    
+
     NSDate *finishDate = [NSDate dateWithTimeIntervalSince1970:[toDateStr doubleValue]];
     NSTimeInterval finishInterval = [finishDate timeIntervalSince1970];
-    
+
     NSTimeInterval timeDifference = finishInterval - beginInterval;
     return timeDifference;
 }
@@ -71,13 +71,12 @@
 }
 
 + (NSInteger)intervalDaySinceNow:(NSString *)theDate {
-    
     NSDate *d = [self dateWithYYYYMMddHHmmss:theDate];
     NSTimeInterval late = [d timeIntervalSince1970] * 1;
     NSDate *dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval now = [dat timeIntervalSince1970] * 1;
     NSString *timeString = @"";
-    
+
     NSTimeInterval cha = now - late;
     if (cha / 86400 > 1) {
         timeString = [NSString stringWithFormat:@"%f", cha / 86400];
@@ -93,7 +92,7 @@
     NSDate *dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval now = [dat timeIntervalSince1970] * 1;
     NSString *timeString = @"";
-    
+
     NSTimeInterval cha = now - late;
     if (cha / 60 > 1) {
         timeString = [NSString stringWithFormat:@"%f", cha / 60];
@@ -213,6 +212,7 @@
 - (NSDateComponents *)componentsOfDay {
     return [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self];
 }
+
 //  --------------------------NSDate---------------------------
 /****************************************************
  *@Description:获得NSDate对应的年份
@@ -346,8 +346,7 @@
 - (BOOL)sameDayWithDate:(NSDate *)otherDate {
     if (self.year == otherDate.year && self.month == otherDate.month && self.day == otherDate.day) {
         return YES;
-    }
-    else {
+    } else {
         return NO;
     }
 }
@@ -361,8 +360,7 @@
 - (BOOL)sameWeekWithDate:(NSDate *)otherDate {
     if (self.year == otherDate.year && self.month == otherDate.month && self.weekOfDayInYear == otherDate.weekOfDayInYear) {
         return YES;
-    }
-    else {
+    } else {
         return NO;
     }
 }
@@ -376,8 +374,7 @@
 - (BOOL)sameMonthWithDate:(NSDate *)otherDate {
     if (self.year == otherDate.year && self.month == otherDate.month) {
         return YES;
-    }
-    else {
+    } else {
         return NO;
     }
 }
@@ -420,7 +417,6 @@
  *获取NSDate对象
  *******************************************************/
 + (NSDate *)dateFromMongoidRFC3339String:(NSString *)dateString {
-    
     static NSDateFormatter *DateFormatter;
     static dispatch_once_t pred;
     dispatch_once(&pred, ^{
@@ -430,7 +426,7 @@
         [DateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss"];
         [DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     });
-    
+
     NSDate *date = nil;
     if (dateString && dateString.length == 24) {
         NSString *RFC3339String = [dateString substringToIndex:19];
@@ -445,17 +441,14 @@
 + (NSString *)getCurrentDayStringWithFormat:(NSString *)format {
     NSDate *de = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    if (format)
-        dateFormatter.dateFormat = format;
-    else
-        dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    if (format) dateFormatter.dateFormat = format;
+    else dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     NSString *ss = [dateFormatter stringFromDate:de];
-    
+
     return ss;
 }
 
 + (NSDate *)dataFromTimeIntervalSince1970:(long long)timeInterval {
-    
     return [NSDate dateWithTimeIntervalSince1970:timeInterval / 1000.0];
 }
 
@@ -468,9 +461,10 @@
 
 + (NSString *)dateStringWithFromTimeIntervalSince1970:(long long)timeInterval dateFormate:(NSString *)format {
     NSDate *date = [NSDate dataFromTimeIntervalSince1970:timeInterval];
-    
+
     NSString *dateString = [NSDate dateStringWithDate:date dateFormat:format];
-    
+
     return dateString;
 }
+
 @end

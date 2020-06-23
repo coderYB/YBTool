@@ -55,8 +55,9 @@
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:defaultName];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
 #pragma mark - READ FOR STANDARD
-+ (id)objectForKey:(NSString *)defaultName{
++ (id)objectForKey:(NSString *)defaultName {
     if (defaultName) {
         return [[NSUserDefaults standardUserDefaults] objectForKey:defaultName];
     }
