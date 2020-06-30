@@ -469,4 +469,51 @@
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
+#pragma mark - layer
+- (void)rounded:(CGFloat)cornerRadius {
+    [self rounded:cornerRadius width:0 color:nil];
+}
+
+- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor {
+    [self rounded:0 width:borderWidth color:borderColor];
+}
+
+- (void)rounded:(CGFloat)cornerRadius width:(CGFloat)borderWidth color:(UIColor *)borderColor {
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.borderWidth = borderWidth;
+    self.layer.borderColor = [borderColor CGColor];
+    self.layer.masksToBounds = YES;
+}
+
+
+-(void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner {
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+}
+
+
+-(void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset {
+    //给Cell设置阴影效果
+    self.layer.masksToBounds = NO;
+    self.layer.shadowColor = shadowColor.CGColor;
+    self.layer.shadowOpacity = opacity;
+    self.layer.shadowRadius = radius;
+    self.layer.shadowOffset = offset;
+}
+
++ (CGFloat)getLabelHeightByWidth:(CGFloat)width Title:(NSString *)title font:(UIFont *)font {
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
+    label.text = title;
+    label.font = font;
+    label.numberOfLines = 0;
+    [label sizeToFit];
+    CGFloat height = label.frame.size.height;
+    return height;
+}
+
 @end

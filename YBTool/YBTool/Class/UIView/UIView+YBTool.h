@@ -190,4 +190,22 @@
  处理点击空白收键盘
  */
 - (void)enableResignFirstResponder;
+
+/**  设置圆角  */
+- (void)rounded:(CGFloat)cornerRadius;
+
+/**  设置圆角和边框  */
+- (void)rounded:(CGFloat)cornerRadius width:(CGFloat)borderWidth color:(UIColor *)borderColor;
+
+/**  设置边框  */
+- (void)border:(CGFloat)borderWidth color:(UIColor *)borderColor;
+
+/**   给哪几个角设置圆角  */
+-(void)round:(CGFloat)cornerRadius RectCorners:(UIRectCorner)rectCorner;
+
+/**  设置阴影  */
+-(void)shadow:(UIColor *)shadowColor opacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
+
++ (CGFloat)getLabelHeightByWidth:(CGFloat)width Title:(NSString *)title font:(UIFont *)font;
+  
 @end
