@@ -65,8 +65,8 @@ typedef void(^doneBlock)(NSDate *);
 -(instancetype)initWithDateStyle:(YBDateStyle)datePickerStyle CompleteBlock:(void(^)(NSDate *))completeBlock {
     self = [super init];
     if (self) {
-        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-        self = [[currentBundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
+        NSBundle *currentBundle = [NSBundle bundleForClass:[YBCustomDatePickerView class]];
+        self = [[currentBundle loadNibNamed:@"YBCustomDatePickerView" owner:self options:nil] lastObject];
 
         
         self.datePickerStyle = datePickerStyle;
@@ -113,8 +113,8 @@ typedef void(^doneBlock)(NSDate *);
 -(instancetype)initWithDateStyle:(YBDateStyle)datePickerStyle scrollToDate:(NSDate *)scrollToDate CompleteBlock:(void(^)(NSDate *))completeBlock {
     self = [super init];
     if (self) {
-        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-        self = [[currentBundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
+        NSBundle *currentBundle = [NSBundle bundleForClass:[YBCustomDatePickerView class]];
+        self = [[currentBundle loadNibNamed:@"YBCustomDatePickerView" owner:self options:nil] lastObject];
         
         self.datePickerStyle = datePickerStyle;
         self.scrollToDate = scrollToDate;
