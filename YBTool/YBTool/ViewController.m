@@ -39,7 +39,7 @@
  */
 - (void) test_UIButton{
     UIButton * btn = [UIButton buttonWithTitle:@"title" font:YBSystemFont(14) titleColor:[UIColor whiteColor] withBlock:^(id sender) {
-        [self createDatePickerView];
+        
     }];
     [btn setFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:btn];
@@ -436,17 +436,7 @@
     [progressView setPercentage:69/90.0f];
     [progressView.centerLabel setText:[NSString stringWithFormat:@"%0.0f'",69.0f/90.0f]];
 }
-- (void)createDatePickerView {
-    UIColor *randomColor = [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1];
-    YBCustomDatePickerView *datepicker = [[YBCustomDatePickerView alloc] initWithDateStyle:YBDateStyleShowYearMonthDay CompleteBlock:^(NSDate *selectDate) {
-        NSString *dateString = [selectDate stringWithFormat:@"yyyy年MM月dd日"];
-        NSLog(@"选择的日期：%@",dateString);
-    }];
-    datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
-    datepicker.datePickerColor = randomColor;//滚轮日期颜色
-    datepicker.doneButtonColor = randomColor;//确定按钮的颜色
-    [datepicker show];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

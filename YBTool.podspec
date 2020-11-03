@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = "YBTool"
 
-s.version          = "1.3.2"
+s.version          = "1.3.4"
 s.summary          = "A tools used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Objective-C.

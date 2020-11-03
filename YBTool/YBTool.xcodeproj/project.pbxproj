@@ -11,8 +11,6 @@
 		29C55C7124AACEC800FD6327 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C55C7024AACEC800FD6327 /* NSDate+Extension.m */; };
 		29C55C8524AAD19F00FD6327 /* YBCalendarReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C55C8424AAD19F00FD6327 /* YBCalendarReminderManager.m */; };
 		29C7EB3A2137EE790056B199 /* YBDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C7EB392137EE790056B199 /* YBDeviceInfo.m */; };
-		29F2A2BB2550137900D3B720 /* YBCustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F2A2B92550137900D3B720 /* YBCustomDatePickerView.m */; };
-		29F2A2BC2550137900D3B720 /* YBCustomDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F2A2BA2550137900D3B720 /* YBCustomDatePickerView.xib */; };
 		D385B0D289B28830B1B5E982 /* libPods-YBTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */; };
 		EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */; };
 		EA6A65B620875837009675FC /* UIButton+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A65B520875837009675FC /* UIButton+Swizzling.m */; };
@@ -84,9 +82,6 @@
 		29C55C8424AAD19F00FD6327 /* YBCalendarReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCalendarReminderManager.m; sourceTree = "<group>"; };
 		29C7EB382137EE790056B199 /* YBDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBDeviceInfo.h; sourceTree = "<group>"; };
 		29C7EB392137EE790056B199 /* YBDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBDeviceInfo.m; sourceTree = "<group>"; };
-		29F2A2B82550137900D3B720 /* YBCustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCustomDatePickerView.h; sourceTree = "<group>"; };
-		29F2A2B92550137900D3B720 /* YBCustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCustomDatePickerView.m; sourceTree = "<group>"; };
-		29F2A2BA2550137900D3B720 /* YBCustomDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBCustomDatePickerView.xib; sourceTree = "<group>"; };
 		4B54A85050006EDB2CF17BF5 /* Pods-YBTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBTool/Pods-YBTool.debug.xcconfig"; sourceTree = "<group>"; };
 		6403E9E0A1566F03BAC53098 /* libPods-YBTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YBTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6A65B12087581B009675FC /* NSMutableArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Swizzling.m"; sourceTree = "<group>"; };
@@ -247,16 +242,6 @@
 			path = YBDeviceInfo;
 			sourceTree = "<group>";
 		};
-		29F2A2B72550137900D3B720 /* YBCustomDatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				29F2A2B82550137900D3B720 /* YBCustomDatePickerView.h */,
-				29F2A2B92550137900D3B720 /* YBCustomDatePickerView.m */,
-				29F2A2BA2550137900D3B720 /* YBCustomDatePickerView.xib */,
-			);
-			path = YBCustomDatePickerView;
-			sourceTree = "<group>";
-		};
 		4C79D6FAE12A3508527E9F84 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +300,6 @@
 		EA6E86C7207F63DA00EAADED /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				29F2A2B72550137900D3B720 /* YBCustomDatePickerView */,
 				29C55C6E24AACE4F00FD6327 /* YBCalendarReminderManager */,
 				29C7EB372137EE5C0056B199 /* YBDeviceInfo */,
 				296426BE20BFEA3D006A16F7 /* YBCircularProgressView */,
@@ -734,7 +718,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F2A2BC2550137900D3B720 /* YBCustomDatePickerView.xib in Resources */,
 				EA6E86BE207F62FE00EAADED /* LaunchScreen.storyboard in Resources */,
 				EA6E86BB207F62FE00EAADED /* Assets.xcassets in Resources */,
 				EA6E86B9207F62FC00EAADED /* Main.storyboard in Resources */,
@@ -803,7 +786,6 @@
 				EA8DF53A208051B000486F41 /* NSDictionary+YBTool.m in Sources */,
 				EA6E876A207F8E0D00EAADED /* YBOnceRun.m in Sources */,
 				EA6E8707207F63DB00EAADED /* NSString+YBTool.m in Sources */,
-				29F2A2BB2550137900D3B720 /* YBCustomDatePickerView.m in Sources */,
 				EA6E8717207F63DB00EAADED /* YBKeyChain.m in Sources */,
 				EA6A65B32087581C009675FC /* NSMutableArray+Swizzling.m in Sources */,
 				EA6E8703207F63DB00EAADED /* YBBasePickerView.m in Sources */,
