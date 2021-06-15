@@ -429,67 +429,67 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 
 #pragma mark - Decomposing Dates
 
-- (NSInteger) nearestHour
-{
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + D_MINUTE * 30;
-    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-    NSDateComponents *components = [[NSDate currentCalendar] components:NSCalendarUnitHour fromDate:newDate];
-    return components.hour;
-}
-
-- (NSInteger) hour
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.hour;
-}
-
-- (NSInteger) minute
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.minute;
-}
-
-- (NSInteger) seconds
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.second;
-}
-
-- (NSInteger) day
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.day;
-}
-
-- (NSInteger) month
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.month;
-}
-
-- (NSInteger) week
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.weekOfMonth;
-}
-
-- (NSInteger) weekday
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.weekday;
-}
-
-- (NSInteger) nthWeekday // e.g. 2nd Tuesday of the month is 2
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.weekdayOrdinal;
-}
-
-- (NSInteger) year
-{
-    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    return components.year;
-}
+//- (NSInteger) nearestHour
+//{
+//    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + D_MINUTE * 30;
+//    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+//    NSDateComponents *components = [[NSDate currentCalendar] components:NSCalendarUnitHour fromDate:newDate];
+//    return components.hour;
+//}
+//
+//- (NSInteger) hour
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.hour;
+//}
+//
+//- (NSInteger) minute
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.minute;
+//}
+//
+//- (NSInteger) seconds
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.second;
+//}
+//
+//- (NSInteger) day
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.day;
+//}
+//
+//- (NSInteger) month
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.month;
+//}
+//
+//- (NSInteger) week
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.weekOfMonth;
+//}
+//
+//- (NSInteger) weekday
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.weekday;
+//}
+//
+//- (NSInteger) nthWeekday // e.g. 2nd Tuesday of the month is 2
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.weekdayOrdinal;
+//}
+//
+//- (NSInteger) year
+//{
+//    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+//    return components.year;
+//}
 
 + (NSDate *)date:(NSString *)datestr WithFormat:(NSString *)format
 {
